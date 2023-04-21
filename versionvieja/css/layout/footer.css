@@ -1,0 +1,10 @@
+.footer-color {
+    background: var(--clr-orange-200);
+    color: var(--clr-white);
+    position: absolute;
+    left: 0;
+}
+
+.footer-position-end{
+    bottom:0rem;
+}

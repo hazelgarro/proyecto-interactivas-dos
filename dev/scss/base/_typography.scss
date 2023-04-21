@@ -1,0 +1,33 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.text-question{
+    @include mixins.set-font(vars.$fw-reg, vars.$fs-rg, vars.$clr-gray-400);//$ff, $fw, $fs, $fc:vars.$clr-black
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.text-orange{
+    @include mixins.set-font(vars.$fw-reg, vars.$fs-rg, vars.$clr-orange-300);
+}
+
+.text-forms{
+    @include mixins.set-font(vars.$fw-med, vars.$fs-rg, vars.$clr-gray-400);
+}
+
+.text-med{
+    @include mixins.set-font(vars.$fw-med, vars.$fs-rg);
+}
+
+.text-nevbar{
+    @include mixins.set-font(vars.$fw-med, vars.$fs-rg, vars.$clr-white);
+}
+
+.text-cards-categories{
+    @include mixins.set-font(vars.$fw-med, vars.$fs-xsm);
+}
+
+.text-title-recipe{
+    @include mixins.set-font(vars.$fw-med, vars.$fs-rg, vars.$clr-black);
+    text-decoration: none !important;
+}

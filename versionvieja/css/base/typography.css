@@ -1,0 +1,37 @@
+.text-question{
+    text-decoration: underline;
+    opacity: 0.8;
+    font-weight: var(--fw-reg);
+    color: var(--clr-gray-400);
+}
+
+.text-orange{
+    color: var(--clr-orange-300);
+}
+
+.text-forms{
+    color: var(--clr-gray-400);
+    font-weight: var(--fw-med);
+}
+
+.text-med{
+    font-weight: var(--fw-med);
+    color: var(--clr-black);
+}
+
+.text-nevbar{
+    color: var(--clr-white) !important ;
+}
+
+.text-cards-categories{
+    font-weight: var(--fs-xsm);
+}
+
+.text-label-time{
+    font-size: var(--fs-xsm);
+}
+
+.text-title-recipe{
+    text-decoration: none !important;
+    color: var(--clr-black);
+}
