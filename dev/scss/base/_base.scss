@@ -1,0 +1,68 @@
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @include mixins.set-font(vars.$base-fs);
+}
+
+body {
+    @include mixins.set-font(vars.$ff);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-badge-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.align-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.padding-0 {
+    padding-bottom: 0rem !important;
+}
+
+.base-container {
+    max-width: 85%;
+}
+
+.recipe-description-space{
+    min-height: 6rem;
+}
+
+.recipe-description-space-top10{
+    min-height: 4rem;
+}
+.overflow-title {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 575.98px) {}

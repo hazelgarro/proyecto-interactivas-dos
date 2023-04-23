@@ -1,0 +1,12 @@
+@use '../abstracts/vars';
+
+.footer-color {
+    background: vars.$clr-orange-200;
+    color: vars.$clr-white;
+    position: absolute;
+    left: 0;
+}
+
+.footer-position-end{
+    bottom:0rem;
+}

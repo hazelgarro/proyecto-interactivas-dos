@@ -1,0 +1,30 @@
+@use '../abstracts/vars';
+
+.badge-orange {
+    color: vars.$clr-white;
+    background-color: vars.$clr-orange-300;
+    border-radius: 0.12rem;
+    padding: 0.12rem !important;
+}
+
+.badge-green {
+    color: vars.$clr-black;
+    background-color: vars.$clr-green-100;
+    border-radius: 0.12rem;
+    padding: 0.12rem !important;
+}
+
+.badge-orange-big {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.37rem;
+    gap: 0.5rem;
+    position: absolute;
+    width: 5.75rem;
+    height: 1.75rem;
+    left: 1rem;
+    top: 1rem;
+    background: vars.$clr-orange-300;
+    border-radius: 0.12rem;
+}

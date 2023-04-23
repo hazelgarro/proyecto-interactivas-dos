@@ -1,0 +1,35 @@
+.badge-orange {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(22deg, 100%, 52%);
+  border-radius: 0.12rem;
+  padding: 0.12rem !important;
+}
+
+.badge-green {
+  color: hsl(0deg, 0%, 14%);
+  background-color: hsl(146deg, 78%, 52%);
+  border-radius: 0.12rem;
+  padding: 0.12rem !important;
+}
+
+.badge-orange-big {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0.37rem;
+  gap: 0.5rem;
+  position: absolute;
+  width: 5.75rem;
+  height: 1.75rem;
+  left: 1rem;
+  top: 1rem;
+  background: hsl(22deg, 100%, 52%);
+  border-radius: 0.12rem;
+}

@@ -3,11 +3,19 @@
 $phone : '(max-width: 376px)';
 $tablet : '(max-width: 600px)';
 
-@mixin set-font($ff:vars.$ff, $fw, $fs, $fc:vars.$clr-black){
+@mixin set-font($ff:vars.$ff, $fw:vars.$fw-reg, $fs:vars.$fs-rg, $fc:vars.$clr-black){
     font-family: $ff;
     font-weight: $fw;
     font-size: $fs;
     color: $fc;
 }
+
+@mixin responsive($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}
+
+
 
 

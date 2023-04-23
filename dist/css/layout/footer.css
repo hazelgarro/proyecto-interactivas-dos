@@ -1,0 +1,10 @@
+.footer-color {
+  background: hsl(29deg, 100%, 64%);
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+  left: 0;
+}
+
+.footer-position-end {
+  bottom: 0rem;
+}

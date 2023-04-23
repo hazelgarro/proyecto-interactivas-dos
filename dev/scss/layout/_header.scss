@@ -1,0 +1,27 @@
+@use '../abstracts/vars';
+
+.header-link{
+    color: vars.$clr-white;
+    text-decoration: none;
+}
+
+.navbar-orange {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.62rem 11.5rem;
+    gap: 23.75rem;
+    position: absolute;
+    width: 120rem;
+    height: 4.25rem;
+    left: 0rem;
+    top: 0rem;
+    background: vars.$clr-orange-200;
+    box-shadow: 0rem 0.25rem 0.5rem vars.$clr-black-50;
+}
+
+.navbar-color {
+    background: vars.$clr-orange-200;
+    color: vars.$clr-white;
+}

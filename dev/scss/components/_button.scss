@@ -1,0 +1,171 @@
+@use '../abstracts/vars';
+
+.btn-orange-dark{
+    background: vars.$clr-orange-200;
+    color: vars.$clr-black;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-orange-ligth{
+    background: vars.$clr-orange-100;
+    color: vars.$clr-orange-300;
+    text-decoration: none;
+}
+
+.btn-signup-dark {
+    height: 2rem;
+    width: 18.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+}
+
+.btn-signup-dark:hover{
+    color: vars.$clr-white;
+}
+
+.btn-signup-light {
+    height: 2rem;
+    width: 18.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+}
+
+.btn-signup-light:hover{
+    color: vars.$clr-black;
+}
+
+.btn-circular {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    border: none;
+    background: vars.$clr-orange-300;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.37rem;
+}
+
+.btn-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 10.5rem;
+    height: 1.87rem;
+    background: vars.$clr-orange-200;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.btn-admin-orange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 6.12rem;
+    height: 1.87rem;
+    background: vars.$clr-orange-200;
+    border-radius: 0.5rem;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-admin-red {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 6.12rem;
+    height: 1.87rem;
+    background: vars.$clr-red-100;
+    border-radius: 0.5rem;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 12.12rem;
+    height: 1.87rem;
+    background: vars.$clr-orange-200;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.btn-search {
+    background: vars.$clr-orange-50;
+    border: 1px solid vars.$clr-orange-300;
+    border-radius: 0.5rem;
+}
+
+.center-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-long-dark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 27.5rem;
+    height: 1.87rem;
+    border-radius: 0.5rem;
+}
+
+.btn-long-dark:hover{
+    color: vars.$clr-white;
+}
+
+.btn-long-ligth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 27.5rem;
+    height: 1.87rem;
+    border-radius: 0.5rem;
+}
+
+.btn-long-ligth:hover{
+    color: vars.$clr-black;
+}
+
+.hover-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(0.063rem) translateZ(0);
+    transform: perspective(0.063rem) translateZ(0);
+    box-shadow: 0 0 0.063rem vars.$clr-black-100;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    display: flex;
+    justify-content: center;
+}
+
+.hover-grow:hover, .hover-grow:focus, .hover-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
