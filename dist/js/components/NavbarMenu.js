@@ -12,7 +12,7 @@ app.component('navbar-menu',{
     <div class="collapse navbar-collapse ms-4 justify-content-between" id="menu">
         <ul class="navbar-nav gap-5 box-navbar">
             <li class=" position-relative"><a class="header-link" href="index.html">Home</a></li>
-            <li class=" position-relative"><a class="header-link " href="top10.html">Top Recipes</a></li>
+            <li class=" position-relative"><a class="header-link " href="top-recipes.html">Top Recipes</a></li>
             <li class=" position-relative"><a class="header-link " href="categories.html">Categories</a></li>
             <li class=" position-relative"><a class="header-link " href="profile.html">Profile</a></li>
         </ul>
