@@ -196,6 +196,7 @@ body {
   border-radius: 0.75rem;
   background: hsl(0deg, 0%, 100%);
   width: 31rem;
+  height: 35rem;
 }
 @media only screen and (max-width: 376px) {
   .box-signup {
@@ -795,7 +796,7 @@ body {
 }
 
 .admin-background {
-  background-image: url("../../../dist/images/imgs/unsplash_jpkfc5_d-DI.png");
+  background-image: url("./../../dist/images/imgs/unsplash_jpkfc5_d-DI.png");
 }
 
 @media only screen and (max-width: 600px) {

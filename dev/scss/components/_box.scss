@@ -17,6 +17,7 @@
     border-radius: 0.75rem;
     background: vars.$clr-white;
     width: 31rem;
+    height: 35rem;
 
     @include mixins.responsive(mixins.$phone){
         border-radius: 0.75rem;
