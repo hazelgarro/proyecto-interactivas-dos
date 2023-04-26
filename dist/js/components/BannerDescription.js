@@ -8,9 +8,6 @@ app.component('banner-description',{
             type: String,
             default: "default description"
         },
-        image:{
-            type: String,
-        }
     },
     template: 
     /* html */
@@ -20,7 +17,7 @@ app.component('banner-description',{
         <p class="mt-3">{{description}}</p>
     </div>
     <div class="col-4 ocultar">
-        <p><img v-bind:src="image" alt="photo food"></p>
+        <p><img src="images/imgs/Maskgroup.png" alt="photo food"></p>
     </div>
 </div>`
 })
