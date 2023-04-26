@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+        onerror="this.onerror=null;this.href='./css/vendors/bootstrap.min.css';">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js">
+    <!--JS Bootstrap-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS animation -->
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/main.css">
+    <title>User profile</title>
+</head>
+
+<body class="banner-background">
+    <!--header-->
+    <section id="app">
+        <header class="container-fluid navbar-color">
+            <!-- nav menu -->
+            <navbar-menu></navbar-menu>
+        </header>
+
+        <!--about user-->
+        <section class="container mt-4 mb-5 gap-5">
+            <div class="row">
+                <div class="col-2">
+                    <box-user name="Hazel Garro"
+                        about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></box-user>
+                </div>
+                <div class="col-12">
+                    <h2>Your Collection</h2>
+                    <section class="row mt-4 gap-3 center">
+                        <!--cards verticales-->
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
+                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                            time="5min" difficult="Easy"></card-vertical>
+                    </section>
+                </div>
+            </div>
+            <!--footer-->
+            <footer class="container-fluid footer-color mt-5 ">
+                <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
+                    <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
+                    <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
+                </div>
+            </footer>
+
+            <!--Script-->
+            <!-- AOS animation -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+                crossorigin="anonymous">
+                </script>
+        </section>
+    </section>
+
+    <!--VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/components/BannerDescription.js"></script>
+    <script src="./js/components/NavbarMenu.js"></script>
+    <script src="./js/components/CardVertical.js"></script>
+    <script src="./js/components/BoxUser.js"></script>
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+</body>
+
+</html>
