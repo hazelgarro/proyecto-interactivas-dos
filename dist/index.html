@@ -29,14 +29,14 @@
         </header>
 
         <!--banner-->
-        <div class="container">
+        <div class="base-container">
             <banner-description title="The Kitchen"
                 description="Do you want food recipes to cook delicious homemade dishes and desserts for all occasions? In that case, welcome to recipe heaven. You have just entered a portal where, after many years of accumulating experience on the Internet, we have managed to ensure that you are always able to make your own homemade food recipes, while giving free rein to the noble and addictive art of cook. Therefore, even if you have come to us looking for a specific cooking recipe, you will surely discover dozens of interesting ideas for your daily menu and for your lunches, snacks and dinners with friends, if you decide to stay and browse."></banner-description>
         </div>
 
         <!--feed-->
         <!--inspiration your meals-->
-        <section class="container mt-4 mb-5 gap-5">
+        <section class="base-container mt-4">
             <h2>Inspiration for your meals</h2>
             <!--feed-->
             <section class="row mt-4 gap-3 center">
@@ -138,15 +138,6 @@
                     </div>
                 </div>
             </section>
-
-            <!--footer-->
-            <footer class="container-fluid footer-color mt-5 ">
-                <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
-                    <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
-                    <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
-                </div>
-            </footer>
-
             <!--Script-->
             <!-- AOS animation -->
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -172,5 +163,12 @@
             const mountedApp = app.mount("#app");
         </script>
 </body>
+<!--footer-->
+<footer class="container-fluid footer-color">
+    <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
+        <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
+        <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
+    </div>
+</footer> 
 
 </html>

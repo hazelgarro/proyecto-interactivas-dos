@@ -31,3 +31,7 @@
     @include mixins.set-font(vars.$fw-med, vars.$fs-rg, vars.$clr-black);
     text-decoration: none !important;
 }
+
+.text-description-banner{
+    @include mixins.set-font(vars.$fs-xsm);
+}

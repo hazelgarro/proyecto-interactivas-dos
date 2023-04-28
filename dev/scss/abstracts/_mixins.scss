@@ -1,7 +1,7 @@
 @use '../abstracts/vars';
 
-$phone : '(max-width: 376px)';
-$tablet : '(max-width: 600px)';
+$phone : '(max-width: 480px)';
+$tablet : '(max-width: 770px)';
 
 @mixin set-font($ff:vars.$ff, $fw:vars.$fw-reg, $fs:vars.$fs-rg, $fc:vars.$clr-black){
     font-family: $ff;
@@ -15,6 +15,9 @@ $tablet : '(max-width: 600px)';
         @content;
     }
 }
+
+
+
 
 
 

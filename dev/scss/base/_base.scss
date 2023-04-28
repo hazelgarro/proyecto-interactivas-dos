@@ -6,14 +6,6 @@
     padding: 0;
 }
 
-html {
-    @include mixins.set-font(vars.$base-fs);
-}
-
-body {
-    @include mixins.set-font(vars.$ff);
-}
-
 .center {
     display: flex;
     justify-content: center;
@@ -44,7 +36,16 @@ body {
 }
 
 .base-container {
-    max-width: 85%;
+    max-width: 85% !important;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mixins.responsive(mixins.$phone){
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 }
 
 .recipe-description-space{
@@ -64,5 +65,3 @@ body {
     line-clamp: 1;
     -webkit-box-orient: vertical;
 }
-
-@media (max-width: 575.98px) {}
