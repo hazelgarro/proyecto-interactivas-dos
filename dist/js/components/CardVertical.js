@@ -29,7 +29,7 @@ app.component('card-vertical', {
     },
     template:
         /* html */
-        `<div class="position-relative box-home col-lg-3 col-md-3 p-0 m-0">
+        `<div class="position-relative box-home col-lg-3 col-md-3 p-0 m-0 mb-4">
     <img v-bind:src="image" class="img-fluid top-border-photo"
         alt="photo food">
     <div class="text-start ms-2 me-2">

@@ -35,3 +35,7 @@
 .text-description-banner{
     @include mixins.set-font(vars.$fs-xsm);
 }
+
+.text-total-top{
+    @include mixins.set-font(vars.$ff, vars.$fw-reg, vars.$fs-rg,vars.$clr-orange-300);
+}

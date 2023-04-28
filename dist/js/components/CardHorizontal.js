@@ -60,9 +60,9 @@ app.component('card-horizontal', {
                             </a>
                         </div>
                         <div class="col-6">
-                            <span class="badge badge-orange">{{type}}</span>
-                            <span class="badge badge-green">{{difficult}}</span>
-                            <span class="badge badge-orange">{{occasion}}</span>
+                            <span class="badge badge-orange m-1">{{type}}</span>
+                            <span class="badge badge-green m-1">{{difficult}}</span>
+                            <span class="badge badge-orange m-1">{{occasion}}</span>
                         </div>
                     </div>
                     <p class="card-text  ms-3 recipe-description-space-top10 overflow">{{description}}</p>

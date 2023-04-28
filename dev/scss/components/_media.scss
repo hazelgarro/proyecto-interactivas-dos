@@ -57,6 +57,10 @@
     }
 }
 
+.card-detail-big{
+    border-color: white;
+}
+
 .img-retote {
     transform: rotate(90deg);
 }
@@ -79,7 +83,7 @@
     gap: 0.25rem;
     width: 5.6rem;
     height: 1.5rem;
-    background: vars.$clr-orange-100;
+    background: vars.$clr-orange-50;
     border-radius: 0.25rem;
     flex: none;
     order: 0;
@@ -103,10 +107,17 @@
 
 .margin-cards{
     margin-right: 0%;
+    justify-content: space-evenly;
 
     @include mixins.responsive(mixins.$tablet){
         margin-bottom: 5%;
     }
+}
+
+.ajust-card-big{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .margin-box{
@@ -128,7 +139,7 @@
 }
 
 .banner-background{
-    background-image: url("../../../dist/images/imgs/Background.png");
+    background-image: url("./../../dist/images/imgs/Background.png");
     background-repeat: no-repeat;
 }
 

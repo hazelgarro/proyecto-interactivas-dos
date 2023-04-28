@@ -14,7 +14,7 @@ app.component('navbar-menu',{
             <li class=" position-relative"><a class="header-link" href="index.html">Home</a></li>
             <li class=" position-relative"><a class="header-link " href="top-recipes.html">Top Recipes</a></li>
             <li class=" position-relative"><a class="header-link " href="categories.html">Categories</a></li>
-            <li class=" position-relative"><a class="header-link " href="profile.html">Profile</a></li>
+            <li class=" position-relative"><a class="header-link " href="user-profile.html">Profile</a></li>
         </ul>
         <div class="me-5 box-navbar">
             <form class="d-flex input-group" action="search.php" method="get" role="search">

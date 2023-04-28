@@ -54,14 +54,12 @@ app.component('recipe-detail', {
     template:
         /* html */
         `<div class="center-img-detail col-md-4 col-lg-6">
-        <div class="card text-bg-dark  max-box-size">
+        <div class="card card-detail-big text-bg-dark  max-box-size">
         <img v-bind:src="image" alt="photo food">
             <div class="card-img-overlay">
-                <div>
+                <div class="ajust-card-big">
                     <p class="align-content-center"><span class="badge-orange-big">{{tag}}</span></p>
-                </div>
-                <div class="align-end">
-                    <button class="btn-circular mt-3 mb-3 hover-grow"><a type="button" href=""><span
+                    <button class="btn-circular hover-grow"><a type="button" href=""><span
                                 class="img-fluid mx-auto mb-2" alt="favorite icon"><img
                                 v-bind:src="icon"></span>
                             <span
@@ -70,14 +68,14 @@ app.component('recipe-detail', {
                 </div>
             </div>
         </div>
-        <div class="">
-            <h1 class="mt-4">{{name}}</h1>
-            <!--  <p class="text-orange"><img src="./imgs/icons/star_rate.svg" alt="">200</p>-->
+        <div class="ajust-card-big">
+            <h1 class="mt-4">{{title}}</h1>
+            <p class="text-orange m-2 text-total-top"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">200</p>
         </div>
-        <div>
-            <span class="badge badge-orange">{{category}}</span>
-            <span class="badge badge-green">{{difficult}}</span>
-            <span class="badge badge-orange">{{ocassion}}</span>
+        <div class="col-6">
+            <span class="badge badge-orange m-1">{{category}}</span>
+            <span class="badge badge-green m-1">{{difficult}}</span>
+            <span class="badge badge-orange m-1">{{ocassion}}</span>
         </div>
         <!-- <div>
             <p><img src="./imgs/icons/Like Button.svg" alt=""></p>
@@ -86,7 +84,7 @@ app.component('recipe-detail', {
         <div>
             <h2 class="mt-4">Description</h2>
             <div class="row">
-                <p class="label-time ms-3"><img src="images/imgs/icons/wash.svg"
+                <p class="label-time ms-3 "><img src="images/imgs/icons/wash.svg"
                         alt="preparation time icon">{{time}}</p>
                 <p class="label-time ms-3"><img src="images/imgs/icons/local_fire_department.svg"
                         alt="cooking time icon">{{time}}</p>

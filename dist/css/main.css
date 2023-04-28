@@ -80,6 +80,18 @@
   -webkit-box-orient: vertical;
 }
 
+hr {
+  height: 0.175rem;
+  border-color: hsl(22deg, 100%, 52%);
+  background-color: hsl(22deg, 100%, 52%);
+  width: 38%;
+}
+
+td {
+  margin: 15px;
+  padding: 15px;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
 }
@@ -141,6 +153,13 @@ body {
   font-weight: 400;
   font-size: 1.25rem;
   color: hsl(0deg, 0%, 14%);
+}
+
+.text-total-top {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: hsl(22deg, 100%, 52%);
 }
 
 .badge-orange {
@@ -727,6 +746,10 @@ body {
   }
 }
 
+.card-detail-big {
+  border-color: white;
+}
+
 .img-retote {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -759,7 +782,7 @@ body {
   gap: 0.25rem;
   width: 5.6rem;
   height: 1.5rem;
-  background: hsl(29deg, 100%, 80%);
+  background: hsl(29deg, 100%, 88%);
   border-radius: 0.25rem;
   -webkit-box-flex: 0;
       -ms-flex: none;
@@ -790,11 +813,26 @@ body {
 
 .margin-cards {
   margin-right: 0%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 @media only screen and (max-width: 770px) {
   .margin-cards {
     margin-bottom: 5%;
   }
+}
+
+.ajust-card-big {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .margin-box {
@@ -817,7 +855,7 @@ body {
 }
 
 .banner-background {
-  background-image: url("../../../dist/images/imgs/Background.png");
+  background-image: url("./../../dist/images/imgs/Background.png");
   background-repeat: no-repeat;
 }
 
