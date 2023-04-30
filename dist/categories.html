@@ -18,11 +18,12 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Home</title>
+    <link rel="shortcut icon" href="images/imgs/icons/favicon.png">
 </head>
 
-<body class="banner-background">
+<body>
     <!--header-->
-    <section id="app">
+    <section id="app" class="banner-background">
         <header class="container-fluid navbar-color">
             <!-- nav menu -->
             <navbar-menu></navbar-menu>
@@ -108,6 +109,15 @@
                 </script>
         </div>
     </section>
+
+    <!--footer-->
+    <footer class="container-fluid footer-color mt-4">
+        <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
+            <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
+            <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
+        </div>
+    </footer>
+
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
@@ -119,12 +129,5 @@
         const mountedApp = app.mount("#app");
     </script>
 </body>
-<!--footer-->
-<footer class="container-fluid footer-color mt-4">
-    <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
-        <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
-        <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
-    </div>
-</footer>
 
 </html>

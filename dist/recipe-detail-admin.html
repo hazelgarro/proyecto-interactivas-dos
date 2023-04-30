@@ -18,6 +18,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Recipe detail admin</title>
+    <link rel="shortcut icon" href="images/imgs/icons/favicon.png">
 </head>
 
 <body class="banner-background">
@@ -28,20 +29,24 @@
             <navbar-admin></navbar-admin>
         </header>
 
-        <!--recipe detail-->
-        <div class="mt-5">
-        <table-recipe-detail image="images/images-recipes/recipe-0rKPZzwPlt.png" name="Recipe Title" category="Entries" level="Easy" ocassion="All" time="15min" portions="4-5" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse." ingredients="Lorem ipsum dolor sit amet.
-        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet." preparation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum "></table-recipe-detail>
-    </div>
+        <main>
+            <!--recipe detail-->
+            <div class="mt-5">
+                <table-recipe-detail image="images/images-recipes/recipe-0rKPZzwPlt.png" name="Recipe Title"
+                    category="Entries" level="Easy" ocassion="All" time="15min" portions="4-5"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse."
+                    ingredients="Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+                    preparation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum "></table-recipe-detail>
+            </div>
 
-        <!--buttons-->
-        <div class="d-flex flex-row-reverse me-3 mt-4">
-            <button class="btn-admin-red me-5 hover-grow"><a class="header-link"
-     href="delete.php?id='.$idRec.'"
-     >Delete</a></button> 
-        <button class="btn-admin-orange me-2 hover-grow"><a class="header-link" href="">Edit</a></button>
-  
-        </div>
+            <!--buttons-->
+            <div class="d-flex flex-row-reverse me-3 mt-4">
+                <button class="btn-admin-red me-5 hover-grow"><a class="header-link"
+                        href="delete.php?id='.$idRec.'">Delete</a></button>
+                <button class="btn-admin-orange me-2 hover-grow"><a class="header-link" href="">Edit</a></button>
+            </div>
+        </main>
 
         <!--footer-->
         <footer class="container-fluid footer-color mt-5 ">

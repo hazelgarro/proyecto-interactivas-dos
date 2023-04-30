@@ -18,26 +18,28 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>User profile</title>
+    <link rel="shortcut icon" href="images/imgs/icons/favicon.png">
 </head>
 
-<body class="banner-background">
+<body>
     <!--header-->
-    <section id="app">
+    <section id="app" class="banner-background">
         <header class="container-fluid navbar-color">
             <!-- nav menu -->
             <navbar-menu></navbar-menu>
         </header>
 
         <!--about user-->
-        <section class="container mt-4 mb-5 gap-5">
+        <section class="base-container mt-4 mb-5 gap-5">
             <div class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <box-user name="Hazel Garro"
                         about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></box-user>
                 </div>
-                <div class="col-12">
-                    <h2>Your Collection</h2>
+                <div class="col-8">
+                    <h2  class="row ms-5" >Your Collection</h2>
                     <section class="row mt-4 gap-3 center">
+                        
                         <!--cards verticales-->
                         <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
                             icon="images/imgs/icons/favorite.svg" title="Recipe Title"
@@ -74,13 +76,8 @@
                     </section>
                 </div>
             </div>
-            <!--footer-->
-            <footer class="container-fluid footer-color mt-5 ">
-                <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
-                    <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
-                    <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
-                </div>
-            </footer>
+
+        
 
             <!--Script-->
             <!-- AOS animation -->
@@ -95,17 +92,24 @@
                 </script>
         </section>
     </section>
+       <!--footer-->
+       <footer class="container-fluid footer-color mt-5 ">
+        <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
+            <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
+            <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
+        </div>
+    </footer>
 
-    <!--VUE-->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/components/BannerDescription.js"></script>
-    <script src="./js/components/NavbarMenu.js"></script>
-    <script src="./js/components/CardVertical.js"></script>
-    <script src="./js/components/BoxUser.js"></script>
-    <script>
-        const mountedApp = app.mount("#app");
-    </script>
+       <!--VUE-->
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+       <script src="./js/main.js"></script>
+       <script src="./js/components/BannerDescription.js"></script>
+       <script src="./js/components/NavbarMenu.js"></script>
+       <script src="./js/components/CardVertical.js"></script>
+       <script src="./js/components/BoxUser.js"></script>
+       <script>
+           const mountedApp = app.mount("#app");
+       </script>
 </body>
 
 </html>

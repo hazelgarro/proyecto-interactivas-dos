@@ -84,12 +84,24 @@ hr {
   height: 0.175rem;
   border-color: hsl(22deg, 100%, 52%);
   background-color: hsl(22deg, 100%, 52%);
-  width: 38%;
+  width: 98%;
 }
 
 td {
   margin: 15px;
   padding: 15px;
+}
+
+.center-items-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 body {
@@ -723,8 +735,8 @@ body {
 }
 
 .size-img-list {
-  width: 246px;
-  height: 56px;
+  width: 331px;
+  height: 176px;
   border-radius: 8px;
 }
 

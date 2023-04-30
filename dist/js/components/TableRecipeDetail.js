@@ -54,9 +54,9 @@ app.component('table-recipe-detail', {
                 <div class="col ms-4 mt-4 me-5">
                     <h1>{{name}}</h1>
                     <div>
-                        <span class="badge badge-orange">{{category}}</span>
-                        <span class="badge badge-green">{{level}}</span>
-                        <span class="badge badge-orange">{{ocassion}}</span>
+                        <span class="badge badge-orange m-1">{{category}}</span>
+                        <span class="badge badge-green m-1">{{level}}</span>
+                        <span class="badge badge-orange m-1">{{ocassion}}</span>
                     </div>
                     <h2 class="mt-4">Description</h2>
                     <div class="d-flex align-items-start">
