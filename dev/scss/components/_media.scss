@@ -74,6 +74,18 @@
     border-radius: 0.75rem 0rem 0rem 0.75rem;
 }
 
+.photo-user-small{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.photo-user-big{
+    border-radius: 50%;
+    width: 12.5rem;
+    height: 12.5rem;
+}
+
 .label-time {
     display: flex;
     flex-direction: row;

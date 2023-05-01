@@ -3,6 +3,13 @@
 .header-link{
     color: vars.$clr-white;
     text-decoration: none;
+    transition: all 2s;
+}
+
+.header-link:hover{
+    font-weight: vars.$fw-med;
+    color: vars.$clr-white;
+    transition: all 2s;
 }
 
 .navbar-orange {
@@ -24,4 +31,37 @@
 .navbar-color {
     background: vars.$clr-orange-200;
     color: vars.$clr-white;
+}
+
+/*Submenu admin*/
+
+.submenu{
+    position: absolute;
+    background-color: vars.$clr-orange-200;
+    height: 7rem;
+    width: 140%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    border-radius: 0.7rem;
+}
+
+.submenu li a{
+    display: block;
+    padding: 0.2rem;
+    color: vars.$clr-white;
+    text-decoration: none;
+    list-style: none;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.submenu li a:hover{
+    font-weight: vars.$fw-med;
+    transition: all 0.2s;
+}
+.option-admi li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    justify-items: center;
 }

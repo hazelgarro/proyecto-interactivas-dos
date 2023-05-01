@@ -138,6 +138,14 @@ body {
   color: hsl(0deg, 0%, 14%);
 }
 
+.text-big {
+  font-family: 700;
+  font-weight: 5rem;
+  font-size: hsl(0deg, 0%, 100%) !important;
+  color: hsl(0deg, 0%, 14%);
+  color: hsl(0deg, 0%, 100%);
+}
+
 .text-nevbar {
   font-family: 500;
   font-weight: 1.25rem;
@@ -776,6 +784,18 @@ body {
   border-radius: 0.75rem 0rem 0rem 0.75rem;
 }
 
+.photo-user-small {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.photo-user-big {
+  border-radius: 50%;
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
 .label-time {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -901,6 +921,15 @@ body {
 .header-link {
   color: hsl(0deg, 0%, 100%);
   text-decoration: none;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.header-link:hover {
+  font-weight: 500;
+  color: hsl(0deg, 0%, 100%);
+  -webkit-transition: all 2s;
+  transition: all 2s;
 }
 
 .navbar-orange {
@@ -932,4 +961,94 @@ body {
 .navbar-color {
   background: hsl(29deg, 100%, 64%);
   color: hsl(0deg, 0%, 100%);
+}
+
+/*Submenu admin*/
+.submenu {
+  position: absolute;
+  background-color: hsl(29deg, 100%, 64%);
+  height: 7rem;
+  width: 140%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  border-radius: 0.7rem;
+}
+
+.submenu li a {
+  display: block;
+  padding: 0.2rem;
+  color: hsl(0deg, 0%, 100%);
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+.submenu li a:hover {
+  font-weight: 500;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.option-admi li:hover .submenu {
+  visibility: visible;
+  opacity: 1;
+  justify-items: center;
+}
+
+.background-responsive {
+  background-color: hsl(22deg, 100%, 52%);
+  color: hsl(0deg, 0%, 100%);
+  visibility: hidden;
+}
+@media only screen and (max-width: 480px) {
+  .background-responsive {
+    visibility: visible;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .background-responsive {
+    visibility: visible;
+  }
+}
+
+.justity-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#user-card-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  #user-card-mobile {
+    display: block;
+  }
+  .justity-mobile {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.user-card-desk {
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .user-card-desk {
+    display: none;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .user-card-desk {
+    display: none;
+  }
 }

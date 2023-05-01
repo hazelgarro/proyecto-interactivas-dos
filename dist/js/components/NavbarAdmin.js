@@ -4,26 +4,41 @@ app.component('navbar-admin',{
     `<nav id="navbar-main" class="navbar navbar-expand-lg">
     <a class="navbar-brand color-header" href="#">
         <img src="./images/imgs/icons/Color=White.svg"
-            class="ms-5 size-img-sm img-fluid d-inline-block align-text-middle" alt="logo">
-    </a>
+            class="ms-5 size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
     <!--boton navbar-main-->
-    <button class="navbar-toggler " data-bs-target="#menu" data-bs-toggle="collapse" type="button">
+    <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse ms-4 justify-content-between" id="menu">
-        <ul class="navbar-nav gap-5 ">
-
+        <div class="col-5">
+        <ul class="navbar-nav gap-5 box-navbar">
+            <li class=" position-relative"><a class="header-link" href="index.html">Home</a></li>
+            <li class=" position-relative"><a class="header-link " href="top-recipes.html">Top Recipes</a></li>
+            <li class=" position-relative"><a class="header-link " href="categories.html">Categories</a></li>
         </ul>
-        <div class="me-5">
-            <form class="d-flex input-group" role="search">
-                <input class="form-control me-2 input-search" type="search"
+        </div>
+        <div class="row me-5 box-navbar">
+            <form class="col-7 d-flex " action="search.php" method="get" role="search">
+                <input class="form-control me-2 search-recipe input-search" type="search" name="keyword"
                     placeholder="Search something..." aria-label="Search">
                 <button class="btn btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
             </form>
+            <div class="col-1">
+                <div class=" position-relative"><a class="header-link " href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
+            </div>
+            <div class="col-3 ms-3 center-items-list">
+                <ul class="navbar-nav gap-5 box-navbar option-admi">
+                    <li class=" position-relative"><a class="header-link" href="recipe-list-admin.html">Admin options</a>
+                        <ul class="submenu" style="list-style:none">
+                            <li><a class="header-link" href="recipe-list-admin.html">Recipes list</a></li>
+                            <li><a class="header-link" href="recipe-add.html">Recipe add</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</nav>`
+    </nav>`
 })
-
 

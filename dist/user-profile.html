@@ -30,15 +30,20 @@
         </header>
 
         <!--about user-->
-        <section class="base-container mt-4 mb-5 gap-5">
-            <div class="row">
-                <div class="col-4">
+        <section class="">
+           
+                <div class="col-12 background-responsive container-fluid" id="user-card-mobile">
+                    <detail-user name="Hazel Garro" about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></detail-user>
+                </div>
+            
+            <div class="row container-fluid justity-mobile mt-5">
+                <div class="col-4 user-card-desk">
                     <box-user name="Hazel Garro"
                         about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></box-user>
                 </div>
-                <div class="col-8">
+                <div class="col-8 mt-2">
                     <h2  class="row ms-5" >Your Collection</h2>
-                    <section class="row mt-4 gap-3 center">
+                    <section class="row mt-4 gap-3 center ">
                         
                         <!--cards verticales-->
                         <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
@@ -107,6 +112,7 @@
        <script src="./js/components/NavbarMenu.js"></script>
        <script src="./js/components/CardVertical.js"></script>
        <script src="./js/components/BoxUser.js"></script>
+       <script src="./js/components/DetailUser.js"></script>
        <script>
            const mountedApp = app.mount("#app");
        </script>

@@ -1,0 +1,45 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.background-responsive{
+    background-color: vars.$clr-orange-300;
+    color: vars.$clr-white;
+    visibility: hidden;
+
+    @include mixins.responsive(mixins.$phone){
+        visibility: visible;
+    }
+
+    @include mixins.responsive(mixins.$tablet){
+        visibility: visible;
+    }
+}
+
+.justity-mobile{
+    display: flex;
+    justify-content: center;
+}
+
+#user-card-mobile{
+    display: none ;
+}
+@media screen and (max-width: 600px) {
+    #user-card-mobile{
+        display: block;
+    }
+    .justity-mobile{
+        justify-content: center;
+    }
+}
+
+.user-card-desk{
+    display: block ;
+
+    @include mixins.responsive(mixins.$phone){
+        display: none;
+    }
+
+    @include mixins.responsive(mixins.$tablet){
+        display: none;
+    }
+}
