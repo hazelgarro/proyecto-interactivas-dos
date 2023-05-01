@@ -29,7 +29,7 @@ app.component('navbar-menu',{
             </div>
         </div>
         <div class="row mt-3 mb-3" id="photo-phone">
-                <div class="position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small me-5" src="./images/photos-users/photo-user.jpg" ></a></div>
+                <div class="position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
         </div>
     </div>
     </nav>`
