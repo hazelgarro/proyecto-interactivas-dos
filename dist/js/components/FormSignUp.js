@@ -6,15 +6,15 @@ app.component('form-sign-up', {
 
         <form class="mt-3" action="login.php" method="post">
             <label class="form-label text-forms mt-2" for="name">Name</label>
-            <input id="name" class="form-control campo-texto" type="text" name="name">
+            <input id="name" class="form-control input-color" type="text" name="name">
             <label class="form-label text-forms mt-2" for="lastname">Last Name</label>
-            <input id="lastname" class="form-control campo-texto" type="text" name="lastname">
+            <input id="lastname" class="form-control input-color" type="text" name="lastname">
             <label class="form-label text-forms mt-2" for="email">Email</label>
-            <input id="email" class="form-control campo-texto" type="mail" name="email">
+            <input id="email" class="form-control input-color" type="mail" name="email">
             <label class="form-label text-forms mt-2" for="user">User</label>
-            <input id="user" class="form-control campo-texto" type="text" name="user">
+            <input id="user" class="form-control input-color" type="text" name="user">
             <label for="password" class="form-label mt-2 text-forms">Password</label>
-            <input name="password" type="password" class="form-control campo-texto">
+            <input name="password" type="password" class="form-control input-color">
             <div class="col center-button">
                 <div class="row center">
                     <input class="center btn-orange-light mt-4 hover-grow" type="submit"

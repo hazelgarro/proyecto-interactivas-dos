@@ -4,13 +4,17 @@
 .footer-color {
     background: vars.$clr-orange-200;
     color: vars.$clr-white;
-    
     left: 0;
 }
 
 .footer-position-end{
     position: relative;
         bottom:0px ;
+}
+
+.footer-position-end-fixed{
+    position: fixed;
+    bottom:0px ;
 }
 
 

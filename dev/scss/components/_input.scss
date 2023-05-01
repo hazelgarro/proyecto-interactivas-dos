@@ -4,10 +4,6 @@
     position: relative;
 }
 
-.input.password {
-    padding: 0.93rem 2.18rem 0.93rem 0.93rem;
-}
-
 .input-icon {
     color: vars.$clr-black-100;
     position: absolute;
@@ -48,7 +44,7 @@
     outline-color: vars.$clr-orange-300;
 }
 
-.campo-texto:hover{
+.input-color:hover{
     width: 100%;
     background-color: #FFFFFF;
     box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem vars.$clr-orange-300;

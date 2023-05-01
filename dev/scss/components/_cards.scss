@@ -1,0 +1,54 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.overflow-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.card-detail-big{
+    border-color: white;
+}
+
+.border-photo-card {
+    border: 0.12rem solid vars.$clr-gray-200;
+    border-radius: 0.75rem 0rem 0rem 0.75rem;
+}
+
+.recipe-display{
+    display: inline-flex !important;
+}
+
+.margin-cards-block{
+    margin-bottom: 5%;
+}
+
+.margin-cards{
+    margin-right: 0%;
+    justify-content: space-evenly;
+
+    @include mixins.responsive(mixins.$tablet){
+        margin-bottom: 5%;
+    }
+}
+
+.ajust-card-big{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

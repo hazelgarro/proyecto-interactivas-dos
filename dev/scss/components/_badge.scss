@@ -1,10 +1,8 @@
 @use '../abstracts/vars';
+@use '../abstracts/mixins';
 
 .badge-orange {
-    color: vars.$clr-white;
-    background-color: vars.$clr-orange-300;
-    border-radius: 0.12rem;
-    padding: 0.12rem !important;
+    @include mixins.badge-small(vars.$clr-white, vars.$clr-orange-300);
 }
 
 .badge-orange:hover{
@@ -12,20 +10,33 @@
 }
 
 .badge-green {
-    color: vars.$clr-black;
-    background-color: vars.$clr-green-100;
-    border-radius: 0.12rem;
-    padding: 0.12rem !important;
+    @include mixins.badge-small(vars.$clr-black, vars.$clr-green-100);
 }
 
 .badge-green:hover{
     color: vars.$clr-orange-300;
 }
 
+.badge-yellow {
+    @include mixins.badge-small(vars.$clr-black, vars.$clr-yellow-100);
+}
+
+.badge-yellow:hover{
+    color: vars.$clr-red-100;
+}
+
+.badge-red {
+    @include mixins.badge-small(vars.$clr-white, vars.$clr-red-100);
+}
+
+.badge-red:hover{
+    color: vars.$clr-yellow-100;
+}
+
 .badge-orange-big {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     padding: 0.37rem;
     gap: 0.5rem;
     position: absolute;

@@ -7,7 +7,7 @@ app.component('form-pass-recovery-one', {
                     <p class="text-center mt-2">Enter your email and we’ll send you a link to reset your password</p>
                     <form>
                         <label class="form-label text-forms" for="email">Email</label>
-                        <input id="email" class="form-control campo-texto" type="email" name="email">
+                        <input id="email" class="form-control input-color" type="email" name="email">
                         <div class="col col-md-12 center-button margin-box ">
                             <div class="row center margin-box">
                                 <a href="#" class="center btn-orange-dark mt-4 hover-grow">Send link to

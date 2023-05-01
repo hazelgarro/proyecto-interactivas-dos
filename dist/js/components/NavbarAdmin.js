@@ -4,7 +4,7 @@ app.component('navbar-admin',{
     `<nav id="navbar-main" class="navbar navbar-expand-lg">
     <a class="navbar-brand color-header" href="#">
         <img src="./images/imgs/icons/Color=White.svg"
-            class="ms-5 size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
+            class="position-logo size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
     <!--boton navbar-main-->
     <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@ app.component('navbar-admin',{
         </ul>
         </div>
         <div class="row me-5 box-navbar">
-            <form class="col-7 d-flex " action="search.php" method="get" role="search">
+            <form class="col-7 d-flex " action="search.html" method="get" role="search">
                 <input class="form-control me-2 input-search" type="search" name="keyword"
                     placeholder="Search something..." aria-label="Search">
                 <button class="btn-search" type="submit"><img src="./images/imgs/icons/search.svg"

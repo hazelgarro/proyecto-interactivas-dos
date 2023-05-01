@@ -48,7 +48,7 @@ app.component('card-horizontal', {
         `<div class="card mb-3">
         <div class="row">
             <div class="col-md-6">
-                <div class="rounded-start top-recipes hover-grow">{{tag}}</div>
+                <div class="rounded-start box-top-recipes hover-grow">{{tag}}</div>
                 <img class="size-img-big img-fluid" v-bind:src="image" alt="photo food" height="362" width="266">
             </div>
             <div class="col-md-6">
@@ -62,7 +62,7 @@ app.component('card-horizontal', {
                         <div class="col-6">
                             <a href="search.html"><span class="badge badge-orange m-1">{{type}}</span></a>
                             <a href="search.html"><span class="badge badge-green m-1">{{difficult}}</span></a>
-                            <a href="search.html"><span class="badge badge-orange m-1">{{occasion}}</span></a>
+                            <a href="search.html"><span class="badge badge-yellow m-1">{{occasion}}</span></a>
                         </div>
                     </div>
                     <p class="card-text  ms-3 recipe-description-space-top10 overflow">{{description}}</p>

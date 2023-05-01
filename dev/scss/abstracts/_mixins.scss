@@ -24,7 +24,12 @@ $desktop-min : '(max-width: 1024px)';
     color: $color;
 }
 
-
+@mixin badge-small($color, $bg){
+    color: $color;
+    background-color: $bg;
+    border-radius: 0.12rem;
+    padding: 0.12rem !important;
+}
 
 
 

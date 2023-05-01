@@ -4,7 +4,7 @@ app.component('navbar-menu',{
     `<nav id="navbar-main" class="navbar navbar-expand-lg">
     <a class="navbar-brand color-header hover-grow" href="index.html">
         <img src="./images/imgs/icons/Color=White.svg"
-            class="ms-5 size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
+            class="position-logo size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
     <!--boton navbar-main-->
     <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -18,18 +18,18 @@ app.component('navbar-menu',{
         </ul>
         
         <div class=" row box-navbar">
-            <form class=" col d-flex center" action="search.php" method="get" role="search">
+            <form class=" col d-flex center" action="search.html" method="get" role="search">
                 <input class="form-control me-2 input-search" type="search" name="keyword"
                     placeholder="Search something..." aria-label="Search">
                 <button class=" btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
             </form>
             <div class="col" id="photo-desk">
-                <div class=" position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
+                <div class=" position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small me-5" src="./images/photos-users/photo-user.jpg" ></a></div>
             </div>
         </div>
         <div class="row mt-3 mb-3" id="photo-phone">
-                <div class=" position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
+                <div class="position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small me-5" src="./images/photos-users/photo-user.jpg" ></a></div>
         </div>
     </div>
     </nav>`

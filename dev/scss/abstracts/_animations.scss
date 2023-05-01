@@ -1,0 +1,20 @@
+@use '../abstracts/vars';
+
+.hover-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(0.063rem) translateZ(0);
+    transform: perspective(0.063rem) translateZ(0);
+    box-shadow: 0 0 0.063rem vars.$clr-black-100;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    display: flex;
+    justify-content: center;
+}
+
+.hover-grow:hover, .hover-grow:focus, .hover-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

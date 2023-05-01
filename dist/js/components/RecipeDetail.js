@@ -53,7 +53,7 @@ app.component('recipe-detail', {
     },
     template:
         /* html */
-        `<div class="center-img-detail col-md-4 col-lg-6">
+        `<div class="center-img-detail col-lg-6">
         <div class="card card-detail-big text-bg-dark  max-box-size">
         <img v-bind:src="image" alt="photo food">
             <div class="card-img-overlay">

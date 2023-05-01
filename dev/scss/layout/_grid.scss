@@ -1,0 +1,44 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.padding-0 {
+    padding-bottom: 0rem !important;
+}
+
+.recipe-description-space{
+    min-height: 6rem;
+}
+
+.recipe-description-space-top10{
+    min-height: 4rem;
+}
+
+.center-items-list{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.center-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.elements-column{
+    @include mixins.responsive(mixins.$phone){
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+    }
+    @include mixins.responsive(mixins.$tablet){
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+    }
+}
