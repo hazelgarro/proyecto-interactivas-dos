@@ -21,7 +21,7 @@ app.component('detail-user', {
                     <p class="mt-2 start ms-3 me-3">{{about}}</p>
                 </div>
                 <div class="row center"> 
-                    <button class="center btn-orange-dark btn-long-dark mt-3 mb-4 hover-grow">Log Out</button>
+                    <button class="center btn-orange-dark mt-3 mb-4 hover-grow">Log Out</button>
                 </div>
         <section>`
 })

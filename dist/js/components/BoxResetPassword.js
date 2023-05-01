@@ -8,9 +8,8 @@ app.component('box-reset-password', {
                 <p class="text-center">A request has been made to reset your password. If you made this request,
                     please click on the button below</p>
                 <div class="col center-button">
-                    <div class="row center"><a href="#" class="btn-orange-dark btn-long-dark hover-grow">Reset
+                    <div class="row center"><a href="#" class="btn-orange-dark btn-width-max hover-grow">Reset
                             password</a></div>
-
                 </div>
             </div>
         </div>

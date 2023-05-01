@@ -5,7 +5,7 @@
 .line-deco {
     border-top: 0.1rem solid vars.$clr-black-200;
     display: block;
-    max-width: 50%;
+    max-width: 66%;
     border-color: vars.$clr-gray-200;
 }
 
@@ -63,10 +63,6 @@
 
 .img-retote {
     transform: rotate(90deg);
-}
-
-.color-input {
-    border-color: vars.$clr-orange-300;
 }
 
 .border-photo-card {

@@ -1,16 +1,35 @@
 @use '../abstracts/vars';
+@use '../abstracts/mixins';
 
 .btn-orange-dark{
-    background: vars.$clr-orange-200;
-    color: vars.$clr-black;
-    text-decoration: none;
+    @include mixins.btn(vars.$clr-orange-200, vars.$clr-black);
     border: none;
+    border-radius: vars.$br-100;
+    width: 80%;
+    height: 1.87rem;
 }
 
-.btn-orange-ligth{
-    background: vars.$clr-orange-100;
-    color: vars.$clr-orange-300;
-    text-decoration: none;
+.btn-orange-dark:hover{
+    font-weight: vars.$fw-med;
+    transition: all 1s;
+    color: vars.$clr-white
+}
+
+.btn-orange-light{
+    @include mixins.btn(vars.$clr-orange-50, vars.$clr-orange-300);
+    border: none;
+    border-radius: vars.$br-100;
+    width: 80%;
+    height: 1.87rem;
+}
+
+.btn-orange-light:hover{
+    @include mixins.btn(vars.$clr-orange-50, vars.$clr-black-200);
+    transition: all 1s;
+}
+
+.btn-width-max{
+    width: 100%;
 }
 
 .btn-signup-dark {
@@ -32,7 +51,7 @@
 }
 
 .btn-signup-light:hover{
-    color: vars.$clr-black;
+    color: vars.$clr-black-200;
 }
 
 .btn-circular {
@@ -48,6 +67,7 @@
 }
 
 .btn-item-list {
+    @include mixins.btn(vars.$clr-orange-200, vars.$clr-white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,41 +76,31 @@
     gap: 0.37rem;
     width: 10.5rem;
     height: 1.87rem;
-    background: vars.$clr-orange-200;
     border-radius: 0.5rem;
     border: none;
+}
+
+.btn-small-admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.37rem;
+    width: 6.12rem;
+    height: 1.87rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .btn-admin-orange {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    gap: 0.37rem;
-    width: 6.12rem;
-    height: 1.87rem;
-    background: vars.$clr-orange-200;
-    border-radius: 0.5rem;
-    border: none;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    @include mixins.btn(vars.$clr-orange-200, vars.$clr-white);
 }
 
 .btn-admin-red {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    gap: 0.37rem;
-    width: 6.12rem;
-    height: 1.87rem;
-    background: vars.$clr-red-100;
-    border-radius: 0.5rem;
-    border: none;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    @include mixins.btn(vars.$clr-red-100, vars.$clr-white);
 }
 
 .btn-add {
@@ -111,6 +121,14 @@
     background: vars.$clr-orange-50;
     border: 1px solid vars.$clr-orange-300;
     border-radius: 0.5rem;
+    width: 3rem;
+    height: 2.5rem;
+}
+
+.btn-search:hover{
+    background: vars.$clr-white;
+    border: 1px solid vars.$clr-orange-300;
+    border-radius: 0.5rem;
 }
 
 .center-button {
@@ -126,9 +144,6 @@
     align-items: center;
     padding: 0.5rem 0.75rem;
     gap: 0.37rem;
-    width: 27.5rem;
-    height: 1.87rem;
-    border-radius: 0.5rem;
 }
 
 .btn-long-dark:hover{

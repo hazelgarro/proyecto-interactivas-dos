@@ -41,3 +41,17 @@
     border-radius: 0.5rem;
     color: vars.$clr-orange-200;
 }
+
+.input-search:hover{
+    box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem vars.$clr-orange-300;
+    border: 0.063rem solid vars.$clr-orange-300;
+    outline-color: vars.$clr-orange-300;
+}
+
+.campo-texto:hover{
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem vars.$clr-orange-300;
+    border: 0.063rem solid vars.$clr-orange-300;
+    outline-color: vars.$clr-orange-300;
+}

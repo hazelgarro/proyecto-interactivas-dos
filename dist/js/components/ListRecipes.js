@@ -13,7 +13,7 @@ app.component('list-recipes', {
                     </div>
                 </div>
                 <div class="col-2 center-items-list">
-                    <button class="btn-item-list hover-grow"><a href="" class="header-link">View detail</a></button>
+                    <button class="btn-item-list hover-grow"><a href="recipe-detail-admin.html" class="header-link">View detail</a></button>
                 </div>
             </div>
         </div>

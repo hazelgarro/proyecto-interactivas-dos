@@ -34,10 +34,10 @@ app.component('card-vertical', {
         alt="photo food">
     <div class="text-start ms-2 me-2">
         <div class="d-flex justify-content-between">
-            <a href="" style="text-decoration:none">
+            <a href="recipe-detail.html" style="text-decoration:none">
                 <h5 class="mt-2 overflow-title text-title-recipe">{{title}}</h5>
             </a>
-            <h6><span class="badge badge-green mt-2 ">{{difficult}}</span></h6>
+            <h6><a href="search.html"><span class="badge badge-green m-2">{{difficult}}</span></a></h6>
         </div>
         <div>
             <p class="pt-2 overflow recipe-description-space">{{description}}</p>

@@ -13,6 +13,10 @@
     @include mixins.responsive(mixins.$tablet){
         visibility: visible;
     }
+
+    @include mixins.responsive(mixins.$desktop-min){
+        visibility: visible;
+    }
 }
 
 .justity-mobile{
@@ -23,7 +27,7 @@
 #user-card-mobile{
     display: none ;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
     #user-card-mobile{
         display: block;
     }

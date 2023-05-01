@@ -17,11 +17,11 @@ app.component('navbar-menu',{
             <li class=" position-relative"><a class="header-link " href="categories.html">Categories</a></li>
         </ul>
         </div>
-        <div class=" row me-5 box-navbar">
+        <div class=" row box-navbar">
             <form class=" col d-flex " action="search.php" method="get" role="search">
-                <input class="form-control me-2 search-recipe input-search" type="search" name="keyword"
+                <input class="form-control me-2 input-search" type="search" name="keyword"
                     placeholder="Search something..." aria-label="Search">
-                <button class="btn btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
+                <button class=" btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
             </form>
             <div class="col">

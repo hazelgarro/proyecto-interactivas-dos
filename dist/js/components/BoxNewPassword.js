@@ -13,7 +13,7 @@ app.component('box-new-password', {
                             alt="visibility icon">
                     </form>
                     <div class="center row">
-                        <a href="#" class="btn-orange-dark btn-long-dark mt-3 ms-4 hover-grow">Reset password</a>
+                        <a href="#" class="btn-orange-dark btn-width-max mt-3 ms-4 mb-2 hover-grow">Reset password</a>
                     </div>
                 </div>
             </div>

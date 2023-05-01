@@ -55,14 +55,14 @@ app.component('card-horizontal', {
                 <div class="card-body padding-0">
                     <div class="row">
                         <div class="col-6">
-                            <a href="" style="text-decoration:none">
+                            <a href="recipe-detail.html" style="text-decoration:none">
                                 <h5 class="card-title ms-3 overflow text-title-recipe">{{title}}</h5>
                             </a>
                         </div>
                         <div class="col-6">
-                            <span class="badge badge-orange m-1">{{type}}</span>
-                            <span class="badge badge-green m-1">{{difficult}}</span>
-                            <span class="badge badge-orange m-1">{{occasion}}</span>
+                            <a href="search.html"><span class="badge badge-orange m-1">{{type}}</span></a>
+                            <a href="search.html"><span class="badge badge-green m-1">{{difficult}}</span></a>
+                            <a href="search.html"><span class="badge badge-orange m-1">{{occasion}}</span></a>
                         </div>
                     </div>
                     <p class="card-text  ms-3 recipe-description-space-top10 overflow">{{description}}</p>

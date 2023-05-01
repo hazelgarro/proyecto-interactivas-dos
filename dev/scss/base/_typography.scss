@@ -24,6 +24,11 @@
     color:  vars.$clr-white;
 }
 
+.text-big-orange{
+    @include mixins.set-font(vars.$fw-bold, vars.$fs-xlg, vars.$clr-white !important);
+    color:  vars.$clr-orange-300;
+}
+
 .text-nevbar{
     @include mixins.set-font(vars.$fw-med, vars.$fs-rg, vars.$clr-white);
 }
