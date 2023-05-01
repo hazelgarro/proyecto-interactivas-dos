@@ -2,7 +2,7 @@ app.component('navbar-menu',{
     template: 
     /* html */
     `<nav id="navbar-main" class="navbar navbar-expand-lg">
-    <a class="navbar-brand color-header" href="#">
+    <a class="navbar-brand color-header hover-grow" href="index.html">
         <img src="./images/imgs/icons/Color=White.svg"
             class="ms-5 size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
     <!--boton navbar-main-->
@@ -10,23 +10,26 @@ app.component('navbar-menu',{
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse ms-4 justify-content-between" id="menu">
-        <div class="col-8">
+        
         <ul class="navbar-nav gap-5 box-navbar">
-            <li class=" position-relative"><a class="header-link" href="index.html">Home</a></li>
-            <li class=" position-relative"><a class="header-link " href="top-recipes.html">Top Recipes</a></li>
-            <li class=" position-relative"><a class="header-link " href="categories.html">Categories</a></li>
+            <li class=" position-relative"><a class="header-link hover-grow" href="index.html">Home</a></li>
+            <li class=" position-relative"><a class="header-link hover-grow" href="top-recipes.html">Top Recipes</a></li>
+            <li class=" position-relative"><a class="header-link hover-grow" href="categories.html">Categories</a></li>
         </ul>
-        </div>
+        
         <div class=" row box-navbar">
-            <form class=" col d-flex " action="search.php" method="get" role="search">
+            <form class=" col d-flex center" action="search.php" method="get" role="search">
                 <input class="form-control me-2 input-search" type="search" name="keyword"
                     placeholder="Search something..." aria-label="Search">
                 <button class=" btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
             </form>
-            <div class="col">
-                <div class=" position-relative"><a class="header-link " href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
+            <div class="col" id="photo-desk">
+                <div class=" position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
             </div>
+        </div>
+        <div class="row mt-3 mb-3" id="photo-phone">
+                <div class=" position-relative"><a class="header-link hover-grow" href="user-profile.html"><img class="photo-user-small" src="./images/photos-users/photo-user.jpg" ></a></div>
         </div>
     </div>
     </nav>`

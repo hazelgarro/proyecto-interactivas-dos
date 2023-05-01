@@ -76,6 +76,30 @@
     height: 2.5rem;
 }
 
+#photo-desk{
+    display: block ;
+
+    @include mixins.responsive(mixins.$phone){
+        display: none;
+    }
+
+    @include mixins.responsive(mixins.$tablet){
+        display: none;
+    }
+}
+
+#photo-phone{
+    display: none ;
+
+    @include mixins.responsive(mixins.$phone){
+        display: block;
+    }
+
+    @include mixins.responsive(mixins.$tablet){
+        display: block;
+    }
+}
+
 .photo-user-big{
     border-radius: 50%;
     width: 12.5rem;

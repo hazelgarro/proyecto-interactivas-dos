@@ -74,12 +74,12 @@ app.component('form-new-recipe', {
             <!--recipe title-->
 
             <label class="form-label" for="title">Recipe title</label>
-            <input id="title" class="form-control" type="text" name="title">
+            <input id="title" class="form-control campo-texto" type="text" name="title">
             <!--recipe categories-->
             <div class="row mt-2">
                 <div class="col ">
                     <label class="form-label" for="category">Category</label>
-                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example"
+                    <select class="form-select form-select-md mb-3 campo-texto" aria-label=".form-select-lg example"
                         name="category">
                         <option value=""></option>
                     </select>
@@ -87,7 +87,7 @@ app.component('form-new-recipe', {
                 <!--recipe difficulties-->
                 <div class="col">
                     <label class="form-label" for="difficulty">Difficulty</label>
-                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example"
+                    <select class="form-select form-select-md mb-3 campo-texto" aria-label=".form-select-lg example"
                         name="difficulty">
                         <option value=""></option>
                     </select>
@@ -95,7 +95,7 @@ app.component('form-new-recipe', {
                 <!--recipe event-->
                 <div class="col">
                     <label class="form-label" for="event">Event</label>
-                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example"
+                    <select class="form-select form-select-md mb-3 campo-texto" aria-label=".form-select-lg example"
                         name="ocassions">
                         <option value="' . $ocassions[$i]['id_recipe_ocassion'] . '"></option>
                     </select>
@@ -104,7 +104,7 @@ app.component('form-new-recipe', {
             <!--recipe tag-->
             <div class="col-4 mt-2">
                 <label class="form-label" for="tag">Tag</label>
-                <input id="tag" class="form-control" type="text" name="tag">
+                <input id="tag" class="form-control campo-texto" type="text" name="tag">
             </div>
 
             <h2 class="mt-4">Description</h2>
@@ -112,47 +112,47 @@ app.component('form-new-recipe', {
             <div class="row mt-2">
                 <div class="col">
                     <label class="form-label" for="prep-time">Preparation Time</label>
-                    <input id="prep-time" class="form-control" name="prep-time">
+                    <input id="prep-time" class="form-control campo-texto" name="prep-time">
 
 
                 </div>
                 <div class="col">
                     <label class="form-label" for="cooking">Cooking Time</label>
-                    <input id="prep-time" class="form-control" name="cooking">
+                    <input id="prep-time" class="form-control campo-texto" name="cooking">
                 </div>
                 <div class="col">
                     <label class="form-label" for="total-time">Total Time</label>
-                    <input id="total-time" class="form-control" name="total-time">
+                    <input id="total-time" class="form-control campo-texto" name="total-time">
                 </div>
                 <!--recipe portions-->
                 <div class="col">
                     <label class="form-label" for="portions">Portions</label>
-                    <input id="portions" class="form-control" type="number" name="portions">
+                    <input id="portions" class="form-control campo-texto" type="number" name="portions">
                 </div>
             </div>
             <!--recipe description-->
             <label class="form-label mt-2" for="description">Description </label>
-            <textarea id="description" class="form-control input-xl" name="description">
+            <textarea id="description" class="form-control input-xl campo-texto" name="description">
 
              </textarea>
             <!--recipe ingredients-->
             <label class="form-label mt-2" for="Ingredientes">Ingredients </label>
             <div class="" id="ingredients">
-            <textarea  id="ingredientes" class="form-control input-xl" name="ingredientes"  ></textarea>
+            <textarea  id="ingredientes" class="form-control input-xl campo-texto" name="ingredientes"  ></textarea>
             </div>
 
             <br>
             <!--recipe preparation-->
             <label class="form-label mt-2" for="preparation">Preparation</label>
-            <textarea id="preparation" class="form-control input-xl" type="text" name="preparation"></textarea>
+            <textarea id="preparation" class="form-control input-xl campo-texto" type="text" name="preparation"></textarea>
         </div>
 
     </section>
 
     <!--buttons-->
     <div class="d-flex flex-row-reverse me-3 mt-4">
-        <input class="btn-admin-red me-5 hover-grow" type="button" value="Discard" onclick="history.back();">
-        <button class="btn-admin-orange me-2 hover-grow" type="submit"> Save</button>
+        <input class="btn btn-admin-red me-5 hover-grow" type="button" value="Discard" onclick="history.back();">
+        <button class="btn btn-admin-orange me-2 hover-grow" type="submit"> Save</button>
     </div>
     </form>`
 })

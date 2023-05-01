@@ -58,7 +58,7 @@ app.component('recipe-detail', {
         <img v-bind:src="image" alt="photo food">
             <div class="card-img-overlay">
                 <div class="ajust-card-big">
-                    <p class="align-content-center"><span class="badge-orange-big">{{tag}}</span></p>
+                    <p class="align-content-center"><span class="badge-orange-big hover-grow">{{tag}}</span></p>
                     <button class="btn-circular hover-grow"><a type="button" href=""><span
                                 class="img-fluid mx-auto mb-2" alt="favorite icon"><img
                                 v-bind:src="icon"></span>
@@ -70,17 +70,13 @@ app.component('recipe-detail', {
         </div>
         <div class="ajust-card-big">
             <h1 class="mt-4">{{title}}</h1>
-            <p class="text-orange m-2 text-total-top"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">200</p>
+            <p class="text-orange m-2 text-total-top hover-grow"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">200</p>
         </div>
         <div class="col-6">
             <span class="badge badge-orange m-1">{{category}}</span>
             <span class="badge badge-green m-1">{{difficult}}</span>
             <span class="badge badge-orange m-1">{{ocassion}}</span>
         </div>
-        <!-- <div>
-            <p><img src="./imgs/icons/Like Button.svg" alt=""></p>
-            <p><img src="./imgs/icons/Like Button(1).svg" alt=""></p>
-        </div>-->
         <div>
             <h2 class="mt-4">Description</h2>
             <div class="row">

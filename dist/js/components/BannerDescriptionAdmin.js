@@ -6,7 +6,7 @@ app.component('banner-description-admin',{
     <h1 class="mt-3">The Kitchen Recipes</h1>
     </div>
     <div class="col-4 ms-5">
-        <p><img class="img-fluid" src="images/imgs/banner-sm.png" alt="banner"></p>
+        <p><img class="img-fluid animate__animated animate__slideInRight" src="images/imgs/banner-sm.png" alt="banner"></p>
     </div>
     </div>`
 })

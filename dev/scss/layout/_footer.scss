@@ -4,19 +4,13 @@
 .footer-color {
     background: vars.$clr-orange-200;
     color: vars.$clr-white;
-    position: absolute;
+    
     left: 0;
 }
 
 .footer-position-end{
-    @include mixins.responsive(mixins.$desktop-min){
-        bottom:0% !important;}
-    @include mixins.responsive(mixins.$desktop){
-        bottom:0% !important;}
-    @include mixins.responsive(mixins.$phone){
-        bottom:0% !important;}
-    @include mixins.responsive(mixins.$tablet){
-        bottom:0% !important;}
+    position: relative;
+        bottom:0px ;
 }
 
 

@@ -2,8 +2,8 @@
 @use '../abstracts/mixins';
 
 .background-responsive{
-    background-color: vars.$clr-orange-300;
-    color: vars.$clr-white;
+    background-color: vars.$clr-orange-100;
+    color: vars.$clr-black;
     visibility: hidden;
 
     @include mixins.responsive(mixins.$phone){

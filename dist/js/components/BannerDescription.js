@@ -17,7 +17,7 @@ app.component('banner-description',{
         <p class="mt-3 text-description-banner">{{description}}</p>
     </div>
     <div class="col-4 ocultar">
-        <p><img src="images/imgs/Maskgroup.png" alt="photo food"></p>
+        <p><img class="animate__animated animate__slideInRight" src="images/imgs/Maskgroup.png" alt="photo food"></p>
     </div>
 </div>`
 })

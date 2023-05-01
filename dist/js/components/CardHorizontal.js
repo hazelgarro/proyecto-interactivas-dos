@@ -48,7 +48,7 @@ app.component('card-horizontal', {
         `<div class="card mb-3">
         <div class="row">
             <div class="col-md-6">
-                <div class="rounded-start top-recipes">{{tag}}</div>
+                <div class="rounded-start top-recipes hover-grow">{{tag}}</div>
                 <img class="size-img-big img-fluid" v-bind:src="image" alt="photo food" height="362" width="266">
             </div>
             <div class="col-md-6">

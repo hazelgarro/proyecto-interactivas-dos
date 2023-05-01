@@ -15,37 +15,38 @@
     <!--JS Bootstrap-->
         <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
-    <title>Pass recovery three</title>
+    <title>Edit profile</title>
     <link rel="shortcut icon" href="images/imgs/icons/favicon.png">
 </head>
 
-<body class="admin-background">
+<body class="banner-background">
     <section id="app">
-        <!-- PASS RECOVERY 3 -->
-        <div class="container center mt-1">
-            <logo></logo>
-        </div>
-        <div>
-            <box-reset-password></box-reset-password>
-        </div>
+        <!--header-->
+        <header class="container-fluid navbar-color">
+            <!-- nav menu -->
+            <navbar-menu></navbar-menu>
+        </header>
 
-        <!--footer-->          
-        <footer class="container-fluid footer-position-end footer-color mt-5">
+        <!--recipe edit form-->
+        <box-user-edit></box-user-edit>
+        <!--footer-->
+        <footer class="container-fluid footer-position-end footer-color mt-5 ">
             <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
                 <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
                 <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
             </div>
         </footer>
+
+        <!--Script-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+            </script>
     </section>
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/components/BannerDescription.js"></script>
     <script src="./js/components/NavbarMenu.js"></script>
-    <script src="./js/components/CardVertical.js"></script>
-    <script src="./js/components/CardHorizontal.js"></script>
-    <script src="./js/components/Logo.js"></script>
-    <script src="./js/components/BoxResetPassword.js"></script>
+    <script src="./js/components/BoxUserEdit.js"></script>
     <script>
         const mountedApp = app.mount("#app");
     </script>

@@ -21,7 +21,7 @@
 
 .text-big{
     @include mixins.set-font(vars.$fw-bold, vars.$fs-xlg, vars.$clr-white !important);
-    color:  vars.$clr-white;
+    color:  vars.$clr-black;
 }
 
 .text-big-orange{

@@ -7,11 +7,19 @@
     padding: 0.12rem !important;
 }
 
+.badge-orange:hover{
+    color: vars.$clr-green-100;
+}
+
 .badge-green {
     color: vars.$clr-black;
     background-color: vars.$clr-green-100;
     border-radius: 0.12rem;
     padding: 0.12rem !important;
+}
+
+.badge-green:hover{
+    color: vars.$clr-orange-300;
 }
 
 .badge-orange-big {
