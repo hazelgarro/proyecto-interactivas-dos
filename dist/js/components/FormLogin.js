@@ -17,15 +17,13 @@ app.component('form-login', {
 
             <div class="col center-button">
                 <div class="row center">
-                    <input class="center btn-orange-dark mt-3 hover-grow" type="submit"
-                        value="Log in">
+                    <button class="center btn-orange-dark mt-3 hover-grow"><a class="header-link" href="index.html" style="text-decoration: none;">Log in</a></button>
                 </div>
                 <div class="">
                     <span class="line-deco mt-3 mb-3 mx-auto"></span>
                 </div>
                 <div class="row center">
-                    <input class="center  btn-orange-light mt-1 hover-grow" type="submit"
-                        value="Sign Up">
+                    <button class="center btn-orange-light mt-1 hover-grow"><a class="header-link" href="sign-up.html" style="text-decoration: none; color:black">Sign Up</a></button>
                 </div>
         </form>
     </div>
