@@ -1,3 +1,4 @@
+////Componente para el apartado de descripcion de las paginas del administrador
 app.component('banner-description-admin',{
     template: 
     /* html */
@@ -6,7 +7,7 @@ app.component('banner-description-admin',{
     <h1 class="mt-3">The Kitchen Recipes</h1>
     </div>
     <div class="col-4 ms-5">
-        <p><img class="img-fluid animate__animated animate__slideInRight" src="images/imgs/banner-sm.png" alt="banner"></p>
+        <p><img class="img-fluid animate__animated animate__slideInRight size-img-banner" src="images/imgs/banner-sm.png" alt="banner"></p>
     </div>
     </div>`
 })

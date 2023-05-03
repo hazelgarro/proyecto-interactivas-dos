@@ -1,3 +1,4 @@
+//Detalle de la receta, para la parte del administrador
 app.component('table-recipe-detail', {
     props:{
         image:{
@@ -76,7 +77,6 @@ app.component('table-recipe-detail', {
                     <p>{{preparation}}</p>
                 </div>
             </td>
-
         </section>
     </table>`
 })

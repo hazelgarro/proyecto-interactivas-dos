@@ -1,3 +1,4 @@
+//Componente, muestra los resultados de la busqueda
 app.component('results-search', {
     props:{
         search:{

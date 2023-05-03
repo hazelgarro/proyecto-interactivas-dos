@@ -1,3 +1,4 @@
+//Componente para modificar la informacion del usuario
 app.component('box-user-edit', {
     props: {
         name: {

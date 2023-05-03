@@ -1,3 +1,4 @@
+//Componente que muestra el cuadro para indicar la nueva contrasenha
 app.component('box-new-password', {
     template:
         /* html */
@@ -8,7 +9,7 @@ app.component('box-new-password', {
                     <form class="input-wrapper">
                         <label class="form-label" for="password">Password must contain at least 7 letters and 1
                             number</label>
-                        <input id="new-password" class="form-control mt-2" type="password" name="new-password">
+                        <input id="new-password" class="form-control mt-2" type="password" name="new-password" placeholder="Enter your new password">
                         <img src="./imgs/icons/visibility.svg" class="input-icon password me-2 margin-icon"
                             alt="visibility icon">
                     </form>

@@ -1,3 +1,4 @@
+//Componente del logo 
 app.component('logo', {
     template:
         /* html */

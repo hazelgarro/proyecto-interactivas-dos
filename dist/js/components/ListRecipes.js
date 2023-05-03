@@ -1,3 +1,4 @@
+//Componente de lista de recetas para el administrador
 app.component('list-recipes', {
     template:
         /* html */
@@ -7,7 +8,7 @@ app.component('list-recipes', {
                     <img class="size-img-list" src="images/images-recipes/recipe-1exZxh80HP.png">
                 </div> 
                 <div class="col-7 center center-items-list">
-                    <div class="row">
+                    <div class="row position-text-list-recipes">
                         <h3>Recipe Name</h3>
                         <p>Update 3min ago</p>
                     </div>

@@ -1,3 +1,4 @@
+//Cuadro en el que se muestra la informacion del usuario, dentro del perfil de la version de desktop
 app.component('box-user', {
     props: {
         name: {

@@ -3,7 +3,7 @@
 $phone : '(max-width: 480px)';
 $tablet : '(max-width: 770px)';
 $desktop : '(max-width: 1920px)';
-$desktop-min : '(max-width: 1024px)';
+$desktop-min : '(min-width: 1024px)';
 
 @mixin set-font($ff:vars.$ff, $fw:vars.$fw-reg, $fs:vars.$fs-rg, $fc:vars.$clr-black){
     font-family: $ff;

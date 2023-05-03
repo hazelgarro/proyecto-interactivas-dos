@@ -1,3 +1,4 @@
+//Componente, menu de navegacion para el usuario
 app.component('navbar-menu',{
     template: 
     /* html */

@@ -1,3 +1,4 @@
+//Componente, menu de navegacion para el administrador
 app.component('navbar-admin',{
     template: 
     /* html */

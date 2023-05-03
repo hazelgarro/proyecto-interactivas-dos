@@ -17,12 +17,14 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Home</title>
+    <!--Favicon-->
     <link rel="shortcut icon" href="images/imgs/icons/favicon.png">
 </head>
 
 <body>
-    <!--header-->
+    <!--VUE-->
     <section id="app" class="banner-background">
+        <!--header-->
         <header class="container-fluid navbar-color">
             <!-- nav menu -->
             <navbar-menu></navbar-menu>
@@ -73,10 +75,25 @@
                     title="Recipe Title"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
                     time="5min" difficult="Easy"></card-vertical>
-
+                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
+                    title="Recipe Title"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                    time="5min" difficult="Easy"></card-vertical>
+                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
+                    title="Recipe Title"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                    time="5min" difficult="Easy"></card-vertical>
+                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
+                    title="Recipe Title"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                    time="5min" difficult="Easy"></card-vertical>
+                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
+                    title="Recipe Title"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
+                    time="5min" difficult="Easy"></card-vertical>
                 <!--feed-->
+
                 <!--Top 10-->
-                
                 <section class="mt-4">
                     <h2 class="mb-4">Top 10 recipes</h2>
                     <div class="justify-container">
@@ -93,14 +110,12 @@
                     </div>
                 </section>
 
-                <!--feed-->
+
                 <!--Categories-->
-                <!--inspiration your meals-->
                 <div class="container mt-4 mb-5 gap-5">
                     <h2>Soups</h2>
                     <!--feed-->
                     <div class="row mt-4 gap-3 center">
-
                         <!--inicial card-->
                         <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
                             icon="images/imgs/icons/favorite.svg" title="Recipe Title"
@@ -134,19 +149,17 @@
                             icon="images/imgs/icons/favorite.svg" title="Recipe Title"
                             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
                             time="5min" difficult="Easy"></card-vertical>
-
                     </div>
                 </div>
             </section>
-            <!--Script-->
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-                crossorigin="anonymous">
-                </script>
         </section>
     </section>
 
+    <!--Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
+
+    <!--Footer-->
     <footer class="container-fluid footer-position-end footer-color">
         <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
             <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
@@ -154,17 +167,16 @@
         </div>
     </footer> 
 
-        <!--VUE-->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/main.js"></script>
-        <script src="./js/components/BannerDescription.js"></script>
-        <script src="./js/components/NavbarMenu.js"></script>
-        <script src="./js/components/CardVertical.js"></script>
-        <script src="./js/components/CardHorizontal.js"></script>
-        <script>
-            const mountedApp = app.mount("#app");
-        </script>
+    <!--VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/components/BannerDescription.js"></script>
+    <script src="./js/components/NavbarMenu.js"></script>
+    <script src="./js/components/CardVertical.js"></script>
+    <script src="./js/components/CardHorizontal.js"></script>
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
 </body>
-<!--footer-->
 
 </html>

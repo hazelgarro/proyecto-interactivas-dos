@@ -1,3 +1,4 @@
+//Componente de la ventana de confirmacion antes de eliminar una receta
 app.component('form-delete-recipe', {
     props:{
         name:{

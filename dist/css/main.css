@@ -78,6 +78,12 @@ body {
   font-weight: 1.25rem;
   font-size: hsl(22deg, 100%, 52%);
   color: hsl(0deg, 0%, 14%);
+  color: hsl(22deg, 100%, 52%);
+}
+
+.text-orange:hover {
+  color: hsl(0deg, 0%, 14%) !important;
+  font-weight: 500;
 }
 
 .text-forms {
@@ -146,6 +152,11 @@ body {
   color: hsl(22deg, 100%, 52%);
 }
 
+@media (min-width: 768px) and (max-width: 1366px) {
+  .text-description-banner {
+    font-size: 1rem;
+  }
+}
 .badge-orange {
   color: hsl(0deg, 0%, 100%);
   background-color: hsl(22deg, 100%, 52%);
@@ -375,6 +386,12 @@ body {
   max-width: 100%;
 }
 
+@media (min-width: 768px) and (max-width: 1366px) {
+  .box-user-big {
+    width: 23rem;
+    height: 50rem;
+  }
+}
 .btn-orange-dark {
   text-decoration: none;
   background-color: hsl(29deg, 100%, 64%);
@@ -580,6 +597,25 @@ body {
   outline-color: hsl(22deg, 100%, 52%);
 }
 
+.password-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.password-icon img {
+  position: absolute;
+}
+
+.input-icon-position-signup {
+  top: 3.2rem;
+  right: 1rem;
+}
+
+.input-icon-position-login {
+  top: 4.2rem;
+  right: 1rem;
+}
+
 .line-deco {
   border-top: 0.1rem solid hsl(0deg, 0%, 0%);
   display: block;
@@ -590,6 +626,10 @@ body {
 .size-img {
   height: 12.5rem;
   width: 12.5rem;
+}
+
+.size-img-banner {
+  width: 51rem;
 }
 
 .size-img-big {
@@ -707,6 +747,11 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1366px) {
+  .size-img-banner {
+    width: 34rem !important;
+  }
+}
 .overflow {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -971,6 +1016,25 @@ body {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .width-elements-responsive {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .width-elements-responsive {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .width-elements-responsive {
+    width: 90%;
+  }
+  .position-text-list-recipes {
+    margin-left: 3rem;
+  }
+}
 .background-responsive {
   background-color: hsl(29deg, 100%, 80%);
   color: hsl(0deg, 0%, 14%);
@@ -986,7 +1050,7 @@ body {
     visibility: visible;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .background-responsive {
     visibility: visible;
   }

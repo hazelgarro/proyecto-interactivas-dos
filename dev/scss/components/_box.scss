@@ -120,3 +120,10 @@
 .box-width{
     max-width: 100%;
 }
+
+@media (min-width: 768px) and (max-width: 1366px){
+    .box-user-big{
+        width: 23rem;
+        height: 50rem;
+    }
+}

@@ -9,6 +9,12 @@
 
 .text-orange{
     @include mixins.set-font(vars.$fw-reg, vars.$fs-rg, vars.$clr-orange-300);
+    color: vars.$clr-orange-300;
+}
+
+.text-orange:hover{
+    color: vars.$clr-black !important;
+    font-weight: vars.$fw-med;
 }
 
 .text-forms{
@@ -48,4 +54,10 @@
 
 .text-total-top{
     @include mixins.set-font(vars.$ff, vars.$fw-reg, vars.$fs-rg,vars.$clr-orange-300);
+}
+
+@media (min-width: 768px) and (max-width: 1366px){
+    .text-description-banner{
+        font-size: 1rem;
+    }
 }

@@ -1,3 +1,4 @@
+//Componente, para mostrar los detalles de la receta
 app.component('recipe-detail', {
     props: {
         title: {

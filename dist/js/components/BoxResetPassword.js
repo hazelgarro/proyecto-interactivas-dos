@@ -1,3 +1,4 @@
+//Componente del cuadro que muestra el texto para indicarle al usuario que resete su contraseña
 app.component('box-reset-password', {
     template:
         /* html */

@@ -51,3 +51,22 @@
     border: 0.063rem solid vars.$clr-orange-300;
     outline-color: vars.$clr-orange-300;
 }
+
+.password-icon{
+    position: relative;
+    cursor: pointer;
+}
+
+.password-icon img{
+    position: absolute;
+}
+  
+.input-icon-position-signup{
+    top: 3.2rem;
+    right: 1rem;
+}
+
+.input-icon-position-login{
+    top: 4.2rem;
+    right: 1rem;
+}

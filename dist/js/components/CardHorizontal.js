@@ -1,3 +1,4 @@
+//Componente, card horizontal de la receta
 app.component('card-horizontal', {
     props: {
         title: {

@@ -1,3 +1,4 @@
+//Componente del cuadro que muestra la indicacion de ingresar, una vez establecida la nueva contraseña
 app.component('box-success-reset-password', {
     template:
         /* html */

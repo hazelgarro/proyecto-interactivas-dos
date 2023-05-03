@@ -1,3 +1,4 @@
+//Componente en el que se muestra la informacion del usuario, dentro del perfil de la version responsive
 app.component('detail-user', {
     props: {
         name: {

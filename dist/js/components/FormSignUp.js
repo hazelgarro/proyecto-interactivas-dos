@@ -1,3 +1,4 @@
+//Formulario para el registro
 app.component('form-sign-up', {
     template:
         /* html */
@@ -13,8 +14,14 @@ app.component('form-sign-up', {
             <input id="email" class="form-control input-color" type="mail" name="email">
             <label class="form-label text-forms mt-2" for="user">User</label>
             <input id="user" class="form-control input-color" type="text" name="user">
-            <label for="password" class="form-label mt-2 text-forms">Password</label>
-            <input name="password" type="password" class="form-control input-color">
+            <div class="password-icon">
+                <label for="password" class="form-label mt-2 text-forms">Password</label>
+                <input name="password" type="password" class="form-control input-color">
+                <img class="input-icon-position-signup" src="./images/imgs/icons/visibility.svg">
+            </div>
+
+
+            
             <div class="col center-button">
                 <div class="row center">
                     <input class="center btn-orange-light mt-4 hover-grow" type="submit"

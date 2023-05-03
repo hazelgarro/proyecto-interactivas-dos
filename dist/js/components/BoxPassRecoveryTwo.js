@@ -1,3 +1,4 @@
+//Componente del cuadro que muestra el texto del Pass Recovery Two
 app.component('box-pass-recovery-two', {
     template:
         /* html */

@@ -1,3 +1,4 @@
+//Componente, card vertical de la receta
 app.component('card-vertical', {
     props: {
         title: {

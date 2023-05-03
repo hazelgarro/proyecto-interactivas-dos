@@ -14,10 +14,14 @@
     width: 12.5rem;
 }
 
+.size-img-banner{
+    width: 51rem;
+}
+
 .size-img-big {
     height: 16.62rem;
     width: 21.5rem;
-
+ 
     @include mixins.responsive(mixins.$tablet){
         height: 16.62rem;
         width: 24.25rem;
@@ -118,5 +122,11 @@
 
     @include mixins.responsive(mixins.$phone){
         margin-left: 0rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1366px){
+    .size-img-banner{
+        width: 34rem !important;
     }
 }

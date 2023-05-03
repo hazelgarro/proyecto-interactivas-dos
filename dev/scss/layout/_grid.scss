@@ -42,3 +42,22 @@
         margin: 0.5rem;
     }
 }
+
+.width-elements-responsive{
+    @include mixins.responsive(mixins.$phone){
+        width: 90%;
+    }
+    @include mixins.responsive(mixins.$tablet){
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1366px){
+    .width-elements-responsive{
+        width: 90%;
+    }
+
+    .position-text-list-recipes{
+        margin-left: 3rem;
+    }
+}
