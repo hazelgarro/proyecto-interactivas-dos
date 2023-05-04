@@ -670,6 +670,8 @@ body {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #photo-desk {
@@ -704,6 +706,8 @@ body {
   border-radius: 50%;
   width: 12.5rem;
   height: 12.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .top-border-photo {

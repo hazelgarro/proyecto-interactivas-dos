@@ -20,7 +20,7 @@ app.component('box-user-edit', {
                     <label for="recipe_image">
                         <h2 class="mt-5 mb-3">Foto de perfil</h2>
                     </label>
-                    <br><img id="preview" src="./images/imgs/PlaceholderSquare.png" width="125" height="125"
+                    <br><img id="preview cover" src="./images/imgs/PlaceholderSquare.png" width="125" height="125"
                 class="img-fluid mt-2 size-img-detail" alt="Preview">
                     <br>
                     <input class="mt-5 img-fluid" id="recipe_image" type="file" name="recipe_image"

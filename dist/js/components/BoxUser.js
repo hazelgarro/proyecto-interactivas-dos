@@ -15,7 +15,7 @@ app.component('box-user', {
         `<div class="container center mt-1 col-md-12 margin-box box-width">
             <div class="row box-user-big center mt-2 col margin-box center-img-detail">
                 <div>
-                    <i class="center mt-3"><img class="photo-user-big hover-grow" src="./images/photos-users/photo-user.jpg" alt="photo user"></i>
+                    <i class="center mt-3"><img class="photo-user-big hover-grow cover" src="./images/photos-users/photo-user.jpg" alt="photo user"></i>
                     <h1 class="text-center mt-4 text-big-orange hover-grow">{{name}}</h1>
                     <p class="mt-2 text-med">About Me</p>
                     <p class="mt-2">{{about}}</p>
