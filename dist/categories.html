@@ -40,7 +40,7 @@
                 <!--inspiration your meals-->
                 <section class="row mt-2 mb-2 gap-3 center">
                     <div v-for="(category, index) in categories" class="cards-position">
-                        <h2 class="mt-4" :category="category.name"></h2>
+                        <title-tag :category="category.name" class="col-12"></title-tag>
                         <div v-for="(recipe, index) in recipes" class="card-margin">
                             <card-vertical :image="recipe.image"
                             icon="images/imgs/icons/favorite.svg" :likes="recipe.likes" :title="recipe.title"
@@ -74,6 +74,7 @@
     <script src="./js/components/NavbarMenu.js"></script>
     <script src="./js/components/CardVertical.js"></script>
     <script src="./js/components/CardHorizontal.js"></script>
+    <script src="./js/components/TitleTag.js"></script>
     <script>
         const mountedApp = app.mount("#app");
     </script>

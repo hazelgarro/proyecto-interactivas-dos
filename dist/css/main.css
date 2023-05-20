@@ -1011,6 +1011,12 @@ body {
   margin: 1rem;
 }
 
+.title-position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media only screen and (max-width: 480px) {
   .elements-column {
     display: -webkit-box;

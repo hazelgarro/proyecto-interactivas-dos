@@ -40,6 +40,10 @@
     margin: 1rem;
 }
 
+.title-position{
+    display: flex;
+}
+
 .elements-column{
     @include mixins.responsive(mixins.$phone){
         display: flex;
