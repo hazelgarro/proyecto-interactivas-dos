@@ -30,6 +30,16 @@
     justify-content: center;
 }
 
+.cards-position{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-margin{
+    margin: 1rem;
+}
+
 .elements-column{
     @include mixins.responsive(mixins.$phone){
         display: flex;

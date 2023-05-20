@@ -28,6 +28,17 @@ app.component('card-vertical', {
             default: "1"
         }
     },
+    mounted() {
+        this.recipe_likes = this.likes;
+    },
+    methods: {
+        onClickLike(){
+            this.$emit('recipelike', this.index);
+        },
+        onClickViewRecipe(){
+            this.$emit('recipedetails', this.index);
+        }
+    },
     template:
         /* html */
         `<div class="position-relative box-home col-lg-3 col-md-3 p-0 m-0 mb-4">
@@ -45,11 +56,11 @@ app.component('card-vertical', {
         </div>
         <div class="d-flex justify-content-between gap-1">
             <h6 class="mt-4 opacity-50"><small>{{time}}</small></h6>
-            <button class="btn-circular mt-3 mb-3 hover-grow me-2"><a type="button" href=""><span
+            <button class="btn-circular mt-3 mb-3 hover-grow me-2" v-on:click="onClickLike()"><a type="button" href=""><span
                         class="img-fluid mx-auto mb-2" alt="favorite icon"><img
                         v-bind:src="icon"></span>
                     <span
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{likes}}</span></a></button>
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" >{{likes}}</span></a></button>
         </div>
     </div>
 </div>`
