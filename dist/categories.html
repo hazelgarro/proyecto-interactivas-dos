@@ -13,7 +13,8 @@
         onerror="this.onerror=null;this.href='./css/vendors/bootstrap.min.css';">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js">
     <!--JS Bootstrap-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!--ANIMATE.STYLES-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!--ANIMATE.STYLES-->
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Categories</title>
@@ -29,7 +30,7 @@
             <!-- nav menu -->
             <navbar-menu></navbar-menu>
         </header>
-        
+
         <!--banner description-->
         <div class="base-container">
             <banner-description title="Our categories"
@@ -39,16 +40,20 @@
             <div>
                 <!--inspiration your meals-->
                 <section class="row mt-2 mb-2 gap-3 center">
-                    <div v-for="(category, index) in categories" class="cards-position">
-                        <title-tag :category="category.name" class="col-12"></title-tag>
-                        <div v-for="(recipe, index) in recipes" class="card-margin">
-                            <card-vertical :image="recipe.image"
-                            icon="images/imgs/icons/favorite.svg" :likes="recipe.likes" :title="recipe.title"
-                            :description="recipe.description"
-                            :time="recipe.time" :difficult="recipe.difficult" v-on:recipelike="onClickRecipeLike" v-on:recipedetails="onClickRecipeDetails"></card-vertical>
+                    <div class="position-btns-categories mt-1 mb-3">
+                        <div v-for="(category, index) in categories" >
+                            <recipe-category-button :category="category.name"
+                                v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
                         </div>
                     </div>
                 </section>
+                <div class="cards-position">
+                <div v-for="(recipe, index) in recipes" class="cards-position">
+                    <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                        :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
+                        :time="recipe.time" :difficult="recipe.difficult"></card-vertical>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -62,7 +67,9 @@
     </footer>
 
     <!--Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"> </script>
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- custom events components -->
@@ -74,6 +81,7 @@
     <script src="./js/components/NavbarMenu.js"></script>
     <script src="./js/components/CardVertical.js"></script>
     <script src="./js/components/CardHorizontal.js"></script>
+    <script src="./js/components/ButtonCategoryRecipe.js"></script>
     <script src="./js/components/TitleTag.js"></script>
     <script>
         const mountedApp = app.mount("#app");

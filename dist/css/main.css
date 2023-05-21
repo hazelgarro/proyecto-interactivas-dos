@@ -427,6 +427,24 @@ body {
   transition: all 1s;
 }
 
+.btn-category {
+  text-decoration: none;
+  background-color: hsl(29deg, 100%, 64%);
+  color: hsl(0deg, 0%, 14%);
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 1.87rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-category:hover {
+  text-decoration: none;
+  background-color: hsl(29deg, 100%, 88%);
+  color: hsl(22deg, 100%, 52%);
+}
+
 .btn-width-max {
   width: 100%;
 }
@@ -1005,6 +1023,7 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 1rem;
 }
 
 .card-margin {
@@ -1015,6 +1034,21 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.position-btns-categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 480px) {

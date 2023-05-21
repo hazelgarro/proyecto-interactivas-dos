@@ -2,136 +2,179 @@ const app = Vue.createApp({ //main application vue app
     data() {
         return {
             recipes: [],
-            categories: [
-                { name: 'main course' },
-                { name: 'side dish' },
-                { name: 'dessert' },
-                { name: 'appetizer' },
-                { name: 'salad' },
-                { name: 'bread' },
-                { name: 'bread' },
-                { name: 'breakfast' },
-                { name: 'soup' },
-                { name: 'beverage' },
-                { name: 'sauce' },
-                { name: 'marinade' },
-                { name: 'fingerfood' },
-                { name: 'snack' },
-                { name: 'drink' }
-            ],
-            recipe: {},
+            categories: [],
+            recipe: [],
+           filledRecipe : {},
         }
     },
     mounted: function () {
-        this.categories.forEach(category => {
-            axios({
-                method: 'get',
-                url: 'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=63292a5b47ce4e3d9ebc6c9623d88942'
-            })
-                .then(
-                    (response) => {
-                        let items = response.data.results;//esto es un array de objetos
-                        console.log(items);
+        axios({
+            method: 'get',
+            url: "https://www.themealdb.com/api/json/v1/1/categories.php"
 
-                        items.forEach((element) => {
-                            let temp = {};
-                            temp.id = element.id;//datos del api
-                            temp.image = element.image,//datos del api
-                                temp.title = element.title,//datos del api
-                                temp.category = 'main course',//datos del api
-                                temp.time = "20 mins",
-                                temp.difficult = "Easy",
-                                temp.likes = 18,
-                                temp.description = "default description",
-                                temp.ingredients = "NA",
-                                temp.instructions = "NA"
-                            this.recipes.push(temp);
-                            console.log(temp);
-                        });
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                );
-        });
+        })
+            .then(
+                (response) => {
+                    let items = response.data.categories;//esto es un array de objetos
+
+                    // console.log(items);
+                    items.forEach((element) => {
+                        let category = {};
+                        category.id = element.idCategory;//datos del api
+                        category.name = element.strCategory,//datos del api
+                            this.categories.push(category);
+
+                    });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+
+        axios({
+            method: 'get',
+            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef' //categoria que carga por default
+        })
+            .then(
+                (response) => {
+                 //   console.log(response.data.meals);
+                    let items = response.data.meals;
+                    
+
+                    items.forEach((element) => {
+
+                        axios({
+                            method: 'get', //method, este api solo permite get
+                            url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
+                        })
+                            .then(
+                                (responseRec) => {
+                                   this. filledRecipe=responseRec.data.meals;
+
+                                    this.recipes.push({
+                                        id: element.idMeal, //datos del api
+                                        image: element.strMealThumb,//datos del api
+                                        title: element.strMeal,//datos del api
+                                        category: "Beef",//datos del api
+                                        time: "20 mins",
+                                        difficult: "Easy",
+                                        likes: 18,
+                                        description:this.filledRecipe[0].strInstructions,
+                                        portion: "3",
+                                        type: "Veg",
+                                        occasion: "All",
+                                        tag: this.filledRecipe[0].strTags,
+                                        preparation: this.filledRecipe[0].strInstructions,
+                                        ingredients: this.filledRecipe[0].strIngredient1,
+                                    })
+
+                                }
+
+                            )
+                            .catch(
+                                error => console.log(error)
+                            );
+
+                        //push metodo de array para meter datos
+                    });
+                    // console.log(this.categories);
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
     },
     methods: {
-        onClickRecipeLike(index) {
-            this.recipes[index].likes += 1; //o ++
-        },
-        onClickRecipeUnlike(index) {
-            if (this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
-        },
-        onClickRecipeDetails(index) {
-            console.log("Recipe id " + index)
-            axios({
-                method: 'get', //method, este api solo permite get
-                url: 'https://api.spoonacular.com/recipes/' + index + '/information?includeNutrition=false&apiKey=63292a5b47ce4e3d9ebc6c9623d88942' //punto de acceso
-            })
-                .then(
-                    (response) => {
-                        let item = response.data;//esto es un array de objetos
-                        console.log(item);
-
-                        this.recipe.id = index;
-                        this.recipe.image = item.image;
-                        this.recipe.title = item.title;
-                        this.recipe.category = item.dishTypes[0];
-                        this.recipe.time = item.readyInMinutes + " mins";
-                        this.recipe.difficult = "Easy";
-                        this.recipe.likes = item.aggregateLikes;
-                        this.recipe.instructions = item.instructions;
-
-                        let ingredientsList = "";
-                        for (let i = 0; i < item.extendedIngredients.length; i++) {
-                            ingredientsList += item.extendedIngredients[i].original + "\n";
-                        }
-
-                        this.recipe.ingredients = ingredientsList;
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                );
-        },
-        onClickViewRecipe(index) {
-            this.selectedIndex = index;
-        },
         onClickSelectedCategory(category) {
             axios({
                 method: 'get', //method, este api solo permite get
-                url: 'https://api.spoonacular.com/recipes/complexSearch?type=' + category + '&apiKey=63292a5b47ce4e3d9ebc6c9623d88942'
+                url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category //punto de acceso
             })
                 .then(
                     (response) => {
-                        let items = response.data.results;//esto es un array de objetos
-                        console.log(items);
-
-                        this.recipes = []; //esta limpiando el array
-
-                        if (items.length > 0) this.loading = false;//loading
+                        console.log(response.data.meals);
+                        let items = response.data.meals;//esto es un array de objetos
+                        this.recipes = [];
 
                         items.forEach((element) => {
+
+                            axios({
+                                method: 'get', //method, este api solo permite get
+                                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
+                            })
+                                .then(
+                                    (response) => {
+                                        this.filledRecipe = response.data.meals;
+                                        console.log(this.filledRecipe);
+                                    }
+
+                                )
+                                .catch(
+                                    error => console.log(error)
+                                );
+
                             this.recipes.push({
-                                id: element.id, //datos del api
-                                image: element.image,//datos del api
-                                name: element.title,//datos del api
+                                id: element.idMeal, //datos del api
+                                image: element.strMealThumb,//datos del api
+                                title: element.strMeal,//datos del api
                                 category: category,//datos del api
                                 time: "20 mins",
-                                level: "Easy",
+                                difficult: "Easy",
                                 likes: 18,
-                                ingredients: "NA",
-                                instructions: "NA"
+                                description: this.filledRecipe[0].strInstructions,
+                                portion: "3",
+                                type: "Veg",
+                                occasion: "All",
+                                tag: this.filledRecipe[0].strTags,
+                                preparation: this.filledRecipe[0].strInstructions,
+                                ingredients: this.filledRecipe[0].strIngredient1,
                             })//push metodo de array para meter datos
+
                         });
-                        //console.log(this.categories);
+                        // console.log(this.categories);
                     }
                 )
                 .catch(
                     error => console.log(error)
                 );
+        },
+        onClickRecipeDetails(index) {
+            axios({
+                method: 'get', //method, este api solo permite get
+                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+index //punto de acceso
+            })
+                .then(
+                    (response) => {
+                        this.filledRecipe = response.data.meals;
+                        console.log(this.filledRecipe);
+                    }
+
+                )
+                .catch(
+                    error => console.log(error)
+                );
+
+            this.recipes.push({
+                id: element.idMeal, //datos del api
+                image: element.strMealThumb,//datos del api
+                title: element.strMeal,//datos del api
+                category: category,//datos del api
+                time: "20 mins",
+                difficult: "Easy",
+                likes: 18,
+                description: filledRecipe.strInstructions,
+                portion: "3",
+                type: "Veg",
+                occasion: "All",
+                tag: filledRecipe.strTags,
+                preparation: filledRecipe.strInstructions,
+                ingredients: filledRecipe.strIngredient1,
+            })//push metodo de array para meter datos
+
         }
-    },
+        // console.log(this.categories);
+
+    }
 })
 
 const emitter = mitt();

@@ -28,6 +28,20 @@
     transition: all 1s;
 }
 
+.btn-category{
+    @include mixins.btn(vars.$clr-orange-200, vars.$clr-black);
+    border: none;
+    border-radius: vars.$br-100;
+    width: 100%;
+    height: 1.87rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.btn-category:hover{
+    @include mixins.btn(vars.$clr-orange-50, vars.$clr-orange-300);
+}
+
 .btn-width-max{
     width: 100%;
 }

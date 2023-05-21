@@ -32,16 +32,12 @@
         <div class="base-container">
             <div class="row  center mt-5 col-12 margin-box">
                 <!--Recipe detail-->
-                <recipe-detail image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy" category="Entries" ocassion="All" ingredients="Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet."
-                    preparation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    likes=5 portions="5" tag="Easy"></recipe-detail>
+                <recipe-detail :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                    :title="recipe.title" 
+                    :description="recipe.description"
+                    :time="recipe.time" :difficult="recipe.difficult" :category="recipe.category" :ocassion="recipe.ocassion" :ingredients="recipe.ingredients"
+                    :preparation="recipe.preparation"
+                    :likes="recipe.likes" :portions="recipe.portions" :tag="recipe.tag"></recipe-detail>
 
 
                 <!--Related recipes-->
@@ -89,6 +85,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- custom events components -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- AXIOS API JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/components/NavbarMenu.js"></script>
     <script src="./js/components/CardVertical.js"></script>
