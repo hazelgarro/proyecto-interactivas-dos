@@ -59,7 +59,7 @@ const app = Vue.createApp({ //main application vue app
                                         category: "Beef",//datos del api
                                         time: "20 mins",
                                         difficult: "Easy",
-                                        likes: 18,
+                                        likes: 2,
                                         description:this.filledRecipe[0].strInstructions,
                                         portion: "3",
                                         type: "Veg",
@@ -121,7 +121,7 @@ const app = Vue.createApp({ //main application vue app
                                 category: category,//datos del api
                                 time: "20 mins",
                                 difficult: "Easy",
-                                likes: 18,
+                                likes: 2,
                                 description: this.filledRecipe[0].strInstructions,
                                 portion: "3",
                                 type: "Veg",
@@ -153,7 +153,7 @@ const app = Vue.createApp({ //main application vue app
                         category: "Beef",//datos del api
                         time: "20 mins",
                         difficult: "Easy",
-                        likes: 18,
+                        likes: 2,
                         description:element.description,
                         portion: "3",
                         type: "Veg",
@@ -168,7 +168,12 @@ const app = Vue.createApp({ //main application vue app
             });
       
         },
-
+        onClickRecipeLike(id){ 
+            this.recipes[id].likes ++;
+            this.recipes.push({
+                likes: likes,
+            })
+        },
     }
 })
 

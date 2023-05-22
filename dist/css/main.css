@@ -437,6 +437,7 @@ body {
   height: 1.87rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin: 0.3rem;
 }
 
 .btn-category:hover {
@@ -1046,9 +1047,8 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 @media only screen and (max-width: 480px) {

@@ -37,7 +37,7 @@ app.component('card-vertical', {
     },
     methods: {
         onClickLike(){
-            this.$emit('recipelike', this.index);
+            this.$emit('recipelike', this.id);
         },
         onClickViewRecipe(){
             this.$emit('recipedetails', this.id);
@@ -50,7 +50,7 @@ app.component('card-vertical', {
         alt="photo food">
     <div class="text-start ms-2 me-2">
         <div class="d-flex justify-content-between">
-            <a href="recipe-detail.html" style="text-decoration:none" v-on:click="onClickViewRecipe()">
+            <a href="recipe-detail.html" style="text-decoration:none" v-on:click="onClickViewRecipe(id)">
                 <h5 class="mt-2 overflow-title text-title-recipe">{{title}}</h5>
             </a>
             <h6><a href="search.html"><span class="badge badge-green m-2">{{difficult}}</span></a></h6>
@@ -60,7 +60,7 @@ app.component('card-vertical', {
         </div>
         <div class="d-flex justify-content-between gap-1">
             <h6 class="mt-4 opacity-50"><small>{{time}}</small></h6>
-            <button class="btn-circular mt-3 mb-3 hover-grow me-2" v-on:click="onClickLike()"><a type="button" href=""><span
+            <button class="btn-circular mt-3 mb-3 hover-grow me-2" v-on:click="onClickLike(id)"><a type="button" href=""><span
                         class="img-fluid mx-auto mb-2" alt="favorite icon"><img
                         v-bind:src="icon"></span>
                     <span

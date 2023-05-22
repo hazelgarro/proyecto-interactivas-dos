@@ -13,7 +13,8 @@
         onerror="this.onerror=null;this.href='./css/vendors/bootstrap.min.css';">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js">
     <!--JS Bootstrap-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!--ANIMATE.STYLES-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!--ANIMATE.STYLES-->
     <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Home</title>
@@ -43,54 +44,14 @@
             <!--feed-->
             <section class="row mt-4 gap-3 center">
                 <!--cards verticales-->
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
-                <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                    title="Recipe Title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                    time="5min" difficult="Easy"></card-vertical>
+                <div class="cards-position">
+                    <div v-for="(recipe, index) in recipes.slice(0, 12)" class="cards-position">
+                        <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
+                            :title="recipe.title" :description="recipe.description" :time="recipe.time"
+                            :difficult="recipe.difficult" :id="recipe.id" v-on:recipedetails="onClickRecipeDetails"
+                            v-on:recipelike="onClickRecipeLike"></card-vertical>
+                    </div>
+                </div>
                 <!--feed-->
 
                 <!--Top 10-->
@@ -98,13 +59,11 @@
                     <h2 class="mb-4">Top 10 recipes</h2>
                     <div class="justify-container">
                         <div class="row">
-                            <div class="col-lg-6 mb-4">
-                                <card-horizontal image="images/images-recipes/recipe-1exZxh80HP.png" title="Recipe Title" difficult="Easy" type="Lunch" occasion="Birthday" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse. Volutpat mus urna feugiat consequat. Eget fames elit amet mauris. Dolor commodo tempor vitae natoque magna turpis. Nunc commodo vestibulum eget platea tempus gravida maecenas. Adipiscing maecenas morbi adipiscing felis, tincidunt egestas tortor, diam sit." time="45min" portion="4-5"></card-horizontal>
-                                <card-horizontal image="images/images-recipes/recipe-1exZxh80HP.png" title="Recipe Title" difficult="Easy" type="Lunch" occasion="Birthday" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse. Volutpat mus urna feugiat consequat. Eget fames elit amet mauris. Dolor commodo tempor vitae natoque magna turpis. Nunc commodo vestibulum eget platea tempus gravida maecenas. Adipiscing maecenas morbi adipiscing felis, tincidunt egestas tortor, diam sit." time="45min" portion="4-5"></card-horizontal>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-                                <card-horizontal image="images/images-recipes/recipe-1exZxh80HP.png" title="Recipe Title" difficult="Easy" type="Lunch" occasion="Birthday" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse. Volutpat mus urna feugiat consequat. Eget fames elit amet mauris. Dolor commodo tempor vitae natoque magna turpis. Nunc commodo vestibulum eget platea tempus gravida maecenas. Adipiscing maecenas morbi adipiscing felis, tincidunt egestas tortor, diam sit." time="45min" portion="4-5"></card-horizontal>
-                                <card-horizontal image="images/images-recipes/recipe-1exZxh80HP.png" title="Recipe Title" difficult="Easy" type="Lunch" occasion="Birthday" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. Volutpat non sed nisl metus, fermentum sed suspendisse. Volutpat mus urna feugiat consequat. Eget fames elit amet mauris. Dolor commodo tempor vitae natoque magna turpis. Nunc commodo vestibulum eget platea tempus gravida maecenas. Adipiscing maecenas morbi adipiscing felis, tincidunt egestas tortor, diam sit." time="45min" portion="4-5"></card-horizontal>
+                            <div class="col-lg-6 mb-4" v-for="(recipe, index) in recipes.slice(0, 4)">
+                                <card-horizontal :image="recipe.image"
+                                    :title="recipe.title" :difficult="recipe.difficult" :type="recipe.type" :occasion="recipe.occasion"
+                                    :description="recipe.description"
+                                    :time="recipe.time" :portion="recipe.portion"></card-horizontal>
                             </div>
                         </div>
                     </div>
@@ -113,51 +72,32 @@
 
                 <!--Categories-->
                 <div class="container mt-4 mb-5 gap-5">
-                    <h2>Soups</h2>
-                    <!--feed-->
-                    <div class="row mt-4 gap-3 center">
-                        <!--inicial card-->
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
+                    <div v-for="(category, index) in categories.slice(0, 1)">
+                        <title-tag :category="category.name"></title-tag>
+                        <div class="row mt-4 gap-3 center">
+                            <!--inicial card-->
+                            <div class="cards-position">
+                                <div v-for="(recipe, index) in recipes.slice(0, 12)" class="cards-position">
+                                    <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                                        :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
+                                        :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id"
+                                        v-on:recipedetails="onClickRecipeDetails"
+                                        v-on:recipelike="onClickRecipeLike"></card-vertical>
+                                </div>
+                            </div>
+                        </div>
+                        <!--feed-->
+
                     </div>
-                </div>
             </section>
 
         </section>
     </section>
 
     <!--Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"> </script>
 
     <!--Footer-->
     <footer class="container-fluid footer-position-end footer-color">
@@ -165,15 +105,20 @@
             <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
             <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
         </div>
-    </footer> 
+    </footer>
 
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- custom events components -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- AXIOS API JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/components/BannerDescription.js"></script>
     <script src="./js/components/NavbarMenu.js"></script>
     <script src="./js/components/CardVertical.js"></script>
     <script src="./js/components/CardHorizontal.js"></script>
+    <script src="./js/components/TitleTag.js"></script>
     <script>
         const mountedApp = app.mount("#app");
     </script>
