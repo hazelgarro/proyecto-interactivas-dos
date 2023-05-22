@@ -1,5 +1,6 @@
 //Componente, para mostrar los detalles de la receta
 app.component('recipe-detail', {
+    
     props: {
         title: {
             type: String,
@@ -51,6 +52,12 @@ app.component('recipe-detail', {
             type: Number,
             default: 1
         }
+    },
+    mounted() {
+     
+        this.$test.on('foo', function(data){
+            console.log(data.description);
+        });//on metodo que esuccha cuando sucede el evento
     },
     template:
         /* html */

@@ -4,7 +4,8 @@ const app = Vue.createApp({ //main application vue app
             recipes: [],
             categories: [],
             recipe: [],
-           filledRecipe : {},
+            filledRecipe : {},
+            detailedRecipe:[]
         }
     },
     mounted: function () {
@@ -138,41 +139,35 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
         },
-        onClickRecipeDetails(index) {
-            axios({
-                method: 'get', //method, este api solo permite get
-                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+index //punto de acceso
-            })
-                .then(
-                    (response) => {
-                        this.filledRecipe = response.data.meals;
-                        console.log(this.filledRecipe);
-                    }
+        onClickRecipeDetails(id){
 
-                )
-                .catch(
-                    error => console.log(error)
-                );
+            console.log('Esta es la resp'+id);
 
-            this.recipes.push({
-                id: element.idMeal, //datos del api
-                image: element.strMealThumb,//datos del api
-                title: element.strMeal,//datos del api
-                category: category,//datos del api
-                time: "20 mins",
-                difficult: "Easy",
-                likes: 18,
-                description: filledRecipe.strInstructions,
-                portion: "3",
-                type: "Veg",
-                occasion: "All",
-                tag: filledRecipe.strTags,
-                preparation: filledRecipe.strInstructions,
-                ingredients: filledRecipe.strIngredient1,
-            })//push metodo de array para meter datos
-
-        }
-        // console.log(this.categories);
+            this.recipes.forEach(element => {
+                if(element.id==id){
+                   
+                    this.detailedRecipe.push({
+                        id: element.id,
+                        image:  element.image,//datos del api
+                        title: element.title,//datos del api
+                        category: "Beef",//datos del api
+                        time: "20 mins",
+                        difficult: "Easy",
+                        likes: 18,
+                        description:element.description,
+                        portion: "3",
+                        type: "Veg",
+                        occasion: "All",
+                        tag:  element.tag,
+                        preparation:  element.preparation,
+                        ingredients: 'gdgdsgfsdsdgg',
+                    });
+                    console.log('Esta es la resp'+this.detailedRecipe[0].title);
+                }
+                
+            });
+      
+        },
 
     }
 })

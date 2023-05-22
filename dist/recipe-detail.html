@@ -32,13 +32,14 @@
         <div class="base-container">
             <div class="row  center mt-5 col-12 margin-box">
                 <!--Recipe detail-->
-                <recipe-detail :image="recipe.image" icon="images/imgs/icons/favorite.svg"
-                    :title="recipe.title" 
-                    :description="recipe.description"
-                    :time="recipe.time" :difficult="recipe.difficult" :category="recipe.category" :ocassion="recipe.ocassion" :ingredients="recipe.ingredients"
-                    :preparation="recipe.preparation"
-                    :likes="recipe.likes" :portions="recipe.portions" :tag="recipe.tag"></recipe-detail>
-
+                <div  v-for="element in detailedRecipe" v-bind:detailedRecipe="detailedRecipe"> 
+                <recipe-detail :image="element.image" icon="images/imgs/icons/favorite.svg"
+                    :title="element.title" 
+                    :description="element.description"
+                    :time="element.time" :difficult="element.difficult" :category="element.category" :ocassion="element.ocassion" :ingredients="element.ingredients"
+                    :preparation="element.preparation"
+                    :likes="element.likes" :portions="element.portions" :tag="element.tag"></recipe-detail>
+                </div>
 
                 <!--Related recipes-->
                 <div class="col-lg-5 center-img-detail">

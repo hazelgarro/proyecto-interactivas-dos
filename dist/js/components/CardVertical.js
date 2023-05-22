@@ -26,6 +26,10 @@ app.component('card-vertical', {
         likes: {
             type: Number,
             default: "1"
+        },
+        id:{
+            type: String,
+            default: "1"
         }
     },
     mounted() {
@@ -36,7 +40,7 @@ app.component('card-vertical', {
             this.$emit('recipelike', this.index);
         },
         onClickViewRecipe(){
-            this.$emit('recipedetails', this.index);
+            this.$emit('recipedetails', this.id);
         }
     },
     template:
@@ -46,7 +50,7 @@ app.component('card-vertical', {
         alt="photo food">
     <div class="text-start ms-2 me-2">
         <div class="d-flex justify-content-between">
-            <a href="recipe-detail.html" style="text-decoration:none">
+            <a href="recipe-detail.html" style="text-decoration:none" v-on:click="onClickViewRecipe()">
                 <h5 class="mt-2 overflow-title text-title-recipe">{{title}}</h5>
             </a>
             <h6><a href="search.html"><span class="badge badge-green m-2">{{difficult}}</span></a></h6>
