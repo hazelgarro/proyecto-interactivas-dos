@@ -31,63 +31,41 @@
 
         <!--About user mobile-->
         <section>
-                <div class="col-12 background-responsive container-fluid" id="user-card-mobile">
-                    <detail-user name="Hazel Garro" about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></detail-user>
-                </div>
-            
-            
+            <div class="col-12 background-responsive container-fluid" id="user-card-mobile">
+                <detail-user name="Hazel Garro"
+                    about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></detail-user>
+            </div>
+
+
             <div class="row container-fluid justity-mobile mt-5">
                 <div class="col-4 user-card-desk">
-                     <!--About user desktop-->
+                    <!--About user desktop-->
                     <box-user name="Hazel Garro"
                         about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh aenean facilisis sapien massa. Molestie arcu phasellus nulla tellus a quam sit egestas. Ante morbi ultrices volutpat nisl commodo elementum ac morbi. Pulvinar ac lorem morbi condimentum vestibulum. Aliquet velit viverra a turpis sed fringilla. Amet, sit vestibulum porttitor lacus eu, tincidunt augue vel, massa. "></box-user>
                 </div>
                 <div class="col-8 mt-2">
-                    <h2  class="row ms-1" >Your Collection</h2>
-                    <section class="row mt-4 gap-3 center ">
-                        
+                    <h2 class="row ms-1">Your Collection</h2>
+                    <section class="row gap-3 center ">
+
                         <!--cards verticales-->
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
-                        <card-vertical image="images/images-recipes/recipe-0rKPZzwPlt.png"
-                            icon="images/imgs/icons/favorite.svg" title="Recipe Title"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                            time="5min" difficult="Easy"></card-vertical>
+                        <div class="cards-position">
+                            <div v-for="(recipe, index) in recipes.slice(0, 8)" class="cards-position">
+                                <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                                    :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
+                                    :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id"
+                                    v-on:recipedetails="onClickRecipeDetails"
+                                    v-on:recipelike="onClickRecipeLike"></card-vertical>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
 
         </section>
     </section>
-    
-       <!--footer-->
-       <footer class="container-fluid footer-position-end footer-color mt-5 ">
+
+    <!--footer-->
+    <footer class="container-fluid footer-position-end footer-color mt-5 ">
         <div class="d-flex justify-content-between ps-5 pe-5 gap-5">
             <p class="mt-4 pt-2">@2023 TheKitchen. All rights reserved.</p>
             <img src="./images/imgs/icons/Color=White.svg" class="size-img-sm img-fluid mt-4" alt="logo">
@@ -95,19 +73,25 @@
     </footer>
 
     <!--Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"> </script>
 
-       <!--VUE-->
-       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-       <script src="./js/main.js"></script>
-       <script src="./js/components/BannerDescription.js"></script>
-       <script src="./js/components/NavbarMenu.js"></script>
-       <script src="./js/components/CardVertical.js"></script>
-       <script src="./js/components/BoxUser.js"></script>
-       <script src="./js/components/DetailUser.js"></script>
-       <script>
-           const mountedApp = app.mount("#app");
-       </script>
+    <!--VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- custom events components -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- AXIOS API JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/components/BannerDescription.js"></script>
+    <script src="./js/components/NavbarMenu.js"></script>
+    <script src="./js/components/CardVertical.js"></script>
+    <script src="./js/components/BoxUser.js"></script>
+    <script src="./js/components/DetailUser.js"></script>
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
 </body>
 
 </html>
