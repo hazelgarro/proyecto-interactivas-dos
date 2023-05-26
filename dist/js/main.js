@@ -6,6 +6,7 @@ const app = Vue.createApp({ //main application vue app
             recipe: [],
             filledRecipe : {},
             detailedRecipe:[],
+            idRecipe: "",
         }
     },
     mounted: function () {
@@ -139,7 +140,6 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
         },
-
         onClickRecipeLike(id){ 
             this.recipes[id].likes ++;
             this.recipes.push({

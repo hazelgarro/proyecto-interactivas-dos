@@ -1,63 +1,75 @@
 //Componente, para mostrar los detalles de la receta
-app.component('recipe-detail', {
-    
+app.component('recipe-detail', { 
     props: {
-        title: {
+        icon:{
             type: String,
-            default: "default title"
-        },
-        difficult: {
-            type: String,
-            default: "default difficult"
-        },
-        category: {
-            type: String,
-            default: "default category"
-        },
-        ocassion: {
-            type: String,
-            default: "default ocassion"
-        },
-        description: {
-            type: String,
-            default: "default description"
-        },
-        preparation: {
-            type: String,
-            default: "default description"
-        },
-        portions: {
-            type: String,
-            default: "default portions"
-        },
-        ingredients: {
-            type: String,
-            default: "default ingredients"
-        },
-        time: {
-            type: String,
-            default: "default time"
-        },
-        tag: {
-            type: String,
-            default: "default tag"
-        },
-        image: {
-            type: String,
-        },
-        icon: {
-            type: String,
-        },
-        likes: {
-            type: Number,
-            default: 1
+        }
+    },
+    data() {
+        return {
+            id : "",
+            image : "",
+            title : "",
+            category : "",
+            time : "",
+            difficult : "",
+            likes : "",
+            description : "",
+            portion : "",
+            type : "",
+            occasion : "",
+            tag : "",
+            preparation : "",
+            ingredients: ""
         }
     },
     mounted() {
-     
-        this.$test.on('foo', function(data){
-            console.log(data.description);
-        });//on metodo que esuccha cuando sucede el evento
+
+            const params = window.location.search;
+            //console.log(params);
+            const urlParams = new URLSearchParams(params);
+            const id = urlParams.get("id");
+            //console.log("este es el id" +id);
+
+            this.getDetails(id);
+       
+    },
+    methods: {
+        getDetails(id){
+            axios({
+                method: 'get',
+                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+
+            })
+                .then(
+                    (response) => {
+
+                        let detailedRecipe = response.data.meals[0];
+                        
+                        console.log(response);
+
+                        this.id = detailedRecipe.idMeal; //datos del api
+                        this.image = detailedRecipe.strMealThumb;//datos del api
+                        this.title = detailedRecipe.strMeal;//datos del api
+                        this.category = detailedRecipe.strCategory;//datos del api
+                        this.time = "20 mins";
+                        this.difficult = "Easy";
+                        this.likes = 2;
+                        this.description = detailedRecipe.strInstructions;
+                        this.portion = "3";
+                        this.type = "Veg";
+                        this.occasion = "All";
+                        this.tag = detailedRecipe.strTags;
+                        this.preparation = detailedRecipe.strInstructions;
+                        this.ingredients = detailedRecipe.strIngredient1;
+
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        }
     },
     template:
         /* html */
