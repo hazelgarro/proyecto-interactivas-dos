@@ -46,8 +46,8 @@
                         <div class="col-lg-6 mb-4" v-for="(recipe, index) in recipes.slice(0, 10)">
                             <card-horizontal :image="recipe.image"
                                 :title="recipe.title" :difficult="recipe.difficult" :type="recipe.type" :occasion="recipe.occasion"
-                                :description="recipe.description"
-                                :time="recipe.time" :portion="recipe.portion"></card-horizontal>
+                                :description="recipe.description" :id="recipe.id"
+                                :time="recipe.time" :portion="recipe.portion" v-on:recipedetails="onClickRecipeDetails"></card-horizontal>
                         </div>
                     </div>
                 </div>

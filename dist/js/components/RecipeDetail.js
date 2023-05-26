@@ -56,7 +56,7 @@ app.component('recipe-detail', {
                         this.difficult = "Easy";
                         this.likes = 2;
                         this.description = detailedRecipe.strInstructions;
-                        this.portion = "3";
+                        this.portions = "3";
                         this.type = "Veg";
                         this.occasion = "All";
                         this.tag = detailedRecipe.strTags;

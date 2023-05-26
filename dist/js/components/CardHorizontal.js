@@ -42,6 +42,14 @@ app.component('card-horizontal', {
         tag: {
             type: Number,
             default: "1"
+        },
+        id:{
+            type: String,
+        }
+    },
+    methods: {
+        onClickViewRecipe(){
+            this.$emit('recipedetails', this.id);
         }
     },
     template:
@@ -56,7 +64,7 @@ app.component('card-horizontal', {
                 <div class="card-body padding-0">
                     <div class="row">
                         <div class="col-6">
-                            <a href="recipe-detail.html" style="text-decoration:none">
+                            <a :href="'recipe-detail.html?id=' + id" style="text-decoration:none" v-on:click="onClickViewRecipe(id)">
                                 <h5 class="card-title ms-3 overflow text-title-recipe">{{title}}</h5>
                             </a>
                         </div>
