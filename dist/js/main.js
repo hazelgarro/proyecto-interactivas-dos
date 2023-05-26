@@ -139,35 +139,7 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
         },
-        onClickRecipeDetails(id){
 
-            console.log('Esta es la resp'+id);
-
-            this.recipes.forEach(element => {
-                if(element.id==id){
-                   
-                    this.detailedRecipe.push({
-                        id: element.id,
-                        image:  element.image,//datos del api
-                        title: element.title,//datos del api
-                        category: "Beef",//datos del api
-                        time: "20 mins",
-                        difficult: "Easy",
-                        likes: 2,
-                        description:element.description,
-                        portion: "3",
-                        type: "Veg",
-                        occasion: "All",
-                        tag:  element.tag,
-                        preparation:  element.preparation,
-                        ingredients: 'gdgdsgfsdsdgg',
-                    });
-                    console.log('Esta es la resp'+this.detailedRecipe[0].title);
-                }
-                
-            });
-      
-        },
         onClickRecipeLike(id){ 
             this.recipes[id].likes ++;
             this.recipes.push({

@@ -32,13 +32,13 @@
         <div class="base-container">
             <div class="row  center mt-5 col-12 margin-box">
                 <!--Recipe detail-->
-                <div v-for="element in detailedRecipe" v-bind:detailedRecipe="detailedRecipe">
-                    <recipe-detail :image="element.image" icon="images/imgs/icons/favorite.svg" :title="element.title"
-                        :description="element.description" :time="element.time" :difficult="element.difficult"
-                        :category="element.category" :ocassion="element.ocassion" :ingredients="element.ingredients"
-                        :preparation="element.preparation" :likes="element.likes" :portions="element.portions"
-                        :tag="element.tag"></recipe-detail>
-                </div>
+
+                <recipe-detail :image="recipe.image" icon="images/imgs/icons/favorite.svg" :title="recipe.title"
+                    :description="recipe.description" :time="recipe.time" :difficult="recipe.difficult"
+                    :category="recipe.category" :ocassion="recipe.ocassion" :ingredients="recipe.ingredients"
+                    :preparation="recipe.preparation" :likes="recipe.likes" :portions="recipe.portions"
+                    :tag="recipe.tag"></recipe-detail>
+
 
                 <!--Related recipes-->
                 <div class="col-lg-5 center-img-detail">
@@ -104,17 +104,44 @@
         const id = urlParams.get("id");
         console.log(id);
 
+        //array de datos de la receta
+        var detailedRecipe = {};
+        var details = [];
+        var recipe = {};
+
+
         axios({
             method: 'get',
-            url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+id
+            url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
 
         })
             .then(
                 (response) => {
-                    
+                    this.details = [];
+
                     console.log(response);
-                    
-                    
+
+                    this.detailedRecipe = response.data.meals[0];
+                    let obj = {};
+
+                    obj.id = this.detailedRecipe.idMeal; //datos del api
+                    obj.image = this.detailedRecipe.strMealThumb;//datos del api
+                    obj.title = this.detailedRecipe.strMeal;//datos del api
+                    obj.category = this.detailedRecipe.strCategory;//datos del api
+                    obj.time = "20 mins";
+                    obj.difficult = "Easy";
+                    obj.likes = 2;
+                    obj.description = this.detailedRecipe.strInstructions;
+                    obj.portion = "3";
+                    obj.type = "Veg";
+                    obj.occasion = "All";
+                    obj.tag = this.detailedRecipe.strTags;
+                    obj.preparation = this.detailedRecipe.strInstructions;
+                    obj.ingredients = this.detailedRecipe.strIngredient1;
+
+                    this.recipe = obj;
+                    this.details.push(this.recipe);
+
                 }
             )
             .catch(
