@@ -13,7 +13,7 @@
         onerror="this.onerror=null;this.href='./css/vendors/bootstrap.min.css';">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js">
     <!--JS Bootstrap-->
-        <!--CSS-->
+    <!--CSS-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Recipe detail</title>
     <!--Favicon-->
@@ -32,13 +32,12 @@
         <div class="base-container">
             <div class="row  center mt-5 col-12 margin-box">
                 <!--Recipe detail-->
-                <div  v-for="element in detailedRecipe" v-bind:detailedRecipe="detailedRecipe"> 
-                <recipe-detail :image="element.image" icon="images/imgs/icons/favorite.svg"
-                    :title="element.title" 
-                    :description="element.description"
-                    :time="element.time" :difficult="element.difficult" :category="element.category" :ocassion="element.ocassion" :ingredients="element.ingredients"
-                    :preparation="element.preparation"
-                    :likes="element.likes" :portions="element.portions" :tag="element.tag"></recipe-detail>
+                <div v-for="element in detailedRecipe" v-bind:detailedRecipe="detailedRecipe">
+                    <recipe-detail :image="element.image" icon="images/imgs/icons/favorite.svg" :title="element.title"
+                        :description="element.description" :time="element.time" :difficult="element.difficult"
+                        :category="element.category" :ocassion="element.ocassion" :ingredients="element.ingredients"
+                        :preparation="element.preparation" :likes="element.likes" :portions="element.portions"
+                        :tag="element.tag"></recipe-detail>
                 </div>
 
                 <!--Related recipes-->
@@ -83,7 +82,9 @@
     </footer>
 
     <!--Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"> </script>
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- custom events components -->
@@ -96,6 +97,29 @@
     <script src="./js/components/RecipeDetail.js"></script>
     <script>
         const mountedApp = app.mount("#app");
+
+        const params = window.location.search;
+        console.log(params);
+        const urlParams = new URLSearchParams(params);
+        const id = urlParams.get("id");
+        console.log(id);
+
+        axios({
+            method: 'get',
+            url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+id
+
+        })
+            .then(
+                (response) => {
+                    
+                    console.log(response);
+                    
+                    
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
     </script>
 
 </body>

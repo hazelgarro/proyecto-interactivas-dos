@@ -11,7 +11,7 @@ app.component('form-login', {
             <div class="password-icon">
                 <label for="password" class="form-label mt-4 text-forms">Password <span class="text-question"><a
                             href="" class="text-question"> Forgot?</a></span></label>
-                <input name="password" type="password" class="form-control input-color">
+                <input id="password" name="password" type="password" class="form-control input-color">
                 <img class="input-icon-position-login" src="./images/imgs/icons/visibility.svg">
             </div>
 

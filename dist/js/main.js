@@ -5,7 +5,7 @@ const app = Vue.createApp({ //main application vue app
             categories: [],
             recipe: [],
             filledRecipe : {},
-            detailedRecipe:[]
+            detailedRecipe:[],
         }
     },
     mounted: function () {
@@ -174,6 +174,7 @@ const app = Vue.createApp({ //main application vue app
                 likes: likes,
             })
         },
+        
     }
 })
 
