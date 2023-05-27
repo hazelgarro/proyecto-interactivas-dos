@@ -4,8 +4,8 @@ const app = Vue.createApp({ //main application vue app
             recipes: [],
             categories: [],
             recipe: [],
-            filledRecipe : {},
-            detailedRecipe:[],
+            filledRecipe: {},
+            detailedRecipe: [],
             idRecipe: "",
         }
     },
@@ -39,9 +39,9 @@ const app = Vue.createApp({ //main application vue app
         })
             .then(
                 (response) => {
-                 //   console.log(response.data.meals);
+                    //   console.log(response.data.meals);
                     let items = response.data.meals;
-                    
+
 
                     items.forEach((element) => {
 
@@ -51,7 +51,7 @@ const app = Vue.createApp({ //main application vue app
                         })
                             .then(
                                 (responseRec) => {
-                                   this. filledRecipe=responseRec.data.meals;
+                                    this.filledRecipe = responseRec.data.meals;
 
                                     this.recipes.push({
                                         id: element.idMeal, //datos del api
@@ -61,7 +61,7 @@ const app = Vue.createApp({ //main application vue app
                                         time: "20 mins",
                                         difficult: "Easy",
                                         likes: 2,
-                                        description:this.filledRecipe[0].strInstructions,
+                                        description: this.filledRecipe[0].strInstructions,
                                         portion: "3",
                                         type: "Veg",
                                         occasion: "All",
@@ -132,6 +132,7 @@ const app = Vue.createApp({ //main application vue app
                                 ingredients: this.filledRecipe[0].strIngredient1,
                             })//push metodo de array para meter datos
 
+
                         });
                         // console.log(this.categories);
                     }
@@ -140,13 +141,21 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
         },
-        onClickRecipeLike(id){ 
-            this.recipes[id].likes ++;
-            this.recipes.push({
-                likes: likes,
-            })
+
+        onClickRecipeLike: function (id) {
+
+            this.recipes.forEach(recipe => {
+                if (recipe.id == id) {
+                    let actualLikes = recipe.likes;
+                    let likeUpdate = actualLikes + 1;
+                    recipe. likes= likeUpdate;
+                   
+                }
+            });
+
+
         },
-        
+
     }
 })
 

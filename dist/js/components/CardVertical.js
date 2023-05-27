@@ -25,7 +25,7 @@ app.component('card-vertical', {
         },
         likes: {
             type: Number,
-            default: "1"
+            default: 1
         },
         id:{
             type: String,
@@ -36,7 +36,7 @@ app.component('card-vertical', {
         this.recipe_likes = this.likes;
     },
     methods: {
-        onClickLike(){
+        onClickRecipeLike(){
             this.$emit('recipelike', this.id);
         },
         onClickViewRecipe(){
@@ -60,11 +60,10 @@ app.component('card-vertical', {
         </div>
         <div class="d-flex justify-content-between gap-1">
             <h6 class="mt-4 opacity-50"><small>{{time}}</small></h6>
-            <button class="btn-circular mt-3 mb-3 hover-grow me-2" v-on:click="onClickLike(id)"><a type="button" href=""><span
+            <button class="btn-circular mt-3 mb-3 hover-grow me-2" v-on:click="onClickRecipeLike(id)"><span
                         class="img-fluid mx-auto mb-2" alt="favorite icon"><img
-                        v-bind:src="icon"></span>
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" >{{likes}}</span></a></button>
+                        v-bind:src="icon"></span><span
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{likes}}</span></button>
         </div>
     </div>
 </div>`

@@ -37,7 +37,7 @@ app.component('card-horizontal', {
         },
         likes: {
             type: Number,
-            default: "1"
+            default: 1
         },
         tag: {
             type: Number,
@@ -45,9 +45,16 @@ app.component('card-horizontal', {
         },
         id:{
             type: String,
+            default: "1"
         }
     },
+    mounted() {
+        this.recipe_likes = this.likes;
+    },
     methods: {
+        onClickRecipeLike(){
+            this.$emit('recipelike', this.id);
+        },
         onClickViewRecipe(){
             this.$emit('recipedetails', this.id);
         }
@@ -87,13 +94,10 @@ app.component('card-horizontal', {
                             <p class="card-text"><small class="text-muted">{{time}}</small></p>
                         </div>
                         <div class="col-1 p-1">
-                            <button class="btn-circular mt-3 mb-3 hover-grow "><a
-                                type="button" href=""><span
+                            <button class="btn-circular mt-3 mb-3 hover-grow" v-on:click="onClickRecipeLike(id)"><span
                                     class="img-fluid mx-auto mb-2"
-                                    alt="favorite icon"><img
-                                        src="images/imgs/icons/favorite.svg"></span>
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ">{{likes}}</span></a></button>
+                                    alt="favorite icon"><img v-bind:src="icon"></span><span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{likes}}</span></button>
                         </div>
                     </div>
                 </div>
