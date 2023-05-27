@@ -8,6 +8,15 @@ app.component('list-recipes', {
         image: {
             type: String,
         },
+        id:{
+            type: String,
+            default: "1"
+        }
+    },
+    methods: {
+        onClickViewRecipe(){
+            this.$emit('recipedetails', this.id);
+        }
     },
     template:
         /* html */
@@ -23,7 +32,7 @@ app.component('list-recipes', {
                     </div>
                 </div>
                 <div class="col-2 center-items-list">
-                    <button class="btn-item-list hover-grow"><a href="recipe-detail-admin.html" class="header-link">View detail</a></button>
+                    <button class="btn-item-list hover-grow"><a :href="'recipe-detail-admin.html?id=' + id" v-on:click="onClickViewRecipe(id)" class="header-link">View detail</a></button>
                 </div>
             </div>
         </div>

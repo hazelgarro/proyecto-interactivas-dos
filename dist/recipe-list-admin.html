@@ -45,7 +45,7 @@
         <!--feed Items-->
         <div class="m-5">
             <div v-for="(recipe, index) in recipes">
-                <list-recipes :image="recipe.image" :title="recipe.title"></list-recipes>
+                <list-recipes :image="recipe.image" :title="recipe.title" :id="recipe.id" v-on:recipedetails="onClickRecipeDetails"></list-recipes>
             </div>
         </div>
 

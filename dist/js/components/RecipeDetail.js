@@ -15,7 +15,7 @@ app.component('recipe-detail', {
             difficult : "",
             likes : "",
             description : "",
-            portion : "",
+            portions : "",
             type : "",
             occasion : "",
             tag : "",

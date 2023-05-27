@@ -1,7 +1,7 @@
 //Detalle de la receta, para la parte del administrador
 app.component('table-recipe-detail', {
     props:{
-        image:{
+       /* image:{
             type: String
         },
         name:{
@@ -39,7 +39,71 @@ app.component('table-recipe-detail', {
         preparation:{
             type: String,
             default: "default preparation"
-        },
+        },*/
+    },
+    data() {
+        return {
+            id : "",
+            image : "",
+            title : "",
+            category : "",
+            time : "",
+            difficult : "",
+            description : "",
+            portions : "",
+            type : "",
+            occasion : "",
+            preparation : "",
+            ingredients: ""
+        }
+    },
+    mounted() {
+
+            const params = window.location.search;
+            //console.log(params);
+            const urlParams = new URLSearchParams(params);
+            const id = urlParams.get("id");
+            //console.log("este es el id" +id);
+
+            this.getDetails(id);
+       
+    },
+    methods: {
+        getDetails(id){
+            axios({
+                method: 'get',
+                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+
+            })
+                .then(
+                    (response) => {
+
+                        let detailedRecipe = response.data.meals[0];
+                        
+                        console.log(response);
+
+                        this.id = detailedRecipe.idMeal; //datos del api
+                        this.image = detailedRecipe.strMealThumb;//datos del api
+                        this.title = detailedRecipe.strMeal;//datos del api
+                        this.category = detailedRecipe.strCategory;//datos del api
+                        this.time = "20 mins";
+                        this.difficult = "Easy";
+                        this.likes = 2;
+                        this.description = detailedRecipe.strInstructions;
+                        this.portions = "3";
+                        this.type = "Veg";
+                        this.occasion = "All";
+                        this.tag = detailedRecipe.strTags;
+                        this.preparation = detailedRecipe.strInstructions;
+                        this.ingredients = detailedRecipe.strIngredient1;
+
+                        console.log(response);
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        }
     },
     template:
         /* html */
@@ -56,8 +120,8 @@ app.component('table-recipe-detail', {
                     <h1>{{name}}</h1>
                     <div>
                         <span class="badge badge-orange m-1">{{category}}</span>
-                        <span class="badge badge-green m-1">{{level}}</span>
-                        <span class="badge badge-orange m-1">{{ocassion}}</span>
+                        <span class="badge badge-green m-1">{{difficult}}</span>
+                        <span class="badge badge-orange m-1">{{occasion}}</span>
                     </div>
                     <h2 class="mt-4">Description</h2>
                     <div class="d-flex align-items-start">
