@@ -1,5 +1,21 @@
 //Componente, menu de navegacion para el usuario
 app.component('navbar-menu',{
+    data() {
+        return {
+          inputValue: '',
+          keyword: '',
+        };
+    },
+    props: {
+        keyword: "",
+    },
+    methods: {
+        onClickSearch(){
+            this.keyword = this.inputValue;
+            this.$emit('searchRecipes', this.keyword);
+            console.log(this.keyword);
+        }
+    },
     template: 
     /* html */
     `<nav id="navbar-main" class="navbar navbar-expand-lg">
@@ -18,11 +34,11 @@ app.component('navbar-menu',{
             <li class=" position-relative"><a class="header-link hover-grow" href="categories.html">Categories</a></li>
         </ul>
         
-        <div class=" row box-navbar">
+        <div class="row box-navbar">
             <form class=" col d-flex center" action="search.html" method="get" role="search">
-                <input class="form-control me-2 input-search" type="search" name="keyword"
+                <input class="form-control me-2 input-search" type="text" v-model="inputValue" name="keyword"
                     placeholder="Search something..." aria-label="Search">
-                <button class=" btn-search" type="submit"><img src="./images/imgs/icons/search.svg"
+                <button class="btn-search" type="submit" v-on:click="onClickSearch(keyword)"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
             </form>
             <div class="col" id="photo-desk">
@@ -36,4 +52,3 @@ app.component('navbar-menu',{
     </nav>`
 })
 
-//<img class="photo-user-small" src="./images/photos-users/photo-user.jpg" >

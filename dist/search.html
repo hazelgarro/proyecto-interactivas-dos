@@ -30,15 +30,8 @@
         </header>
 
         <!--Results search-->
-        <div>
-            <results-search></results-search>
-            <div class="center">
-                <!--Card-->
-                <card-vertical class="m-5" image="images/images-recipes/recipe-0rKPZzwPlt.png" icon="images/imgs/icons/favorite.svg"
-                title="Recipe Title"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, co. Lorem ipsum dolor sit amet, co"
-                time="5min" difficult="Easy"></card-vertical>
-            </div>
+        <div class="center">
+            <results-search @click="getKeyword"  @click="onClickSearch" :keyword="keyword"></results-search>
         </div>
     
         <!--footer-->
@@ -54,6 +47,10 @@
     </section>
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- custom events components -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- AXIOS API JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/components/BannerDescription.js"></script>
     <script src="./js/components/NavbarMenu.js"></script>

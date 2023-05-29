@@ -148,8 +148,8 @@ const app = Vue.createApp({ //main application vue app
                 if (recipe.id == id) {
                     let actualLikes = recipe.likes;
                     let likeUpdate = actualLikes + 1;
-                    recipe. likes= likeUpdate;
-                   
+                    recipe.likes = likeUpdate;
+
                 }
             });
 
