@@ -1,45 +1,6 @@
 //Detalle de la receta, para la parte del administrador
 app.component('table-recipe-detail', {
     props:{
-       /* image:{
-            type: String
-        },
-        name:{
-            type: String,
-            default: "default name"
-        },
-        category:{
-            type: String,
-            default: "default category"
-        },
-        level:{
-            type: String,
-            default: "default level"
-        },
-        ocassion:{
-            type: String,
-            default: "default ocassion"
-        },
-        time:{
-            type: String,
-            default: "default time"
-        },
-        portions:{
-            type: String,
-            default: "default portions"
-        },
-        description:{
-            type: String,
-            default: "default description"
-        },
-        ingredients:{
-            type: String,
-            default: "default ingredients"
-        },
-        preparation:{
-            type: String,
-            default: "default preparation"
-        },*/
     },
     data() {
         return {
@@ -63,8 +24,6 @@ app.component('table-recipe-detail', {
             //console.log(params);
             const urlParams = new URLSearchParams(params);
             const id = urlParams.get("id");
-            //console.log("este es el id" +id);
-
             this.getDetails(id);
        
     },
@@ -80,12 +39,12 @@ app.component('table-recipe-detail', {
 
                         let detailedRecipe = response.data.meals[0];
                         
-                        console.log(response);
+                        //console.log(response);
 
-                        this.id = detailedRecipe.idMeal; //datos del api
-                        this.image = detailedRecipe.strMealThumb;//datos del api
-                        this.title = detailedRecipe.strMeal;//datos del api
-                        this.category = detailedRecipe.strCategory;//datos del api
+                        this.id = detailedRecipe.idMeal; 
+                        this.image = detailedRecipe.strMealThumb;
+                        this.title = detailedRecipe.strMeal;
+                        this.category = detailedRecipe.strCategory;
                         this.time = "20 mins";
                         this.difficult = "Easy";
                         this.likes = 2;
@@ -96,8 +55,6 @@ app.component('table-recipe-detail', {
                         this.tag = detailedRecipe.strTags;
                         this.preparation = detailedRecipe.strInstructions;
                         this.ingredients = detailedRecipe.strIngredient1;
-
-                        console.log(response);
                     }
                 )
                 .catch(

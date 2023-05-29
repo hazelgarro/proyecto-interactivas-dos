@@ -32,9 +32,6 @@ app.component('card-vertical', {
             default: "1"
         }
     },
-    mounted() {
-        this.recipe_likes = this.likes;
-    },
     methods: {
         onClickRecipeLike(){
             this.$emit('recipelike', this.id);

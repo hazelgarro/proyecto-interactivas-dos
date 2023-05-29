@@ -3,10 +3,7 @@ const app = Vue.createApp({ //main application vue app
         return {
             recipes: [],
             categories: [],
-            recipe: [],
             filledRecipe: {},
-            detailedRecipe: [],
-            idRecipe: "",
         }
     },
     mounted: function () {
@@ -17,7 +14,7 @@ const app = Vue.createApp({ //main application vue app
         })
             .then(
                 (response) => {
-                    let items = response.data.categories;//esto es un array de objetos
+                    let items = response.data.categories;
 
                     // console.log(items);
                     items.forEach((element) => {
@@ -46,7 +43,7 @@ const app = Vue.createApp({ //main application vue app
                     items.forEach((element) => {
 
                         axios({
-                            method: 'get', //method, este api solo permite get
+                            method: 'get', 
                             url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
                         })
                             .then(
@@ -76,10 +73,7 @@ const app = Vue.createApp({ //main application vue app
                             .catch(
                                 error => console.log(error)
                             );
-
-                        //push metodo de array para meter datos
                     });
-                    // console.log(this.categories);
                 }
             )
             .catch(
@@ -89,19 +83,19 @@ const app = Vue.createApp({ //main application vue app
     methods: {
         onClickSelectedCategory(category) {
             axios({
-                method: 'get', //method, este api solo permite get
+                method: 'get', 
                 url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category //punto de acceso
             })
                 .then(
                     (response) => {
                         console.log(response.data.meals);
-                        let items = response.data.meals;//esto es un array de objetos
+                        let items = response.data.meals;
                         this.recipes = [];
 
                         items.forEach((element) => {
 
                             axios({
-                                method: 'get', //method, este api solo permite get
+                                method: 'get',
                                 url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
                             })
                                 .then(
@@ -116,10 +110,10 @@ const app = Vue.createApp({ //main application vue app
                                 );
 
                             this.recipes.push({
-                                id: element.idMeal, //datos del api
-                                image: element.strMealThumb,//datos del api
-                                title: element.strMeal,//datos del api
-                                category: category,//datos del api
+                                id: element.idMeal, 
+                                image: element.strMealThumb,
+                                title: element.strMeal,
+                                category: category,
                                 time: "20 mins",
                                 difficult: "Easy",
                                 likes: 2,
@@ -130,9 +124,7 @@ const app = Vue.createApp({ //main application vue app
                                 tag: this.filledRecipe[0].strTags,
                                 preparation: this.filledRecipe[0].strInstructions,
                                 ingredients: this.filledRecipe[0].strIngredient1,
-                            })//push metodo de array para meter datos
-
-
+                            })
                         });
                         // console.log(this.categories);
                     }

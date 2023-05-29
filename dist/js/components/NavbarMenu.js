@@ -1,37 +1,15 @@
 //Componente, menu de navegacion para el usuario
 app.component('navbar-menu', {
-   
     data() {
         return {
             inputValue: '',
             keyword: '',
         };
     },
-
-    // data() {
-    //     return {
-    //         keyword: '',
-    //         listRecipes: [],
-    //     }
-    // },
     methods: {
         onClickSearch(keyword) {
-            /*axios({
-                method: 'get',
-                url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`
-              })
-              .then(response => {
-                //console.log(response.data.meals);
-                this.listRecipes = response.data.meals;
-                console.log(this.listRecipes);
-              })
-              .catch(error => console.log(error));
-            }*/
             this.keyword = this.inputValue;
              this.$emit('searchRecipes', this.keyword);
-    
-        
-           // console.log(this.keyword);
         }
     },
     template:
@@ -69,5 +47,3 @@ app.component('navbar-menu', {
     </div>
     </nav>`
 });
-
-//v-model="inputValue" @submit.prevent="onClickSearch(keyword)"

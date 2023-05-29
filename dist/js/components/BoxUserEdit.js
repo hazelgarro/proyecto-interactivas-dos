@@ -15,7 +15,6 @@ app.component('box-user-edit', {
         `<div class="col">
             <div class="row elements-column">
                 <div class="col">
-                <!--start form col1-->
                 <form action="addinfo.php" method="post" enctype="multipart/form-data">
                     <label for="recipe_image">
                         <h2 class="mt-5 mb-3">Foto de perfil</h2>

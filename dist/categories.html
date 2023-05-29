@@ -40,7 +40,7 @@
             <div>
                 <!--inspiration your meals-->
                 <section class="row mt-2 mb-2 gap-3 center">
-                    <div class="position-btns-categories mt-1 mb-3">
+                    <div class="position-btns-categories mt-1 mb-3 m-2">
                         <div v-for="(category, index) in categories" >
                             <recipe-category-button :category="category.name"
                                 v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>

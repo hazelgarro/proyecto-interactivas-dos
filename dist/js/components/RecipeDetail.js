@@ -29,8 +29,6 @@ app.component('recipe-detail', {
             //console.log(params);
             const urlParams = new URLSearchParams(params);
             const id = urlParams.get("id");
-            //console.log("este es el id" +id);
-
             this.getDetails(id);
        
     },
@@ -48,10 +46,10 @@ app.component('recipe-detail', {
                         
                         console.log(response);
 
-                        this.id = detailedRecipe.idMeal; //datos del api
-                        this.image = detailedRecipe.strMealThumb;//datos del api
-                        this.title = detailedRecipe.strMeal;//datos del api
-                        this.category = detailedRecipe.strCategory;//datos del api
+                        this.id = detailedRecipe.idMeal; 
+                        this.image = detailedRecipe.strMealThumb;
+                        this.title = detailedRecipe.strMeal;
+                        this.category = detailedRecipe.strCategory;
                         this.time = "20 mins";
                         this.difficult = "Easy";
                         this.likes = 2;
@@ -69,7 +67,10 @@ app.component('recipe-detail', {
                 .catch(
                     error => console.log(error)
                 );
-        }
+        },
+        onClickRecipeLike(){
+            this.$emit('recipelike', this.id);
+    },
     },
     template:
         /* html */
@@ -79,12 +80,12 @@ app.component('recipe-detail', {
             <div class="card-img-overlay">
                 <div class="ajust-card-big">
                     <p class="align-content-center"><span class="badge-orange-big hover-grow">{{tag}}</span></p>
-                    <button class="btn-circular hover-grow"><a type="button" href=""><span
+                    <button class="btn-circular hover-grow" v-on:click="onClickRecipeLike(id)"><span
                                 class="img-fluid mx-auto mb-2" alt="favorite icon"><img
                                 v-bind:src="icon"></span>
                             <span
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{likes}}
-                            </span></a></button>
+                            </span></button>
                 </div>
             </div>
         </div>
