@@ -1,25 +1,22 @@
 //Componente, menu de navegacion para el usuario
-app.component('navbar-menu',{
-
-   /* data() {
-        return {
-          inputValue: '',
-          keyword: '',
-        };
-    },
-    props: {
-        keyword: "",
-    },*/
-  
+app.component('navbar-menu', {
+   
     data() {
         return {
-          keyword: '',
-          listRecipes: [] ,
-        }
-      },
+            inputValue: '',
+            keyword: '',
+        };
+    },
+
+    // data() {
+    //     return {
+    //         keyword: '',
+    //         listRecipes: [],
+    //     }
+    // },
     methods: {
-        onClickSearch(keyword){
-            axios({
+        onClickSearch(keyword) {
+            /*axios({
                 method: 'get',
                 url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`
               })
@@ -29,14 +26,17 @@ app.component('navbar-menu',{
                 console.log(this.listRecipes);
               })
               .catch(error => console.log(error));
-            }
-            /*this.keyword = this.inputValue;
-            this.$emit('searchRecipes', this.keyword);
-            console.log(this.keyword);*/
-        },
-    template: 
-    /* html */
-    `<nav id="navbar-main" class="navbar navbar-expand-lg">
+            }*/
+            this.keyword = this.inputValue;
+             this.$emit('searchRecipes', this.keyword);
+    
+        
+           // console.log(this.keyword);
+        }
+    },
+    template:
+        /* html */
+        `<nav id="navbar-main" class="navbar navbar-expand-lg">
     <a class="navbar-brand color-header hover-grow" href="index.html">
         <img src="./images/imgs/icons/Color=White.svg"
             class="position-logo size-img-sm img-fluid d-inline-block align-text-middle" alt="logo"></a>
@@ -53,8 +53,8 @@ app.component('navbar-menu',{
         </ul>
         
         <div class="row box-navbar">
-            <form class=" col d-flex center" action="search.html" method="get" role="search" @submit.prevent="onClickSearch(keyword)">
-                <input class="form-control me-2 input-search" type="text" v-model="keyword" name="keyword"
+            <form class=" col d-flex center" action="search.html" method="get" role="search">
+                <input class="form-control me-2 input-search" type="text" v-model="inputValue" name="keyword"
                     placeholder="Search something..." aria-label="Search">
                 <button class="btn-search" type="submit" v-on:click="onClickSearch(keyword)"><img src="./images/imgs/icons/search.svg"
                         alt="search icon"></button>
