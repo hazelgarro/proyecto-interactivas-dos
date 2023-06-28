@@ -1,7 +1,10 @@
 app.component('recipe-category-button',{
     props:{
-        category:{
+        namecategory:{
             type: String,
+        },
+        category:{
+            type: Number,
         }
     },
     methods: {
@@ -12,5 +15,5 @@ app.component('recipe-category-button',{
     },
     template: 
     /* html */
-    `<button class="btn-category" v-on:click="onClickCategoryButton">{{ category }}</button>`
+    `<button class="btn-category" v-on:click="onClickCategoryButton">{{ namecategory }}</button>`
 })

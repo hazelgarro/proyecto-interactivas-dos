@@ -42,7 +42,7 @@
                 <section class="row mt-2 mb-2 gap-3 center">
                     <div class="position-btns-categories mt-1 mb-3 m-2">
                         <div v-for="(category, index) in categories" >
-                            <recipe-category-button :category="category.name"
+                            <recipe-category-button :namecategory="category.name" :category="category.id"
                                 v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
                         </div>
                     </div>

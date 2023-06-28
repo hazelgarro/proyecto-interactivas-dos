@@ -60,7 +60,7 @@
                     <h2 class="mb-4">Top 10 recipes</h2>
                     <div class="justify-container">
                         <div class="row">
-                            <div class="col-lg-6 mb-4" v-for="(recipe, index) in recipes.slice(0, 4)">
+                            <div class="col-lg-6 mb-4" v-for="(recipe, index) in top10Recipes.slice(0, 4)">
                                 <card-horizontal :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                                     :title="recipe.title" :difficult="recipe.difficult" :type="recipe.type" :occasion="recipe.occasion"
                                     :description="recipe.description" :id="recipe.id"

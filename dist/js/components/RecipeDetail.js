@@ -36,31 +36,35 @@ app.component('recipe-detail', {
         getDetails(id){
             axios({
                 method: 'get',
-                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+                url: "http://localhost/prueba/public/api/recipes/recipe/" + id
 
             })
                 .then(
                     (response) => {
 
-                        let detailedRecipe = response.data.meals[0];
+                        let detailedRecipe = response.data[0];
+                        let listIngredients = response.data[1];
                         
-                        console.log(response);
+                        console.log(listIngredients);
 
-                        this.id = detailedRecipe.idMeal; 
-                        this.image = detailedRecipe.strMealThumb;
-                        this.title = detailedRecipe.strMeal;
-                        this.category = detailedRecipe.strCategory;
-                        this.time = "20 mins";
-                        this.difficult = "Easy";
-                        this.likes = 2;
-                        this.description = detailedRecipe.strInstructions;
-                        this.portions = "3";
-                        this.type = "Veg";
-                        this.occasion = "All";
-                        this.tag = detailedRecipe.strTags;
-                        this.preparation = detailedRecipe.strInstructions;
-                        this.ingredients = detailedRecipe.strIngredient1;
+                        this.id = detailedRecipe[0].id; 
+                        this.image = "http://localhost/prueba/public/storage/imgs/"+detailedRecipe[0].image;
+                        this.title = detailedRecipe[0].name;
+                        this.category = detailedRecipe[0].category;
+                        this.time = detailedRecipe[0].total_time+" mins";
+                        this.difficult = detailedRecipe[0].level;
+                        this.likes = detailedRecipe[0].likes;
+                        this.description = detailedRecipe[0].description;
+                        this.portions = detailedRecipe[0].portions;
+                        this.type = detailedRecipe[0].category;
+                        this.occasion = detailedRecipe[0].occasion;
+                        this.tag = "Yummy";
+                        this.preparation = detailedRecipe[0].preparation_instructions;
 
+                        listIngredients.forEach(ingredient => {
+                            console.log(ingredient.description);
+                            this.ingredients += ingredient.amount + " "+ ingredient.measurement_unit +" "+ ingredient.description +"\n" ;
+                        });
 
                     }
                 )

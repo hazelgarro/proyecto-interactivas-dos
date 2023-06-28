@@ -4,23 +4,24 @@ const app = Vue.createApp({ //main application vue app
             recipes: [],
             categories: [],
             filledRecipe: {},
+            top10Recipes: [],
         }
     },
     mounted: function () {
         axios({
             method: 'get',
-            url: "https://www.themealdb.com/api/json/v1/1/categories.php"
+            url: "http://localhost/prueba/public/api/recipes/categories"
 
         })
             .then(
                 (response) => {
-                    let items = response.data.categories;
+                    let items = response.data;
 
                     // console.log(items);
                     items.forEach((element) => {
                         let category = {};
-                        category.id = element.idCategory;//datos del api
-                        category.name = element.strCategory,//datos del api
+                        category.id = element.id;//datos del api
+                        category.name = element.category,//datos del api
                             this.categories.push(category);
 
                     });
@@ -30,41 +31,102 @@ const app = Vue.createApp({ //main application vue app
                 error => console.log(error)
             );
 
+            //TOP 10
+            axios({
+                method: 'get',
+                url: "http://localhost/prueba/public/api/recipes/top10"
+    
+            })
+                .then(
+                    (response) => {
+                        let items = response.data;
+    
+                        items.forEach((element) => {
+    
+                            axios({
+                                method: 'get',
+                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id// + element.idMeal punto de acceso
+                            })
+                                .then(
+                                    (responseDetails) => {
+                                        this.recipeDetail = responseDetails.data[0];
+                                        this.recipeIngredients = responseDetails.data[1];
+    
+                                        //for(let i=0; i<recipeIngredients.length; i++) {
+                                        // this.listIngredients =+ recipeIngredients[i];
+                                        //}
+    
+                                        this.top10Recipes.push({
+                                            id: element.id, //datos del api
+                                            image: "http://localhost/prueba/public/storage/imgs/" + element.image,//datos del api
+                                            title: element.name,//datos del api
+                                            category: element.category,
+                                            time: this.recipeDetail[0].total_time + " min",
+                                            difficult: element.level,
+                                            likes: element.likes,
+                                            description: element.description,
+                                            portion: this.recipeDetail.portions,
+                                            type: element.category,
+                                            occasion: element.occasion,
+                                            tag: "",
+                                            preparation: this.recipeDetail.preparation_instructions,
+                                            ingredients: "", //this.listIngredients
+                                        })
+    
+                                    }
+    
+                                )
+                                .catch(
+                                    error => console.log(error)
+                                );
+                        });
+    
+    
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+
         axios({
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef' //categoria que carga por default
+            url: 'http://localhost/prueba/public/api/recipes/filterby/category/1' //categoria que carga por default Breakfast
         })
             .then(
                 (response) => {
-                    //   console.log(response.data.meals);
-                    let items = response.data.meals;
-
+                    let items = response.data;
 
                     items.forEach((element) => {
 
                         axios({
-                            method: 'get', 
-                            url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
+                            method: 'get',
+                            url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id// + element.idMeal punto de acceso
                         })
                             .then(
-                                (responseRec) => {
-                                    this.filledRecipe = responseRec.data.meals;
+                                (responseDetails) => {
+                                    this.recipeDetail = responseDetails.data[0];
+                                    this.recipeIngredients = responseDetails.data[1];
+                                    let listIngredients;
+
+                                    //for(let i=0; i<recipeIngredients.length; i++) {
+                                    // this.listIngredients =+ recipeIngredients[i];
+                                    //}
 
                                     this.recipes.push({
-                                        id: element.idMeal, //datos del api
-                                        image: element.strMealThumb,//datos del api
-                                        title: element.strMeal,//datos del api
-                                        category: "Beef",//datos del api
-                                        time: "20 mins",
-                                        difficult: "Easy",
-                                        likes: 2,
-                                        description: this.filledRecipe[0].strInstructions,
-                                        portion: "3",
+                                        id: element.id, //datos del api
+                                        image: "http://localhost/prueba/public/storage/imgs/" + element.image,//datos del api
+                                        title: element.name,//datos del api
+                                        category: element.category,
+                                        time: this.recipeDetail[0].total_time + " min",
+                                        difficult: element.level,
+                                        likes: element.likes,
+                                        description: element.description,
+                                        portion: this.recipeDetail.portions,
                                         type: "Veg",
-                                        occasion: "All",
-                                        tag: this.filledRecipe[0].strTags,
-                                        preparation: this.filledRecipe[0].strInstructions,
-                                        ingredients: this.filledRecipe[0].strIngredient1,
+                                        occasion: element.occasion,
+                                        tag: "",
+                                        preparation: this.recipeDetail.preparation_instructions,
+                                        ingredients: "", //this.listIngredients
                                     })
 
                                 }
@@ -74,6 +136,8 @@ const app = Vue.createApp({ //main application vue app
                                 error => console.log(error)
                             );
                     });
+
+
                 }
             )
             .catch(
@@ -83,24 +147,24 @@ const app = Vue.createApp({ //main application vue app
     methods: {
         onClickSelectedCategory(category) {
             axios({
-                method: 'get', 
-                url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category //punto de acceso
+                method: 'get',
+                url: 'http://localhost/prueba/public/api/recipes/filterby/category/' + category // punto de acceso
             })
                 .then(
                     (response) => {
-                        console.log(response.data.meals);
-                        let items = response.data.meals;
+                        console.log(response.data);
+                        let items = response.data;
                         this.recipes = [];
 
                         items.forEach((element) => {
 
                             axios({
                                 method: 'get',
-                                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + element.idMeal //punto de acceso
+                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id //punto de acceso
                             })
                                 .then(
                                     (response) => {
-                                        this.filledRecipe = response.data.meals;
+                                        this.filledRecipe = response.data;
                                         console.log(this.filledRecipe);
                                     }
 
@@ -110,17 +174,17 @@ const app = Vue.createApp({ //main application vue app
                                 );
 
                             this.recipes.push({
-                                id: element.idMeal, 
-                                image: element.strMealThumb,
-                                title: element.strMeal,
-                                category: category,
-                                time: "20 mins",
-                                difficult: "Easy",
-                                likes: 2,
-                                description: this.filledRecipe[0].strInstructions,
-                                portion: "3",
+                                id: element.id,
+                                image: "http://localhost/prueba/public/storage/imgs/" + element.image,
+                                title: element.name,
+                                category: element.category,
+                                time: element.total_time,
+                                difficult: element.level,
+                                likes: element.likes,
+                                description: element.description,
+                                portion: element.portions,
                                 type: "Veg",
-                                occasion: "All",
+                                occasion: element.occasion,
                                 tag: this.filledRecipe[0].strTags,
                                 preparation: this.filledRecipe[0].strInstructions,
                                 ingredients: this.filledRecipe[0].strIngredient1,
@@ -133,7 +197,6 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
         },
-
         onClickRecipeLike: function (id) {
 
             this.recipes.forEach(recipe => {
