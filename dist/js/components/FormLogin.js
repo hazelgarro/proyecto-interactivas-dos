@@ -1,4 +1,5 @@
 //Componente del formulario para ingresar
+
 app.component('form-login', {
     methods: {
         login() {
@@ -13,7 +14,10 @@ app.component('form-login', {
           .then(response => {
             // Solicitud de inicio de sesión exitosa
             // Redirigir al usuario a ../../home.html
+            console.log(response.data);
+            localStorage.setItem("token", response.data.accessToken); 
             window.location.href = 'http://localhost/TheKitchen2.0/dist/index.html';
+            
           })
           .catch(error => {
             // Error en la solicitud de inicio de sesión
@@ -41,7 +45,7 @@ app.component('form-login', {
             <div class="col center-button">
                 <div class="row center">
                     <!-- Agregar el evento 'click' para llamar al método 'loginUser' -->
-                    <a href="#" class="center btn-orange-dark mt-3 hover-grow" @click="login">Log in</a>
+                    <a class="center btn-orange-dark mt-3 hover-grow" @click="login">Log in</a>
                     <!--<button class="center btn-orange-dark mt-3 hover-grow"><a class="header-link" href="index.html" style="text-decoration: none;">Log in</a></button>-->
                 </div>
                 <div class="">

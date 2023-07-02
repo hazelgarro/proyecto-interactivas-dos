@@ -10,6 +10,36 @@ app.component('box-user', {
             default: "default about me"
         },
     },
+    data() {
+        return {
+           
+        }
+    },
+    methods: {
+        logout() {
+            token= localStorage.getItem("token");
+            config = { headers: { Authorization: `Bearer Token  ${token}` }};
+            bodyParameters = {  name: 'Axios POST with Bearer Token' };
+
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba/public/api/users/logout',
+                bodyParameters,
+                config,
+            })
+                .then(
+                    (response) => {
+                        console.log(response)
+                        window.location.href = 'http://localhost/TheKitchen2.0/dist/login.html';
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+      
+
+    },
     template:
         /* html */
         `<div class="container center mt-1 col-md-12 margin-box box-width">
@@ -22,7 +52,7 @@ app.component('box-user', {
                 </div>
                     <div class="row center">
                         <button class="center btn-orange-light btn-width-max mt-3 hover-grow"><a class="header-link" style="color:black" href="edit-profile.html">Edit profile</a></button>
-                        <button class="center btn-orange-dark btn-width-max mt-3 hover-grow">Log Out</button>
+                        <button class="center btn-orange-dark btn-width-max mt-3 hover-grow" @click="logout()">Log Out</button>
                     </div>
             </div>
         </div>`

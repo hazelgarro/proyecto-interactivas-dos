@@ -210,6 +210,71 @@ const app = Vue.createApp({ //main application vue app
 
 
         },
+        onClickLevel: function (difficult) {
+            levels[
+                {id: 1, level: "Easy Recipes"},
+                {id: 2, level: "Intermediate Recipes"},
+                {id: 3, level: "Advanced Recipes"}
+            ]
+
+            this.levels.forEach(level => {
+                let id = "";
+                if(level.level == difficult){
+                    this.id = level.id;
+                }
+            })
+
+            axios({
+                method: 'get',
+                url: "http://localhost/prueba/public/api/recipes/filterby/level/"+this.id
+    
+            })
+                .then(
+                    (response) => {
+                        let items = response.data;
+                        this.recipes = [];
+
+                        items.forEach((element) => {
+
+                            axios({
+                                method: 'get',
+                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id //punto de acceso
+                            })
+                                .then(
+                                    (response) => {
+                                        this.filledRecipe = response.data;
+                                        console.log(this.filledRecipe);
+                                    }
+
+                                )
+                                .catch(
+                                    error => console.log(error)
+                                );
+
+                            this.recipes.push({
+                                id: element.id,
+                                image: "http://localhost/prueba/public/storage/imgs/" + element.image,
+                                title: element.name,
+                                category: element.category,
+                                time: element.total_time,
+                                difficult: element.level,
+                                likes: element.likes,
+                                description: element.description,
+                                portion: element.portions,
+                                type: "Veg",
+                                occasion: element.occasion,
+                                tag: this.filledRecipe[0].strTags,
+                                preparation: this.filledRecipe[0].strInstructions,
+                                ingredients: this.filledRecipe[0].strIngredient1,
+                            })
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+
+        }
 
     }
 })

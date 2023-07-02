@@ -8,6 +8,7 @@ app.component('results-search', {
         return {
             resultsRecipes: [],
             keyword: "",
+            recipes:[],
         }
     },
     mounted() {
@@ -20,39 +21,35 @@ app.component('results-search', {
             this.getResults();
     },
     methods: {
-      
         getResults() {
             axios({
                 method: 'get',
-                url: "https://www.themealdb.com/api/json/v1/1/search.php?s=" + this.keyword
+                url: "http://localhost/prueba/public/api/recipes/searchbyname/" + this.keyword
 
             })
                 .then(
                     (response) => {
+                        let items = response.data;
+                        this.resultsRecipes = [];
 
-                        let resultsRecipes = response.data.meals;
-
-                        console.log(resultsRecipes);
-
-                        resultsRecipes.forEach((element) => {
+                        items.forEach((element) => {
 
                             this.resultsRecipes.push({
-                                id: element.idMeal, 
-                                image: element.strMealThumb,
-                                title: element.strMeal,
-                                category: "Beef",
-                                time: "20 mins",
-                                difficult: "Easy",
-                                likes: 2,
-                                description: element.strInstructions,
-                                portion: "3",
+                                id: element.id,
+                                image: "http://localhost/prueba/public/storage/imgs/" + element.image,
+                                title: element.name,
+                                category: element.category,
+                                time: element.total_time,
+                                difficult: element.level,
+                                likes: element.likes,
+                                description: element.description,
+                                portion: element.portions,
                                 type: "Veg",
-                                occasion: "All",
-                                tag: element.strTags,
-                                preparation: element.strInstructions,
-                                ingredients: element.strIngredient1,
+                                occasion: element.occasion,
                             })
                         });
+
+                        console.log(this.resultsRecipes);
                     }
                 )
                 .catch(
