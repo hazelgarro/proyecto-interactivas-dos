@@ -4,8 +4,8 @@
   vertical-align: middle;
   -webkit-transform: perspective(0.063rem) translateZ(0);
   transform: perspective(0.063rem) translateZ(0);
-  -webkit-box-shadow: 0 0 0.063rem hsla(0deg, 0%, 0%, 0);
-          box-shadow: 0 0 0.063rem hsla(0deg, 0%, 0%, 0);
+  -webkit-box-shadow: 0 0 0.063rem hsla(0, 0%, 0%, 0);
+          box-shadow: 0 0 0.063rem hsla(0, 0%, 0%, 0);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
@@ -50,8 +50,8 @@
 
 hr {
   height: 0.175rem;
-  border-color: hsl(22deg, 100%, 52%);
-  background-color: hsl(22deg, 100%, 52%);
+  border-color: hsl(22, 100%, 52%);
+  background-color: hsl(22, 100%, 52%);
   width: 98%;
 }
 
@@ -67,8 +67,8 @@ body {
 .text-question {
   font-family: 400;
   font-weight: 1.25rem;
-  font-size: hsl(223deg, 1%, 47%);
-  color: hsl(0deg, 0%, 14%);
+  font-size: hsl(223, 1%, 47%);
+  color: hsl(0, 0%, 14%);
   text-decoration: underline;
   opacity: 0.8;
 }
@@ -76,65 +76,65 @@ body {
 .text-orange {
   font-family: 400;
   font-weight: 1.25rem;
-  font-size: hsl(22deg, 100%, 52%);
-  color: hsl(0deg, 0%, 14%);
-  color: hsl(22deg, 100%, 52%);
+  font-size: hsl(22, 100%, 52%);
+  color: hsl(0, 0%, 14%);
+  color: hsl(22, 100%, 52%);
 }
 
 .text-orange:hover {
-  color: hsl(0deg, 0%, 14%) !important;
+  color: hsl(0, 0%, 14%) !important;
   font-weight: 500;
 }
 
 .text-forms {
   font-family: 500;
   font-weight: 1.25rem;
-  font-size: hsl(223deg, 1%, 47%);
-  color: hsl(0deg, 0%, 14%);
+  font-size: hsl(223, 1%, 47%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-med {
   font-family: 500;
   font-weight: 1.25rem;
   font-size: 1.25rem;
-  color: hsl(0deg, 0%, 14%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-big {
   font-family: 700;
   font-weight: 5rem;
-  font-size: hsl(0deg, 0%, 100%) !important;
-  color: hsl(0deg, 0%, 14%);
-  color: hsl(0deg, 0%, 14%);
+  font-size: hsl(0, 0%, 100%) !important;
+  color: hsl(0, 0%, 14%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-big-orange {
   font-family: 700;
   font-weight: 5rem;
-  font-size: hsl(0deg, 0%, 100%) !important;
-  color: hsl(0deg, 0%, 14%);
-  color: hsl(22deg, 100%, 52%);
+  font-size: hsl(0, 0%, 100%) !important;
+  color: hsl(0, 0%, 14%);
+  color: hsl(22, 100%, 52%);
 }
 
 .text-nevbar {
   font-family: 500;
   font-weight: 1.25rem;
-  font-size: hsl(0deg, 0%, 100%);
-  color: hsl(0deg, 0%, 14%);
+  font-size: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-cards-categories {
   font-family: 500;
   font-weight: 1rem;
   font-size: 1.25rem;
-  color: hsl(0deg, 0%, 14%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-title-recipe {
   font-family: 500;
   font-weight: 1.25rem;
-  font-size: hsl(0deg, 0%, 14%);
-  color: hsl(0deg, 0%, 14%);
+  font-size: hsl(0, 0%, 14%);
+  color: hsl(0, 0%, 14%);
   text-decoration: none !important;
 }
 
@@ -142,14 +142,14 @@ body {
   font-family: 1rem;
   font-weight: 400;
   font-size: 1.25rem;
-  color: hsl(0deg, 0%, 14%);
+  color: hsl(0, 0%, 14%);
 }
 
 .text-total-top {
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   font-size: 1.25rem;
-  color: hsl(22deg, 100%, 52%);
+  color: hsl(22, 100%, 52%);
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
@@ -158,47 +158,47 @@ body {
   }
 }
 .badge-orange {
-  color: hsl(0deg, 0%, 100%);
-  background-color: hsl(22deg, 100%, 52%);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(22, 100%, 52%);
   border-radius: 0.12rem;
   padding: 0.12rem !important;
 }
 
 .badge-orange:hover {
-  color: hsl(146deg, 78%, 52%);
+  color: hsl(146, 78%, 52%);
 }
 
 .badge-green {
-  color: hsl(0deg, 0%, 14%);
-  background-color: hsl(146deg, 78%, 52%);
+  color: hsl(0, 0%, 14%);
+  background-color: hsl(146, 78%, 52%);
   border-radius: 0.12rem;
   padding: 0.12rem !important;
 }
 
 .badge-green:hover {
-  color: hsl(22deg, 100%, 52%);
+  color: hsl(22, 100%, 52%);
 }
 
 .badge-yellow {
-  color: hsl(0deg, 0%, 14%);
-  background-color: hsl(58deg, 100%, 69%);
+  color: hsl(0, 0%, 14%);
+  background-color: hsl(58, 100%, 69%);
   border-radius: 0.12rem;
   padding: 0.12rem !important;
 }
 
 .badge-yellow:hover {
-  color: hsl(0deg, 100%, 64%);
+  color: hsl(0, 100%, 64%);
 }
 
 .badge-red {
-  color: hsl(0deg, 0%, 100%);
-  background-color: hsl(0deg, 100%, 64%);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 100%, 64%);
   border-radius: 0.12rem;
   padding: 0.12rem !important;
 }
 
 .badge-red:hover {
-  color: hsl(58deg, 100%, 69%);
+  color: hsl(58, 100%, 69%);
 }
 
 .badge-orange-big {
@@ -219,7 +219,7 @@ body {
   height: 1.75rem;
   left: 1rem;
   top: 1rem;
-  background: hsl(22deg, 100%, 52%);
+  background: hsl(22, 100%, 52%);
   border-radius: 0.12rem;
 }
 
@@ -238,34 +238,34 @@ body {
           align-items: center;
   padding: 1.5rem 1rem;
   gap: 1rem;
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
   border-radius: 0.75rem;
 }
 
 .box-signup {
   border-radius: 0.75rem;
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
   width: 31rem;
   height: 35rem;
 }
 @media only screen and (max-width: 480px) {
   .box-signup {
     border-radius: 0.75rem;
-    background: hsl(0deg, 0%, 100%);
+    background: hsl(0, 0%, 100%);
     max-width: 21.5rem;
   }
 }
 @media only screen and (max-width: 770px) {
   .box-signup {
     border-radius: 0.75rem;
-    background: hsl(0deg, 0%, 100%);
+    background: hsl(0, 0%, 100%);
     max-width: 21.5rem;
   }
 }
 
 .box-home {
   width: 14.5rem;
-  border: 0.063rem solid hsl(0deg, 0%, 85%);
+  border: 0.063rem solid hsl(0, 0%, 85%);
   border-radius: 0.5rem;
 }
 @media only screen and (max-width: 770px) {
@@ -274,7 +274,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     width: 90%;
-    border: 0.063rem solid hsl(0deg, 0%, 85%);
+    border: 0.063rem solid hsl(0, 0%, 85%);
     border-radius: 0.5rem;
   }
 }
@@ -295,7 +295,7 @@ body {
   position: absolute;
   width: 31rem;
   height: 14.75rem;
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
   border-radius: 0.75rem;
 }
 
@@ -315,7 +315,7 @@ body {
   position: absolute;
   width: 31rem;
   height: 12.4rem;
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
   border-radius: 0.75rem;
 }
 
@@ -335,7 +335,7 @@ body {
   position: absolute;
   width: 31rem;
   height: 45rem;
-  background: hsl(29deg, 100%, 80%);
+  background: hsl(29, 100%, 80%);
   border-radius: 0.75rem;
 }
 
@@ -360,9 +360,9 @@ body {
   height: 2rem;
   left: 1.5rem;
   top: 0rem;
-  background: hsl(22deg, 100%, 52%);
+  background: hsl(22, 100%, 52%);
   border-radius: 0rem 0rem 0.25rem 0.25rem;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 
 @media only screen and (max-width: 770px) {
@@ -394,8 +394,8 @@ body {
 }
 .btn-orange-dark {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 14%);
+  background-color: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 14%);
   border: none;
   border-radius: 0.5rem;
   width: 80%;
@@ -406,13 +406,13 @@ body {
   font-weight: 500;
   -webkit-transition: all 1s;
   transition: all 1s;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 
 .btn-orange-light {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 88%);
-  color: hsl(22deg, 100%, 52%);
+  background-color: hsl(29, 100%, 88%);
+  color: hsl(22, 100%, 52%);
   border: none;
   border-radius: 0.5rem;
   width: 80%;
@@ -421,16 +421,16 @@ body {
 
 .btn-orange-light:hover {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 88%);
-  color: hsl(0deg, 0%, 0%);
+  background-color: hsl(29, 100%, 88%);
+  color: hsl(0, 0%, 0%);
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
 .btn-category {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 14%);
+  background-color: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 14%);
   border: none;
   border-radius: 0.5rem;
   width: 100%;
@@ -442,8 +442,8 @@ body {
 
 .btn-category:hover {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 88%);
-  color: hsl(22deg, 100%, 52%);
+  background-color: hsl(29, 100%, 88%);
+  color: hsl(22, 100%, 52%);
 }
 
 .btn-width-max {
@@ -455,7 +455,7 @@ body {
   height: 2rem;
   border-radius: 100%;
   border: none;
-  background: hsl(22deg, 100%, 52%);
+  background: hsl(22, 100%, 52%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -471,8 +471,8 @@ body {
 
 .btn-item-list {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -496,8 +496,8 @@ body {
 
 .btn-admin-orange {
   text-decoration: none;
-  background-color: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
   border: none;
   -webkit-box-pack: center;
@@ -511,15 +511,15 @@ body {
 }
 
 .btn-admin-orange:hover {
-  background-color: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   font-weight: 500;
 }
 
 .btn-admin-red {
   text-decoration: none;
-  background-color: hsl(0deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
   border: none;
   -webkit-box-pack: center;
@@ -533,22 +533,22 @@ body {
 }
 
 .btn-admin-red:hover {
-  background-color: hsl(0deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   font-weight: 500;
 }
 
 .btn-search {
-  background: hsl(29deg, 100%, 88%);
-  border: 1px solid hsl(22deg, 100%, 52%);
+  background: hsl(29, 100%, 88%);
+  border: 1px solid hsl(22, 100%, 52%);
   border-radius: 0.5rem;
   width: 3rem;
   height: 2.5rem;
 }
 
 .btn-search:hover {
-  background: hsl(0deg, 0%, 100%);
-  border: 1px solid hsl(22deg, 100%, 52%);
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(22, 100%, 52%);
   border-radius: 0.5rem;
 }
 
@@ -557,7 +557,7 @@ body {
 }
 
 .input-icon {
-  color: hsla(0deg, 0%, 0%, 0);
+  color: hsla(0, 0%, 0%, 0);
   position: absolute;
   width: 1.25rem;
   height: 1.25rem;
@@ -594,26 +594,26 @@ body {
   gap: 0.5rem;
   width: 15.5rem;
   height: 2.5rem;
-  background: hsl(29deg, 100%, 88%);
-  border: 0.063rem solid hsl(22deg, 100%, 52%);
+  background: hsl(29, 100%, 88%);
+  border: 0.063rem solid hsl(22, 100%, 52%);
   border-radius: 0.5rem;
-  color: hsl(29deg, 100%, 64%);
+  color: hsl(29, 100%, 64%);
 }
 
 .input-search:hover {
-  -webkit-box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22deg, 100%, 52%);
-          box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22deg, 100%, 52%);
-  border: 0.063rem solid hsl(22deg, 100%, 52%);
-  outline-color: hsl(22deg, 100%, 52%);
+  -webkit-box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22, 100%, 52%);
+          box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22, 100%, 52%);
+  border: 0.063rem solid hsl(22, 100%, 52%);
+  outline-color: hsl(22, 100%, 52%);
 }
 
 .input-color:hover {
   width: 100%;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22deg, 100%, 52%);
-          box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22deg, 100%, 52%);
-  border: 0.063rem solid hsl(22deg, 100%, 52%);
-  outline-color: hsl(22deg, 100%, 52%);
+  -webkit-box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22, 100%, 52%);
+          box-shadow: 0.015rem 0.015rem 0.015rem 0.015rem hsl(22, 100%, 52%);
+  border: 0.063rem solid hsl(22, 100%, 52%);
+  outline-color: hsl(22, 100%, 52%);
 }
 
 .password-icon {
@@ -636,10 +636,10 @@ body {
 }
 
 .line-deco {
-  border-top: 0.1rem solid hsl(0deg, 0%, 0%);
+  border-top: 0.1rem solid hsl(0, 0%, 0%);
   display: block;
   max-width: 66%;
-  border-color: hsl(223deg, 5%, 70%);
+  border-color: hsl(223, 5%, 70%);
 }
 
 .size-img {
@@ -800,7 +800,7 @@ body {
 }
 
 .border-photo-card {
-  border: 0.12rem solid hsl(223deg, 5%, 70%);
+  border: 0.12rem solid hsl(223, 5%, 70%);
   border-radius: 0.75rem 0rem 0rem 0.75rem;
 }
 
@@ -856,7 +856,7 @@ body {
   gap: 0.25rem;
   width: 5.6rem;
   height: 1.5rem;
-  background: hsl(29deg, 100%, 88%);
+  background: hsl(29, 100%, 88%);
   border-radius: 0.25rem;
   -webkit-box-flex: 0;
       -ms-flex: none;
@@ -866,13 +866,13 @@ body {
           order: 0;
   -ms-flex-positive: 0;
       flex-grow: 0;
-  color: hsl(22deg, 100%, 52%);
+  color: hsl(22, 100%, 52%);
   font-weight: 500;
 }
 
 .footer-color {
-  background: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 100%);
   left: 0;
 }
 
@@ -887,7 +887,7 @@ body {
 }
 
 .header-link {
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   text-decoration: none;
   -webkit-transition: all 2s;
   transition: all 2s;
@@ -895,7 +895,7 @@ body {
 
 .header-link:hover {
   font-weight: 500;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   -webkit-transition: all 2s;
   transition: all 2s;
 }
@@ -921,20 +921,20 @@ body {
   height: 4.25rem;
   left: 0rem;
   top: 0rem;
-  background: hsl(29deg, 100%, 64%);
-  -webkit-box-shadow: 0rem 0.25rem 0.5rem hsla(0deg, 0%, 0%, 0.251);
-          box-shadow: 0rem 0.25rem 0.5rem hsla(0deg, 0%, 0%, 0.251);
+  background: hsl(29, 100%, 64%);
+  -webkit-box-shadow: 0rem 0.25rem 0.5rem hsla(0, 0%, 0%, 0.251);
+          box-shadow: 0rem 0.25rem 0.5rem hsla(0, 0%, 0%, 0.251);
 }
 
 .navbar-color {
-  background: hsl(29deg, 100%, 64%);
-  color: hsl(0deg, 0%, 100%);
+  background: hsl(29, 100%, 64%);
+  color: hsl(0, 0%, 100%);
 }
 
 /*Submenu admin*/
 .submenu {
   position: absolute;
-  background-color: hsl(29deg, 100%, 64%);
+  background-color: hsl(29, 100%, 64%);
   height: 7rem;
   width: 140%;
   visibility: hidden;
@@ -947,7 +947,7 @@ body {
 .submenu li a {
   display: block;
   padding: 0.2rem;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   text-decoration: none;
   list-style: none;
   -webkit-box-pack: center;
@@ -1110,8 +1110,8 @@ body {
   }
 }
 .background-responsive {
-  background-color: hsl(29deg, 100%, 80%);
-  color: hsl(0deg, 0%, 14%);
+  background-color: hsl(29, 100%, 80%);
+  color: hsl(0, 0%, 14%);
   visibility: hidden;
 }
 @media only screen and (max-width: 480px) {
