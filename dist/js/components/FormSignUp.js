@@ -4,7 +4,7 @@ app.component('form-sign-up', {
         registerUser() {
             // Obtener los valores de los campos de entrada
             const name = document.getElementById('name').value;
-            const lastName = document.getElementById('lastname').value;
+            const last_name = document.getElementById('lastname').value;
             const country = document.getElementById('country').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
@@ -12,7 +12,7 @@ app.component('form-sign-up', {
             // Realizar la solicitud POST al endpoint de registro
             axios.post('http://localhost/prueba/public/api/users/register', {
                 name: name,
-                last_name: lastName,
+                last_name: last_name,
                 country: country,
                 email: email,
                 password: password
@@ -60,7 +60,7 @@ app.component('form-sign-up', {
 
             <div class="col center-button">
                 <div class="row center">
-                    <a href="./login.html" class="center btn-orange-light mt-4 hover-grow header-link" @click="registerUser" style="text-decoration: none; color:black">Sign up</a>
+                    <a href="#" class="center btn-orange-light mt-4 hover-grow header-link" @click="registerUser" style="text-decoration: none; color:black">Sign up</a>
                     <!--<button class="center btn-orange-light mt-4 hover-grow" type="submit"><a class="header-link" href="login.html" style="text-decoration: none; color:black">Sign Up</a></button>-->
                 </div>
                 <div class="">
