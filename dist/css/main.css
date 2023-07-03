@@ -552,6 +552,22 @@ body {
   border-radius: 0.5rem;
 }
 
+.btn-save {
+  position: relative;
+  top: -13.7rem;
+  left: 12rem;
+  background: none;
+  border: none;
+}
+
+.btn-save-card-big {
+  position: relative;
+  top: -16.7rem;
+  left: 14rem;
+  background: none;
+  border: none;
+}
+
 .input-wrapper {
   position: relative;
 }

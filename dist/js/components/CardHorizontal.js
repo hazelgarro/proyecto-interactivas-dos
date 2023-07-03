@@ -46,6 +46,9 @@ app.component('card-horizontal', {
         id:{
             type: String,
             default: "1"
+        },
+        imgsave: {
+            type: String,
         }
     },
     methods: {
@@ -54,7 +57,10 @@ app.component('card-horizontal', {
         },
         onClickViewRecipe(){
             this.$emit('recipedetails', this.id);
-        }
+        },
+        onClickSave(){
+            this.$emit('saverecipe', this.id);
+        },
     },
     template:
         /* html */
@@ -63,6 +69,7 @@ app.component('card-horizontal', {
             <div class="col-md-6">
                 <div class="rounded-start box-top-recipes hover-grow">{{tag}}</div>
                 <img class="size-img-big img-fluid" v-bind:src="image" alt="photo food" height="362" width="266">
+                <button class="btn-save-card-big" v-on:click="onClickSave(id)"><img v-bind:src="imgsave"></button>
             </div>
             <div class="col-md-6">
                 <div class="card-body padding-0">

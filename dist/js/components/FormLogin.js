@@ -12,10 +12,11 @@ app.component('form-login', {
         password: password
       })
         .then(response => {
-          // Solicitud de inicio de sesión exitosa
-          // Redirigir al usuario a ../../home.html
-          console.log(response.data);
+          
+        
           localStorage.setItem("token", response.data.accessToken);
+          localStorage.setItem("userData", response.data);
+
           window.location.href = 'http://localhost/TheKitchen2.0/dist/index.html';
 
         })

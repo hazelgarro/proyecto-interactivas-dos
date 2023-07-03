@@ -5,9 +5,13 @@ app.component('box-user', {
             type: String,
             default: "user name"
         },
-        about: {
+        lastname: {
             type: String,
-            default: "default about me"
+            default: "user lastname"
+        },
+        country: {
+            type: String,
+            default: "default country"
         },
     },
     data() {
@@ -18,6 +22,10 @@ app.component('box-user', {
     methods: {
         logout() {
             token= localStorage.getItem("token");
+            this.name = localStorage.getItem("name");
+            this.lastname = localStorage.getItem("lastname");
+            this.country = localStorage.getItem("country");
+            
             /*config = { headers: { Authorization: `Bearer Token  ${token}` }};
             bodyParameters = {  name: 'Axios POST with Bearer Token' };*/
 

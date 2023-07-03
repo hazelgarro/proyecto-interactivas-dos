@@ -5,6 +5,7 @@ const app = Vue.createApp({ //main application vue app
             categories: [],
             filledRecipe: {},
             top10Recipes: [],
+            savedRecipes: [],
         }
     },
     mounted: function () {
@@ -142,6 +143,59 @@ const app = Vue.createApp({ //main application vue app
             .catch(
                 error => console.log(error)
             );
+
+            //get saved recipes
+            axios({
+                method: 'get',
+                url: "http://localhost/prueba/public/api/users/savedrecipes/1"
+    
+            })
+                .then(
+                    (response) => {
+                        let items = response.data;
+                        items.forEach((element) => {
+    
+                            axios({
+                                method: 'get',
+                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id
+                            })
+                                .then(
+                                    (responseDetails) => {
+                                        this.recipeDetail = responseDetails.data[0];
+                                        this.recipeIngredients = responseDetails.data[1];
+    
+                                        //for(let i=0; i<recipeIngredients.length; i++) {
+                                        // this.listIngredients =+ recipeIngredients[i];
+                                        //}
+    
+                                        this.savedRecipes.push({
+                                            id: element.id, //datos del api
+                                            image: "http://localhost/prueba/public/storage/imgs/" + element.image,//datos del api
+                                            title: element.name,//datos del api
+                                            category: element.category,
+                                            time: this.recipeDetail[0].total_time + " min",
+                                            difficult: element.level,
+                                            likes: element.likes,
+                                            description: element.description,
+                                            portion: this.recipeDetail[0].portions,
+                                            type: element.category,
+                                            occasion: element.occasion,
+                                            tag: "",
+                                            preparation: this.recipeDetail.preparation_instructions,
+                                            ingredients: "", 
+                                        })
+                                    }
+    
+                                )
+                                .catch(
+                                    error => console.log(error)
+                                );
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
     },
     methods: {
         onClickSelectedCategory(category) {
@@ -200,14 +254,46 @@ const app = Vue.createApp({ //main application vue app
 
             this.recipes.forEach(recipe => {
                 if (recipe.id == id) {
-                    let actualLikes = recipe.likes;
-                    let likeUpdate = actualLikes + 1;
-                    recipe.likes = likeUpdate;
+
+                    axios({
+                        method: 'get',
+                        url: "http://localhost/prueba/public/api/users/likes/1/"+id
+            
+                    })
+                        .then(
+                            (response) => {
+                                console.log(response);
+                                console.log(recipe.likes);
+                            }
+                        )
+                        .catch(
+                            error => console.log(error)
+                        );
 
                 }
             });
+        },
+        onClickSave: function(id){
+            this.recipes.forEach(recipe => {
+                if (recipe.id == id) {
 
-
+                    axios({
+                        method: 'get',
+                        url: "http://localhost/prueba/public/api/users/saverecipe/1/"+id
+            
+                    })
+                        .then(
+                            (response) => {
+                                console.log(response);
+                                console.log("recipe save successfull");
+                                console.log(this.savedRecipes);
+                            }
+                        )
+                        .catch(
+                            error => console.log(error)
+                        );
+                }
+            });
         },
         onClickLevel: function (difficult) {
             levels[

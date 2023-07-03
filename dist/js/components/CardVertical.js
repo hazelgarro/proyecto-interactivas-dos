@@ -23,6 +23,9 @@ app.component('card-vertical', {
         icon: {
             type: String,
         },
+        imgsave: {
+            type: String,
+        },
         likes: {
             type: Number,
             default: 1
@@ -41,6 +44,9 @@ app.component('card-vertical', {
         },
         onClickLevel(){
             this.$emit('recipeslevel', this.difficult);
+        },
+        onClickSave(){
+            this.$emit('saverecipe', this.id);
         }
     },
     template:
@@ -48,6 +54,7 @@ app.component('card-vertical', {
         `<div class="position-relative box-home col-lg-3 col-md-3 p-0 m-0 mb-4 m-3">
     <img v-bind:src="image" class="img-fluid top-border-photo"
         alt="photo food">
+        <button class="btn-save" v-on:click="onClickSave(id)"><img v-bind:src="imgsave"></button>
     <div class="text-start ms-2 me-2">
         <div class="d-flex justify-content-between">
             <a :href="'recipe-detail.html?id=' + id" style="text-decoration:none" v-on:click="onClickViewRecipe(id)">

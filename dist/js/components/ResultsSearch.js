@@ -68,10 +68,10 @@ app.component('results-search', {
         </div>
         <div  class="cards-lines-two">
             <div v-for="(recipe, index) in resultsRecipes" class="cards-position row mb-5">
-                        <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
+                        <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                             :title="recipe.title" :description="recipe.description" :time="recipe.time"
                             :difficult="recipe.difficult" :id="recipe.id" v-on:recipedetails="onClickRecipeDetails"
-                            v-on:recipelike="onClickRecipeLike"></card-vertical>
+                            v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-vertical>
             </div>
         </div>
         <div v-if="resultsRecipes == ''">

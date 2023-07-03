@@ -49,8 +49,8 @@
 
                         <!--cards verticales-->
                         <div class="cards-position">
-                            <div v-for="(recipe, index) in recipes.slice(0, 8)" class="cards-position">
-                                <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                            <div v-for="(recipe, index) in savedRecipes" class="cards-position">
+                                <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg"
                                     :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
                                     :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id"
                                     v-on:recipedetails="onClickRecipeDetails"

@@ -44,10 +44,10 @@
                 <div>
                     <div class="row justity-mobile">
                         <div class="col-lg-6 mb-4" v-for="(recipe, index) in top10Recipes.slice(0, 10)">
-                            <card-horizontal :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
+                            <card-horizontal :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                                 :title="recipe.title" :difficult="recipe.difficult" :type="recipe.type" :occasion="recipe.occasion"
                                 :description="recipe.description" :id="recipe.id"
-                                :time="recipe.time" :portion="recipe.portion" v-on:recipedetails="onClickRecipeDetails" v-on:recipelike="onClickRecipeLike"></card-horizontal>
+                                :time="recipe.time" :portion="recipe.portion" v-on:recipedetails="onClickRecipeDetails" v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-horizontal>
                         </div>
                     </div>
                 </div>

@@ -47,10 +47,10 @@
                 <!--cards verticales-->
                 <div class="cards-position">
                     <div v-for="(recipe, index) in recipes.slice(0, 12)" class="cards-position">
-                        <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
+                        <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                             :title="recipe.title" :description="recipe.description" :time="recipe.time"
                             :difficult="recipe.difficult" :id="recipe.id" v-on:recipedetails="onClickRecipeDetails"
-                            v-on:recipelike="onClickRecipeLike" v-on:recipeslevel="onClickLevel"></card-vertical>
+                            v-on:recipelike="onClickRecipeLike" v-on:recipeslevel="onClickLevel" v-on:saverecipe="onClickSave"></card-vertical>
                     </div>
                 </div>
                 <!--feed-->
@@ -61,10 +61,10 @@
                     <div class="justify-container">
                         <div class="row">
                             <div class="col-lg-6 mb-4" v-for="(recipe, index) in top10Recipes.slice(0, 4)">
-                                <card-horizontal :image="recipe.image" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
+                                <card-horizontal :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                                     :title="recipe.title" :difficult="recipe.difficult" :type="recipe.type" :occasion="recipe.occasion"
                                     :description="recipe.description" :id="recipe.id"
-                                    :time="recipe.time" :portion="recipe.portion" v-on:recipedetails="onClickRecipeDetails" v-on:recipelike="onClickRecipeLike"></card-horizontal>
+                                    :time="recipe.time" :portion="recipe.portion" v-on:recipedetails="onClickRecipeDetails" v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-horizontal>
                             </div>
                         </div>
                     </div>
@@ -79,11 +79,11 @@
                             <!--inicial card-->
                             <div class="cards-position">
                                 <div v-for="(recipe, index) in recipes.slice(0, 12)" class="cards-position">
-                                    <card-vertical :image="recipe.image" icon="images/imgs/icons/favorite.svg"
+                                    <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg"
                                         :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
                                         :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id"
                                         v-on:recipedetails="onClickRecipeDetails"
-                                        v-on:recipelike="onClickRecipeLike"></card-vertical>
+                                        v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-vertical>
                                 </div>
                             </div>
                         </div>
