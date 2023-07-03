@@ -65,14 +65,13 @@ const app = Vue.createApp({ //main application vue app
                                             difficult: element.level,
                                             likes: element.likes,
                                             description: element.description,
-                                            portion: this.recipeDetail.portions,
+                                            portion: this.recipeDetail[0].portions,
                                             type: element.category,
                                             occasion: element.occasion,
                                             tag: "",
                                             preparation: this.recipeDetail.preparation_instructions,
                                             ingredients: "", //this.listIngredients
                                         })
-    
                                     }
     
                                 )

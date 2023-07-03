@@ -18,18 +18,19 @@ app.component('box-user', {
     methods: {
         logout() {
             token= localStorage.getItem("token");
-            config = { headers: { Authorization: `Bearer Token  ${token}` }};
-            bodyParameters = {  name: 'Axios POST with Bearer Token' };
+            /*config = { headers: { Authorization: `Bearer Token  ${token}` }};
+            bodyParameters = {  name: 'Axios POST with Bearer Token' };*/
 
             axios({
-                method: 'get',
+                method: 'GET',
                 url: 'http://localhost/prueba/public/api/users/logout',
-                bodyParameters,
-                config,
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             })
                 .then(
                     (response) => {
-                        console.log(response)
+                     //  console.log(response.data)
                         window.location.href = 'http://localhost/TheKitchen2.0/dist/login.html';
                     }
                 )

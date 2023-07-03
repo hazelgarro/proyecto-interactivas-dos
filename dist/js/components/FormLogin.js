@@ -1,35 +1,35 @@
 //Componente del formulario para ingresar
 
 app.component('form-login', {
-    methods: {
-        login() {
-          const user = document.getElementById('user').value;
-          const password = document.getElementById('password').value;
-    
-          // Realizar la solicitud de inicio de sesión al API
-          axios.post('http://localhost/prueba/public/api/users/login', {
-            email: user,
-            password: password
-          })
-          .then(response => {
-            // Solicitud de inicio de sesión exitosa
-            // Redirigir al usuario a ../../home.html
-            console.log(response.data);
-            localStorage.setItem("token", response.data.accessToken); 
-            window.location.href = 'http://localhost/TheKitchen2.0/dist/index.html';
-            
-          })
-          .catch(error => {
-            // Error en la solicitud de inicio de sesión
-            console.log(error);
-            // Puedes mostrar un mensaje de error o tomar otras acciones según tus necesidades
-          });
-        }
-      },
+  methods: {
+    login() {
+      const user = document.getElementById('user').value;
+      const password = document.getElementById('password').value;
 
-    template:
-        /* html */
-        `<div class="row container center mt-1 col-md-12 margin-box box-width">
+      // Realizar la solicitud de inicio de sesión al API
+      axios.post('http://localhost/prueba/public/api/users/login', {
+        email: user,
+        password: password
+      })
+        .then(response => {
+          // Solicitud de inicio de sesión exitosa
+          // Redirigir al usuario a ../../home.html
+          console.log(response.data);
+          localStorage.setItem("token", response.data.accessToken);
+          window.location.href = 'http://localhost/TheKitchen2.0/dist/index.html';
+
+        })
+        .catch(error => {
+          // Error en la solicitud de inicio de sesión
+          console.log(error);
+          // Puedes mostrar un mensaje de error o tomar otras acciones según tus necesidades
+        });
+    }
+  },
+
+  template:
+    /* html */
+    `<div class="row container center mt-1 col-md-12 margin-box box-width">
     <div class="row box-login col-md-12 center ">
 
         <form action="login.php" method="post">
@@ -54,6 +54,7 @@ app.component('form-login', {
                 <div class="row center">
                     <button class="center btn-orange-light mt-1 hover-grow"><a class="header-link" href="sign-up.html" style="text-decoration: none; color:black">Sign Up</a></button>
                 </div>
+            </div>
         </form>
     </div>
 </div>`
