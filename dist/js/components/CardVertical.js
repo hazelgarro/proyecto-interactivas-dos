@@ -43,7 +43,10 @@ app.component('card-vertical', {
             this.$emit('recipedetails', this.id);
         },
         onClickLevel(){
-            this.$emit('recipeslevel', this.difficult);
+            //this.$emit('recipeslevel', this.difficult);
+            localStorage.setItem("level", this.difficult);
+            window.location.href = 'http://localhost/TheKitchen2.0/dist/search.html';
+
         },
         onClickSave(){
             this.$emit('saverecipe', this.id);
@@ -60,7 +63,7 @@ app.component('card-vertical', {
             <a :href="'recipe-detail.html?id=' + id" style="text-decoration:none" v-on:click="onClickViewRecipe(id)">
                 <h5 class="mt-2 overflow-title text-title-recipe">{{title}}</h5>
             </a>
-            <h6><a v-on:click="onClickLevel(difficult)" href="search.html"><span class="badge badge-green m-2">{{difficult}}</span></a></h6>
+            <h6><a v-on:click="onClickLevel()"><span class="badge badge-green m-2">{{difficult}}</span></a></h6>
         </div>
         <div>
             <p class="pt-2 overflow recipe-description-space">{{description}}</p>
@@ -72,6 +75,8 @@ app.component('card-vertical', {
                         v-bind:src="icon"></span><span
                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{likes}}</span></button>
         </div>
+
+        <!--:id={{id}}-->
     </div>
 </div>`
 })

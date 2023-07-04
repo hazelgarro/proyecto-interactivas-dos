@@ -562,12 +562,30 @@ body {
 
 .btn-save-card-big {
   position: relative;
-  top: -16.7rem;
-  left: 14rem;
   background: none;
   border: none;
 }
+@media only screen and (min-width: 1024px) {
+  .btn-save-card-big {
+    top: -16.8rem;
+    left: 14rem;
+  }
+}
 
+.btn-save-detailsrecipe {
+  position: relative;
+  background: none;
+  border: none;
+  top: -1.1rem;
+  left: 42rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .btn-save-card-big {
+    top: -7.5rem;
+    left: -3rem;
+  }
+}
 .input-wrapper {
   position: relative;
 }

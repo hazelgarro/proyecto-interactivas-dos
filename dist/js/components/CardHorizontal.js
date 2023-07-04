@@ -61,6 +61,14 @@ app.component('card-horizontal', {
         onClickSave(){
             this.$emit('saverecipe', this.id);
         },
+        onClickLevel(){
+            //this.$emit('recipeslevel', this.difficult);
+            localStorage.setItem("level", this.difficult);
+            localStorage.setItem("category", this.type);
+            localStorage.setItem("occasion", this.occasion);
+            window.location.href = 'http://localhost/TheKitchen2.0/dist/search.html';
+
+        },
     },
     template:
         /* html */
@@ -80,9 +88,9 @@ app.component('card-horizontal', {
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="search.html"><span class="badge badge-orange m-1">{{type}}</span></a>
-                            <a href="search.html"><span class="badge badge-green m-1">{{difficult}}</span></a>
-                            <a href="search.html"><span class="badge badge-yellow m-1">{{occasion}}</span></a>
+                            <a v-on:click="onClickLevel()"><span class="badge badge-orange m-1">{{type}}</span></a>
+                            <a v-on:click="onClickLevel()"><span class="badge badge-green m-1">{{difficult}}</span></a>
+                            <a v-on:click="onClickLevel()"><span class="badge badge-yellow m-1">{{occasion}}</span></a>
                         </div>
                     </div>
                     <p class="card-text  ms-3 recipe-description-space-top10 overflow">{{description}}</p>

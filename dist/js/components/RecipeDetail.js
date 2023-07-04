@@ -3,6 +3,9 @@ app.component('recipe-detail', {
     props: {
         icon:{
             type: String,
+        },
+        imgsave: {
+            type: String,
         }
     },
     data() {
@@ -20,7 +23,7 @@ app.component('recipe-detail', {
             occasion : "",
             tag : "",
             preparation : "",
-            ingredients: ""
+            ingredients: "",
         }
     },
     mounted() {
@@ -45,7 +48,7 @@ app.component('recipe-detail', {
                         let detailedRecipe = response.data[0];
                         let listIngredients = response.data[1];
                         
-                        console.log(listIngredients);
+                        //console.log(listIngredients);
 
                         this.id = detailedRecipe[0].id; 
                         this.image = "http://localhost/prueba/public/storage/imgs/"+detailedRecipe[0].image;
@@ -62,7 +65,7 @@ app.component('recipe-detail', {
                         this.preparation = detailedRecipe[0].preparation_instructions;
 
                         listIngredients.forEach(ingredient => {
-                            console.log(ingredient.description);
+                            //console.log(ingredient.description);
                             this.ingredients += ingredient.amount + " "+ ingredient.measurement_unit +" "+ ingredient.description +"\n" ;
                         });
 
@@ -73,8 +76,38 @@ app.component('recipe-detail', {
                 );
         },
         onClickRecipeLike(){
-            this.$emit('recipelike', this.id);
-    },
+            
+            axios({
+                method: 'get',
+                url: "http://localhost/prueba/public/api/users/likes/1/"+this.id
+    
+            })
+                .then(
+                    (response) => {
+                        console.log(response);
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+
+        },
+        onClickSave(){
+            axios({
+                method: 'get',
+                url: "http://localhost/prueba/public/api/users/saverecipe/1/"+this.id
+    
+            })
+                .then(
+                    (response) => {
+                        console.log(response);
+                        console.log("recipe save successfull");
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
     },
     template:
         /* html */
@@ -83,6 +116,7 @@ app.component('recipe-detail', {
         <img v-bind:src="image" alt="photo food">
             <div class="card-img-overlay">
                 <div class="ajust-card-big">
+                <button class="btn-save-detailsrecipe" v-on:click="onClickSave(id)"><img v-bind:src="imgsave"></button>
                     <p class="align-content-center"><span class="badge-orange-big hover-grow">{{tag}}</span></p>
                     <button class="btn-circular hover-grow" v-on:click="onClickRecipeLike(id)"><span
                                 class="img-fluid mx-auto mb-2" alt="favorite icon"><img

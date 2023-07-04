@@ -6,6 +6,7 @@ const app = Vue.createApp({ //main application vue app
             filledRecipe: {},
             top10Recipes: [],
             savedRecipes: [],
+            recipesLevel: [],
         }
     },
     mounted: function () {
@@ -264,6 +265,7 @@ const app = Vue.createApp({ //main application vue app
                             (response) => {
                                 console.log(response);
                                 console.log(recipe.likes);
+                                //document.getElementById(id).text = response.data.likes;
                             }
                         )
                         .catch(
@@ -295,7 +297,8 @@ const app = Vue.createApp({ //main application vue app
                 }
             });
         },
-        onClickLevel: function (difficult) {
+        /* onClickLevel: function (difficult) {
+            let id = "";
             levels[
                 {id: 1, level: "Easy Recipes"},
                 {id: 2, level: "Intermediate Recipes"},
@@ -303,7 +306,6 @@ const app = Vue.createApp({ //main application vue app
             ]
 
             this.levels.forEach(level => {
-                let id = "";
                 if(level.level == difficult){
                     this.id = level.id;
                 }
@@ -317,7 +319,7 @@ const app = Vue.createApp({ //main application vue app
                 .then(
                     (response) => {
                         let items = response.data;
-                        this.recipes = [];
+                        this.recipesLevel = [];
 
                         items.forEach((element) => {
 
@@ -336,7 +338,7 @@ const app = Vue.createApp({ //main application vue app
                                     error => console.log(error)
                                 );
 
-                            this.recipes.push({
+                            this.recipesLevel.push({
                                 id: element.id,
                                 image: "http://localhost/prueba/public/storage/imgs/" + element.image,
                                 title: element.name,
@@ -359,8 +361,7 @@ const app = Vue.createApp({ //main application vue app
                     error => console.log(error)
                 );
 
-        }
-
+        } */
     }
 })
 

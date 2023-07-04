@@ -51,7 +51,7 @@
                 <div v-for="(recipe, index) in recipes" class="cards-position">
                     <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg"
                         :likes="recipe.likes" :title="recipe.title" :description="recipe.description"
-                        :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id" v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-vertical>
+                        :time="recipe.time" :difficult="recipe.difficult" :id="recipe.id" v-on:recipeslevel="onClickLevel()" v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave"></card-vertical>
                 </div>
             </div>
             </div>
