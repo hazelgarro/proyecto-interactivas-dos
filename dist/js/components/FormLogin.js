@@ -6,7 +6,7 @@ app.component('form-login', {
       const user = document.getElementById('user').value;
       const password = document.getElementById('password').value;
 
-      // Realizar la solicitud de inicio de sesión al API
+      // Solicitud de inicio de sesión 
       axios.post('http://localhost/prueba/public/api/users/login', {
         email: user,
         password: password
@@ -23,9 +23,9 @@ app.component('form-login', {
 
         })
         .catch(error => {
-          // Error en la solicitud de inicio de sesión
+          
           console.log(error);
-          // Puedes mostrar un mensaje de error o tomar otras acciones según tus necesidades
+          
         });
     }
   },

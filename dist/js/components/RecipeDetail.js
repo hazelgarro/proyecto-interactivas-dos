@@ -129,7 +129,7 @@ app.component('recipe-detail', {
         </div>
         <div class="ajust-card-big">
             <h1 class="mt-4">{{title}}</h1>
-            <p class="text-orange m-2 text-total-top hover-grow"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">200</p>
+            <p class="text-orange m-2 text-total-top hover-grow"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">{{id}}</p>
         </div>
         <div class="col-6">
             <span class="badge badge-orange m-1">{{category}}</span>

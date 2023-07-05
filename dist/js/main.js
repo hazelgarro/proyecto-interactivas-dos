@@ -23,8 +23,8 @@ const app = Vue.createApp({ //main application vue app
                     // console.log(items);
                     items.forEach((element) => {
                         let category = {};
-                        category.id = element.id;//datos del api
-                        category.name = element.category,//datos del api
+                        category.id = element.id;
+                        category.name = element.category,
                             this.categories.push(category);
 
                     });
@@ -54,10 +54,6 @@ const app = Vue.createApp({ //main application vue app
                                     (responseDetails) => {
                                         this.recipeDetail = responseDetails.data[0];
                                         this.recipeIngredients = responseDetails.data[1];
-    
-                                        //for(let i=0; i<recipeIngredients.length; i++) {
-                                        // this.listIngredients =+ recipeIngredients[i];
-                                        //}
     
                                         this.top10Recipes.push({
                                             id: element.id, //datos del api
@@ -102,7 +98,7 @@ const app = Vue.createApp({ //main application vue app
 
                         axios({
                             method: 'get',
-                            url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id// + element.idMeal punto de acceso
+                            url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id
                         })
                             .then(
                                 (responseDetails) => {
@@ -110,14 +106,10 @@ const app = Vue.createApp({ //main application vue app
                                     this.recipeIngredients = responseDetails.data[1];
                                     let listIngredients;
 
-                                    //for(let i=0; i<recipeIngredients.length; i++) {
-                                    // this.listIngredients =+ recipeIngredients[i];
-                                    //}
-
                                     this.recipes.push({
-                                        id: element.id, //datos del api
-                                        image: "http://localhost/prueba/public/storage/imgs/" + element.image,//datos del api
-                                        title: element.name,//datos del api
+                                        id: element.id, 
+                                        image: "http://localhost/prueba/public/storage/imgs/" + element.image,
+                                        title: element.name,
                                         category: element.category,
                                         time: this.recipeDetail[0].total_time + " min",
                                         difficult: element.level,
@@ -128,7 +120,7 @@ const app = Vue.createApp({ //main application vue app
                                         occasion: element.occasion,
                                         tag: "",
                                         preparation: this.recipeDetail.preparation_instructions,
-                                        ingredients: "", //this.listIngredients
+                                        ingredients: "", 
                                     })
 
                                 }
