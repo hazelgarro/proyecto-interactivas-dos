@@ -235,8 +235,12 @@ const app = Vue.createApp({ //main application vue app
                         .then(
                             (response) => {
                                 console.log(response);
-                                console.log(recipe.likes);
-                                //document.getElementById(id).text = response.data.likes;
+                                const updatedLikes = response.data.likes;
+
+                                const recipe = this.recipes.find(recipe => recipe.id == id);
+                                if(recipe){
+                                    recipe.likes = updatedLikes;
+                                }
                             }
                         )
                         .catch(
