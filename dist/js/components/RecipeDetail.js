@@ -108,6 +108,14 @@ app.component('recipe-detail', {
                     error => console.log(error)
                 );
         },
+        onClickLevel(){
+            //this.$emit('recipeslevel', this.difficult);
+            localStorage.setItem("level", this.difficult);
+            localStorage.setItem("category", this.type);
+            localStorage.setItem("occasion", this.occasion);
+            window.location.href = 'http://localhost/TheKitchen2.0/dist/search.html';
+
+        },
     },
     template:
         /* html */
@@ -132,9 +140,9 @@ app.component('recipe-detail', {
             <p class="text-orange m-2 text-total-top hover-grow"><img class="m-2" src="images/imgs/icons/star_rate.svg" alt="">{{id}}</p>
         </div>
         <div class="col-6">
-            <span class="badge badge-orange m-1">{{category}}</span>
-            <span class="badge badge-green m-1">{{difficult}}</span>
-            <span class="badge badge-orange m-1">{{ocassion}}</span>
+            <span v-on:click="onClickLevel()" class="badge badge-orange m-1">{{category}}</span>
+            <span v-on:click="onClickLevel()" class="badge badge-green m-1">{{difficult}}</span>
+            <span v-on:click="onClickLevel()" class="badge badge-orange m-1">{{ocassion}}</span>
         </div>
         <div>
             <h2 class="mt-4">Description</h2>
