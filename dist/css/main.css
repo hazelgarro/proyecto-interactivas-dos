@@ -334,7 +334,7 @@ body {
   gap: 1rem;
   position: absolute;
   width: 31rem;
-  height: 45rem;
+  height: 33rem;
   background: hsl(29, 100%, 80%);
   border-radius: 0.75rem;
 }
@@ -554,7 +554,7 @@ body {
 
 .btn-save {
   position: relative;
-  top: -13.7rem;
+  top: -14.5rem;
   left: 12rem;
   background: none;
   border: none;

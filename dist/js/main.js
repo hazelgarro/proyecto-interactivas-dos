@@ -6,10 +6,11 @@ const app = Vue.createApp({ //main application vue app
             filledRecipe: {},
             top10Recipes: [],
             savedRecipes: [],
-            recipesLevel: [],
+            userId: localStorage.getItem("id"),
         }
     },
     mounted: function () {
+    //categories
         axios({
             method: 'get',
             url: "http://localhost/prueba/public/api/recipes/categories"
@@ -148,50 +149,28 @@ const app = Vue.createApp({ //main application vue app
             //get saved recipes
             axios({
                 method: 'get',
-                url: "http://localhost/prueba/public/api/users/savedrecipes/1"
+                url: "http://localhost/prueba/public/api/users/savedrecipes/"+this.userId
     
             })
                 .then(
                     (response) => {
                         let items = response.data;
                         items.forEach((element) => {
-    
-                            axios({
-                                method: 'get',
-                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id
-                            })
-                                .then(
-                                    (responseDetails) => {
-                                        this.recipeDetail = responseDetails.data[0];
-                                        this.recipeIngredients = responseDetails.data[1];
-    
-                                        //for(let i=0; i<recipeIngredients.length; i++) {
-                                        // this.listIngredients =+ recipeIngredients[i];
-                                        //}
-    
+
                                         this.savedRecipes.push({
                                             id: element.id, //datos del api
                                             image: "http://localhost/prueba/public/storage/imgs/" + element.image,//datos del api
                                             title: element.name,//datos del api
                                             category: element.category,
-                                            time: this.recipeDetail[0].total_time + " min",
+                                            time: 10+" min",
                                             difficult: element.level,
                                             likes: element.likes,
                                             description: element.description,
-                                            portion: this.recipeDetail[0].portions,
+                                            portion: 2,
                                             type: element.category,
-                                            occasion: element.occasion,
-                                            tag: "",
-                                            preparation: this.recipeDetail.preparation_instructions,
-                                            ingredients: "", 
+                                            occasion: element.occasion, 
                                         })
-                                    }
-    
-                                )
-                                .catch(
-                                    error => console.log(error)
-                                );
-                        });
+                                    });
                     }
                 )
                 .catch(
@@ -258,7 +237,7 @@ const app = Vue.createApp({ //main application vue app
 
                     axios({
                         method: 'get',
-                        url: "http://localhost/prueba/public/api/users/likes/1/"+id
+                        url: "http://localhost/prueba/public/api/users/likes/"+this.userId+"/"+id
             
                     })
                         .then(
@@ -281,7 +260,7 @@ const app = Vue.createApp({ //main application vue app
 
                     axios({
                         method: 'get',
-                        url: "http://localhost/prueba/public/api/users/saverecipe/1/"+id
+                        url: "http://localhost/prueba/public/api/users/saverecipe/"+this.userId+"/"+id
             
                     })
                         .then(
@@ -297,71 +276,6 @@ const app = Vue.createApp({ //main application vue app
                 }
             });
         },
-        /* onClickLevel: function (difficult) {
-            let id = "";
-            levels[
-                {id: 1, level: "Easy Recipes"},
-                {id: 2, level: "Intermediate Recipes"},
-                {id: 3, level: "Advanced Recipes"}
-            ]
-
-            this.levels.forEach(level => {
-                if(level.level == difficult){
-                    this.id = level.id;
-                }
-            })
-
-            axios({
-                method: 'get',
-                url: "http://localhost/prueba/public/api/recipes/filterby/level/"+this.id
-    
-            })
-                .then(
-                    (response) => {
-                        let items = response.data;
-                        this.recipesLevel = [];
-
-                        items.forEach((element) => {
-
-                            axios({
-                                method: 'get',
-                                url: 'http://localhost/prueba/public/api/recipes/recipe/' + element.id //punto de acceso
-                            })
-                                .then(
-                                    (response) => {
-                                        this.filledRecipe = response.data;
-                                        console.log(this.filledRecipe);
-                                    }
-
-                                )
-                                .catch(
-                                    error => console.log(error)
-                                );
-
-                            this.recipesLevel.push({
-                                id: element.id,
-                                image: "http://localhost/prueba/public/storage/imgs/" + element.image,
-                                title: element.name,
-                                category: element.category,
-                                time: element.total_time,
-                                difficult: element.level,
-                                likes: element.likes,
-                                description: element.description,
-                                portion: element.portions,
-                                type: "Veg",
-                                occasion: element.occasion,
-                                tag: this.filledRecipe[0].strTags,
-                                preparation: this.filledRecipe[0].strInstructions,
-                                ingredients: this.filledRecipe[0].strIngredient1,
-                            })
-                        });
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                );
-
-        } */
     }
 })
 

@@ -13,9 +13,11 @@ app.component('form-login', {
       })
         .then(response => {
           
-        
           localStorage.setItem("token", response.data.accessToken);
-          localStorage.setItem("userData", response.data);
+
+          localStorage.setItem("name", response.data.user.name+" "+response.data.user.last_name);
+          localStorage.setItem("country", response.data.user.country);
+          localStorage.setItem("id", response.data.user.id);
 
           window.location.href = 'http://localhost/TheKitchen2.0/dist/index.html';
 

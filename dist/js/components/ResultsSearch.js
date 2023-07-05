@@ -187,14 +187,14 @@ app.component('results-search', {
         </script>
         <div class="row g-0 mt-5">
         <div v-if="resultsRecipes != null">
-            <h4 class='text-center mt-3'>Results for <span class='fw-bolder'>{{this.keyword}}</span></h4>
+            <h4 class='text-center mt-3'>Results for <span class='fw-bolder'>{{keyword}}</span></h4>
         </div>
         <div  class="cards-lines-two">
             <div v-for="(recipe, index) in resultsRecipes" class="cards-position row mb-5">
                         <card-vertical :image="recipe.image" imgsave="images/imgs/icons/save.png" icon="images/imgs/icons/favorite.svg" :likes="recipe.likes"
                             :title="recipe.title" :description="recipe.description" :time="recipe.time"
                             :difficult="recipe.difficult" :id="recipe.id" v-on:recipedetails="onClickRecipeDetails"
-                            v-on:recipelike="onClickRecipeLike" v-on:recipeslevel="onClickLevel()" v-on:saverecipe="onClickSave"></card-vertical>
+                            v-on:recipelike="onClickRecipeLike" v-on:saverecipe="onClickSave" v-on:recipeslevel="onClickLevel"></card-vertical>
             </div>
         </div>
         <div v-if="resultsRecipes === null">
