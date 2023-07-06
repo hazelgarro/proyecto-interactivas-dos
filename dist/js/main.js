@@ -226,7 +226,7 @@ const app = Vue.createApp({ //main application vue app
 
             this.recipes.forEach(recipe => {
                 if (recipe.id == id) {
-
+                    
                     axios({
                         method: 'get',
                         url: "http://localhost/prueba/public/api/users/likes/"+this.userId+"/"+id
@@ -234,13 +234,17 @@ const app = Vue.createApp({ //main application vue app
                     })
                         .then(
                             (response) => {
-                                console.log(response);
-                                const updatedLikes = response.data.likes;
-
-                                const recipe = this.recipes.find(recipe => recipe.id == id);
-                                if(recipe){
-                                    recipe.likes = updatedLikes;
+                                if(response.data.code === 400){
+                                    alert("You alredy voted for this recipe");
+                                } else {
+                                    console.log(response);
+                                    const updatedLikes = response.data.likes;
+                                    const recipe = this.recipes.find(recipe => recipe.id == id);
+                                    if(recipe){
+                                        recipe.likes = updatedLikes;
+                                    }
                                 }
+                                
                             }
                         )
                         .catch(
